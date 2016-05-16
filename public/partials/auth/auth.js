@@ -15,7 +15,6 @@ app.controller('AuthCtrl',
                 $localStorage.auth = JSON.stringify(resp);
 
                 Authenticate.getCarriers(resp).then(function(response) {
-                    debugger;
                     var props = response.properties;
                     if(Object.keys(props).length){
                         if(props.defaultcarrier){
@@ -25,10 +24,11 @@ app.controller('AuthCtrl',
                             resp.carrierGroups = props.carriergroups;
                         }
                     }
+                    $rootScope.currentUser = $scope.user;
+                    $localStorage.currentUser = $scope.user;
                     $localStorage.auth = JSON.stringify(resp);
                     $state.go("airiq-search.main");
                 }, function(error) {
-                    debugger;
                     $state.go('sign-in');
                     // if(!error.responseText){
                     //     $state.go('sign-in');
@@ -39,7 +39,6 @@ app.controller('AuthCtrl',
                 });
 
             }, function(error) {
-                debugger;
                 $state.go('sign-in');
                 // try{
                 //     error = JSON.parse(error.responseText);
@@ -51,10 +50,6 @@ app.controller('AuthCtrl',
                 //     $state.go('sign-in');
                 // }
             });
-
-            $localStorage.currentUser = $scope.user;
-            $rootScope.currentUser = $scope.user;
-            // $state.go("airiq-search.main");
         }
 
         $scope.months = [];
