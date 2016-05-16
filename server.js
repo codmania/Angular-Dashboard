@@ -2,7 +2,7 @@
 var slashes = require("connect-slashes");
 var app = express();
 
-app.use(express.basicAuth('avasis', 'demo'));
+app.use(express.basicAuth('airdata', 'demo'));
 app.use(express.logger());
 app.use(express.static('www'));
 app.use('/app', express.static('public'));
