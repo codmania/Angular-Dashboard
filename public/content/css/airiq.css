@@ -1,0 +1,116 @@
+.airiq-wrapper {
+  color: #4a4a4a; }
+  .airiq-wrapper > h2 {
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 27px;
+    margin-top: 0px;
+    margin-bottom: 25px; }
+  .airiq-wrapper .card-wrapper {
+    padding: 0px;
+    margin-bottom: 20px; }
+    .airiq-wrapper .card-wrapper h3 {
+      font-family: AvenirNextLTPro-Medium;
+      font-size: 17px;
+      margin-top: 5px;
+      margin-bottom: 5px; }
+    .airiq-wrapper .card-wrapper .item {
+      margin-bottom: 10px;
+      padding-top: 10px; }
+      .airiq-wrapper .card-wrapper .item > span {
+        display: block;
+        font-family: AvenirNextLTPro-Demi;
+        font-size: 13px;
+        margin-bottom: 7px; }
+      .airiq-wrapper .card-wrapper .item .input-group .input-group-addon {
+        background-color: #f9f9f9; }
+        .airiq-wrapper .card-wrapper .item .input-group .input-group-addon + .form-control {
+          border-left: 0; }
+    .airiq-wrapper .card-wrapper .form-control {
+      height: 40px;
+      padding: 15px;
+      border: 1px solid #eee;
+      background-color: #f9f9f9; }
+      .airiq-wrapper .card-wrapper .form-control:focus, .airiq-wrapper .card-wrapper .form-control.focus {
+        background-color: #fff; }
+    .airiq-wrapper .card-wrapper .search-field .form-control {
+      background-color: #f9f9f9;
+      padding-left: 30px;
+      height: 34px; }
+  .airiq-wrapper .card-title {
+    padding: 10px 15px;
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 22px;
+    color: #fff;
+    background: #7077D4; }
+    .airiq-wrapper .card-title span {
+      display: inline-block; }
+  .airiq-wrapper .card-content {
+    padding: 15px 20px; }
+  .airiq-wrapper .button-group {
+    float: right;
+    display: block;
+    margin-bottom: 20px;
+    padding: 0px 15px; }
+  .airiq-wrapper .date-field-wrapper {
+    height: 40px;
+    padding: 8px 20px; }
+  .airiq-wrapper ui-select .btn.dropdown-toggle {
+    padding: 9px 15px; }
+  .airiq-wrapper .panelwithgraph {
+    position: relative; }
+  .airiq-wrapper #main-placeholder {
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    width: 100%;
+    height: 100%; }
+    .airiq-wrapper #main-placeholder img {
+      height: 90%;
+      max-width: 100%; }
+  .airiq-wrapper .custom-datefield {
+    min-width: 230px; }
+  .airiq-wrapper #profitMultiplierMain {
+    display: inline-block; }
+  .airiq-wrapper .panel {
+    border: 1px solid #d7d7d7;
+    box-shadow: -2px -2px 10px #d7d7d7; }
+  .airiq-wrapper .panel-heading {
+    height: 50px;
+    padding: 15px;
+    background: #5189D2; }
+    .airiq-wrapper .panel-heading h3 {
+      color: #fff; }
+    .airiq-wrapper .panel-heading ui-select .btn.dropdown-toggle {
+      padding: 4px 15px; }
+  .airiq-wrapper .multiplier-dropdown {
+    margin-top: -5px; }
+    .airiq-wrapper .multiplier-dropdown label {
+      color: #fff; }
+  .airiq-wrapper canvas {
+    width: 100% !important;
+    padding: 10px 15px; }
+  .airiq-wrapper .btns {
+    float: right;
+    position: relative; }
+    .airiq-wrapper .btns .btn-toggle {
+      color: #fff;
+      font-size: 16px;
+      font-weight: normal; }
+
+.btn-report {
+  margin-bottom: 20px; }
+
+.nav-user-photo {
+  width: 35px;
+  height: 30px; }
+
+.child-menu img {
+  width: 20px;
+  height: auto;
+  margin-right: 10px; }
+
+.child-menu li {
+  padding: 10px 0px 10px 35px; }
+  .child-menu li a {
+    color: #fff;
+    font-family: "AvenirNextLTPro-Medium"; }

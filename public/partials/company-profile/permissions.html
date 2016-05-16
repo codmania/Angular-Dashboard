@@ -1,0 +1,179 @@
+<div class="tab-content">
+    <div class="permissions-wrapper">
+        <div class="row">
+            <div class="col-md-7 description">
+                <h4>Access Codes</h4>
+                <span class="text-primary text-bold create">C</span> Create
+                <span class="text-warning text-bold view">R</span> View
+                <span class="text-success text-bold edit">U</span> Edit
+                <span class="text-danger text-bold delete">D</span> Delete
+                <span class="asterisk">* Permission only Applies to those Items the User Created</span>
+            </div>
+            <div class="col-md-5 text-right filter">
+                <div class="dropdown pull-right">
+                    <a href="" class="btn btn-default" data-toggle="dropdown">
+                        Filter by <i class="fa fa-chevron-down"></i>
+                    </a>
+                </div>
+
+                <div class="search-field pull-right">
+                    <i class="fa fa-search"></i>
+                    <input type="text" placeholder="Search by date, worker, tag, location  or project" class="round">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="contents">
+            <div class="left-side">
+                <div class="empty-box">
+                </div>
+                <div ng-repeat="node in tree" class="node">
+                    <div class="handle">
+                        <i class="fa" ng-class="{'fa-plus': node.collapsed, 'fa-minus': !node.collapsed}" ng-click="toggle(node)"></i>
+                        {{node.name}}
+                    </div>
+                    <div class="children" ng-if="node.children" ng-hide="node.collapsed" >
+                        <div ng-repeat="child in node.children" class="item"
+                             ng-click="selectRow(child)"
+                             ng-class="{'selected': child.selected}">
+                            {{child.name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <slick dots="false" infinite="false" speed="300" slides-to-show="7" touch-move="true" slides-to-scroll="1" >
+                    <div class="person" ng-repeat="person in data">
+                        <div class="color" ng-if="person.color"
+                             ng-class="{'bg-danger': person.color == 'danger',
+                                        'bg-warning': person.color == 'warning',
+                                        'bg-success': person.color == 'success'}">
+                        </div>
+                        <div class="info text-center" ng-click="selectPerson(person)" ng-class="{'selected': person.selected}">
+
+                            <img ng-src="assets/img/{{person.avatar}}" class="img-circle avatar">
+                            <div class="name text-primary">
+                                {{person.name}}
+                            </div>
+                            <div class="role text-muted">
+                                {{person.role}}
+                            </div>
+                        </div>
+                        <div class="node" ng-repeat="node in person.data">
+                            <div class="handle" ng-class="{'selected': person.all_selected}">&nbsp;</div>
+                            <div class="children" ng-if="node.children" ng-hide="node.collapsed">
+                                <div ng-repeat="child in node.children"  class="item text-center"
+                                     ng-class="{'selected': child.selected}"
+                                     ng-click="selectCell(person, child)"
+                                     data-template-url="project-permission-popover-template.html"
+                                     data-animation="am-flip-x" data-auto-close="1" data-container="body"
+                                     data-placement="bottom" bs-popover>
+                                    <span class="text-primary" ng-if="child.all.create || child.specific.create">
+                                        C<span ng-if="child.specific.create">*</span>
+                                    </span>
+                                    <span class="text-warning" ng-if="child.all.read || child.specific.read">
+                                        R<span ng-if="child.specific.read">*</span>
+                                    </span>
+                                    <span class="text-success" ng-if="child.all.edit || child.specific.edit">
+                                        U<span ng-if="child.specific.edit">*</span>
+                                    </span>
+                                    <span class="text-danger" ng-if="child.all.destroy || child.specific.destroy">
+                                        D<span ng-if="child.specific.destroy">*</span>
+                                    </span>
+
+                                    <span ng-if="isEmpty(child.all) || isEmpty(child.specific)">&nbsp;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </slick>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/ng-template" id="project-permission-popover-template.html">
+<div class="permissions-popover popover">
+    <div class="arrow"></div>
+    <div class="name text-primary">{{selectedPerson.name}}</div>
+    <div class="role text-muted">{{selectedPerson.role}}</div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th></th>
+                <th>All projects</th>
+                <th>* Item Specific</th>
+            </tr>
+        </thead>
+            <tr>
+                <td class="text-primary">CREATE</td>
+                <td>
+                    <div class="checkbox checkbox-inline">
+                        <input type="checkbox" ng-model="popover.all.create">
+                        <label>&nbsp;</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="checkbox checkbox-inline">
+                        <input type="checkbox" ng-model="popover.specific.create">
+                        <label>&nbsp;</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-warning">READ</td>
+                <td>
+                    <div class="checkbox checkbox-inline">
+                        <input type="checkbox" ng-model="popover.all.read">
+                        <label>&nbsp;</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="checkbox checkbox-inline">
+                        <input type="checkbox" ng-model="popover.specific.read">
+                        <label>&nbsp;</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-success">EDIT</td>
+                <td>
+                    <div class="checkbox checkbox-inline">
+                        <input type="checkbox" ng-model="popover.all.edit">
+                        <label>&nbsp;</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="checkbox checkbox-inline">
+                        <input type="checkbox" ng-model="popover.specific.edit">
+                        <label>&nbsp;</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-danger">DELETE</td>
+                <td>
+                    <div class="checkbox checkbox-inline">
+                        <input type="checkbox" ng-model="popover.all.destroy">
+                        <label>&nbsp;</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="checkbox checkbox-inline">
+                        <input type="checkbox" ng-model="popover.specific.destroy">
+                        <label>&nbsp;</label>
+                    </div>
+                </td>
+            </tr>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="text-right">
+        <button class="btn btn-cancel" ng-click="$hide()">Cancel</button>
+        <button class="btn btn-success" ng-click="save(); $hide()">Save</button>
+    </div>
+</div>
+</script>

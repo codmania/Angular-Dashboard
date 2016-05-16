@@ -1,0 +1,70 @@
+<div class="row bankdraw">
+    <div class="top clearfix">
+        <div class="closeBox" style="padding: 140px 0;">
+            <p>
+                <a ui-sref="financials.main">Close <i class="fa fa-caret-right"></i></a>
+            </p>
+        </div>
+        <div class="detail">
+            <div class="row">
+                <div class="col-md-7 font-medium">
+                    <h2>Draw Request</h2>
+                    <div class="heading text-muted">Draw Request Name</div>
+                    <div class="text-muted">
+                        <div>World Bank</div>
+                        <div>Synergy Construction</div>
+                        <div>Project Info</div>
+                        <div>47 Wilmington Ave  Wilmington, VA  90125</div>
+                        <small>Loan #</small>
+                        <div>2015098403</div>
+                    </div>
+                </div>
+                <div class="col-md-4 pull-right">
+                    <table class="table no-border table-condensed mt30">
+                        <tbody>
+                            <tr>
+                                <td>DRAW REQUEST NUMBER</td>
+                                <td>107</td>
+                            </tr>
+                            <tr>
+                                <td>DATE INITIATED</td>
+                                <td>8/17/2014</td>
+                            </tr>
+                            <tr>
+                                <td>INITIATED BY</td>
+                                <td>Beth Wiseman</td>
+                            </tr>
+
+                            <tr>
+                                <td>CURRENT STATUS</td>
+                                <td class="text-success">In Process</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="row">
+                                        <label class="col-sm-6 item-title mt20">Currently Responsible</label>
+                                        <div class="col-sm-6">
+                                            <ui-select selected-item="currentResponsible" options="users"></ui-select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="row mt5">
+                                        <div class="col-md-12">
+                                            <div class="follow-up-due">
+                                                <ui-date-field ng-model="date"></ui-date-field>
+                                            </div>
+                                            <div class="due-title">Follow Up Due</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

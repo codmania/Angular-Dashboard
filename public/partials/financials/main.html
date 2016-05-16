@@ -1,0 +1,110 @@
+<div class="tab-content no-padding">
+    <div class="table-responsive">
+        <table class="table table-financial-main" ng-class="{'hidden-optional-columns': !isFullColumnsShown}">
+            <thead>
+                <tr>
+                    <th rowspan="2">Division Cost Code</th>
+                    <th colspan="{{isFullColumnsShown ? 6 : 1}}" rowspan="{{isFullColumnsShown ? 1 : 2}}">
+                        Working Budget 
+                        <a class="pull-right" ng-click="isFullColumnsShown=!isFullColumnsShown">
+                            <i class="pa10 fa fa-chevron-right text-primary" ng-show="!isFullColumnsShown"></i>
+                            <i class="pa10 fa fa-chevron-left text-primary" ng-show="isFullColumnsShown"></i>
+                        </a>
+                    </th>
+                    <th colspan="2">Pending Costs</th>
+                    <th rowspan="2">Unbudgeted Costs</th>
+                    <th rowspan="2">Estimated Cost at Completion</th>
+                    <th rowspan="2">Payments Made</th>
+                    <th rowspan="2">Cash Required to Complete</th>
+                </tr>
+                <tr>
+                    <th class="optional-columns">Est.Budget</th>
+                    <th class="optional-columns">Under Contract</th>
+                    <th class="optional-columns">Approved Purchase Orders</th>
+                    <th class="optional-columns">Approved Change Orders</th>
+                    <th class="optional-columns">Direct Costs</th>
+                    <th class="optional-columns">Working Budget</th>
+                    <th>Pending Purchase Orders</th>
+                    <th>Pending Change Orders</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="item in data">
+                <tr class="first-level">
+                    <td style="min-width: 240px">
+                        <div class="text-primary">{{item.division_cost_code}}
+                            <i class="fa pull-right" ng-click="item.isCollapsed = !item.isCollapsed"
+                                ng-class="{'fa-chevron-down': item.isCollapsed,
+                                           'fa-chevron-up': !item.isCollapsed}"></i>
+                        </div>
+                    </td>
+                    <td class="optional-columns">{{item.est_budget | currency:'$':0}}</td>
+                    <td class="optional-columns">{{item.under_contract | currency:'$':0}}</td>
+                    <td class="optional-columns">{{item.approved_purchase_orders | currency:'$':0}}</td>
+                    <td class="optional-columns">{{item.approved_change_orders | currency:'$':0}}</td>
+                    <td class="optional-columns">{{item.direct_costs | currency:'$':0}}</td>
+                    <td>{{item.working_budget | currency:'$':0}}</td>
+                    <td>{{item.pending_purchase_orders | currency:'$':0}}</td>
+                    <td>{{item.pending_change_orders | currency:'$':0}}</td>
+                    <td>{{item.unbudgeted_costs | currency:'$':0}}</td>
+                    <td>{{item.est_cost_at_completion | currency:'$':0}}</td>
+                    <td>{{item.payments_made | currency:'$':0}}</td>
+                    <td>{{item.cash_required_to_complete | currency:'$':0}}</td>
+                </tr>
+                <tr ng-repeat="row in item.children" ng-hide="item.isCollapsed">
+                    <td><div><span class="text-primary">{{row.division_cost_code}}</span></div></td>
+                    <td class="optional-columns">{{row.est_budget | currency:'$':0}}</td>
+                    <td class="optional-columns">{{row.under_contract | currency:'$':0}}</td>
+                    <td class="optional-columns">{{row.approved_purchase_orders | currency:'$':0}}</td>
+                    <td class="optional-columns">{{row.approved_change_orders | currency:'$':0}}</td>
+                    <td class="optional-columns">{{row.direct_costs | currency:'$':0}}</td>
+                    <td>{{row.working_budget | currency:'$':0}}</td>
+                    <td>{{row.pending_purchase_orders | currency:'$':0}}</td>
+                    <td>{{row.pending_change_orders | currency:'$':0}}</td>
+                    <td>{{row.unbudgeted_costs | currency:'$':0}}</td>
+                    <td>{{row.est_cost_at_completion | currency:'$':0}}</td>
+                    <td>{{row.payments_made | currency:'$':0}}</td>
+                    <td>{{row.cash_required_to_complete | currency:'$':0}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td class="optional-columns">{{(data | sumBy:'est_budget') | currency:'$':0}}</td>
+                    <td class="optional-columns">{{(data | sumBy:'under_contract') | currency:'$':0}}</td>
+                    <td class="optional-columns">{{(data | sumBy:'approved_purchase_orders') | currency:'$':0}}</td>
+                    <td class="optional-columns">{{(data | sumBy:'approved_change_orders') | currency:'$':0}}</td>
+                    <td class="optional-columns">{{(data | sumBy:'direct_costs') | currency:'$':0}}</td>
+                    <td>{{(data | sumBy:'working_budget') | currency:'$':0}}</td>
+                    <td>{{(data | sumBy:'pending_purchase_orders') | currency:'$':0}}</td>
+                    <td>{{(data | sumBy:'pending_change_orders') | currency:'$':0}}</td>
+                    <td>{{(data | sumBy:'unbudgeted_costs') | currency:'$':0}}</td>
+                    <td>{{(data | sumBy:'est_cost_at_completion') | currency:'$':0}}</td>
+                    <td>{{(data | sumBy:'payments_made') | currency:'$':0}}</td>
+                    <td>{{(data | sumBy:'cash_required_to_complete') | currency:'$':0}}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<div class="row mt20 white financial-main-bottom">
+    <div class="col-md-3">
+        <span class="text-muted">Land Cost</span>
+        <p class="text-default">$0</p>
+    </div>
+    <div class="col-md-2">
+        <span class="text-muted">Development Cost</span>
+        <p class="text-default">$185,000</p>
+    </div>
+    <div class="col-md-2">
+        <span class="text-primary">Additional Cost</span>
+        <p class="text-primary">$0</p>
+    </div>
+    <div class="col-md-2">
+        <span class="text-info">Total Project Cost</span>
+        <p class="text-info">$3,016,059</p>
+    </div>
+    <div class="col-md-3">
+        <span class="text-muted">Total Project Cost per Sqft</span>
+        <p class="text-default">$308</p>
+    </div>
+</div>

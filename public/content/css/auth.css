@@ -1,0 +1,28 @@
+.auth-wrapper {
+  background-color: #2a2d33;
+  min-height: 100%;
+  padding-bottom: 80px; }
+  .auth-wrapper .top div {
+    font-size: 20px;
+    color: white; }
+  .auth-wrapper .auth-form {
+    width: 500px;
+    border-radius: 5px;
+    margin: 20px auto; }
+    .auth-wrapper .auth-form .heading {
+      font-size: 20px;
+      color: #44474b; }
+    .auth-wrapper .auth-form .password-wrapper {
+      position: relative; }
+      .auth-wrapper .auth-form .password-wrapper i.fa-check {
+        position: absolute;
+        right: 22px;
+        top: 16px;
+        font-size: 17px; }
+  .auth-wrapper .btn {
+    width: 100%; }
+
+ui-select ul.dropdown-menu {
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden; }

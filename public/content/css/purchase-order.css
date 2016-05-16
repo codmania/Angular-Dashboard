@@ -1,0 +1,365 @@
+.pon-page-wrapper {
+  padding-top: 0;
+  margin-bottom: 0; }
+  .pon-page-wrapper label {
+    color: #4a4a4a; }
+  .pon-page-wrapper .pon-page-info {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 1px 0 4px #d8d8d8; }
+  .pon-page-wrapper .closeBox {
+    background: #000;
+    width: 100px;
+    padding: 110px 0;
+    text-align: center; }
+  .pon-page-wrapper .pon-page-title {
+    margin-top: 60px;
+    width: calc(100% - 100px); }
+    .pon-page-wrapper .pon-page-title h2 {
+      font-family: AvenirNextLTPro-Regular;
+      font-size: 27px;
+      margin-top: 0px; }
+    .pon-page-wrapper .pon-page-title input {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 0px;
+      width: 100%;
+      font-size: 17px; }
+    .pon-page-wrapper .pon-page-title .project-info h3 {
+      font-family: "AvenirNextLTPro-Demi";
+      font-size: 16px;
+      margin-bottom: 0;
+      margin-top: 20px; }
+    .pon-page-wrapper .pon-page-title .project-info span {
+      font-family: "AvenirNextLTPro-Demi";
+      font-size: 12px; }
+  .pon-page-wrapper .po-info {
+    color: #4a4a4a; }
+    .pon-page-wrapper .po-info .row span:first-child, .pon-page-wrapper .po-info .row div:first-child {
+      text-transform: uppercase;
+      font-size: 10px;
+      font-family: AvenirNextLTPro-Demi; }
+    .pon-page-wrapper .po-info .row span:last-child {
+      font-family: AvenirNextLTPro-Regular; }
+    .pon-page-wrapper .po-info label {
+      color: #fff; }
+  .pon-page-wrapper .first-section {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    margin-top: 30px;
+    padding: 20px; }
+    .pon-page-wrapper .first-section .date-field-wrapper {
+      border: 1px solid #eee; }
+    .pon-page-wrapper .first-section textarea {
+      background-color: #f9f9f9; }
+      .pon-page-wrapper .first-section textarea:hover {
+        border: 1px solid #eee; }
+      .pon-page-wrapper .first-section textarea:focus, .pon-page-wrapper .first-section textarea:active {
+        background-color: #fff;
+        border: 1px solid #eee; }
+  .pon-page-wrapper .section {
+    padding: 20px;
+    border: 1px solid #eee; }
+  .pon-page-wrapper h5 {
+    margin: 20px 0;
+    font-size: 13px; }
+    .pon-page-wrapper h5:first-child {
+      margin-top: 0; }
+  .pon-page-wrapper input {
+    height: 51px;
+    background-color: #f9f9f9; }
+    .pon-page-wrapper input:focus {
+      background-color: #fff;
+      border-color: #d7d7d7; }
+  .pon-page-wrapper .textable {
+    line-height: 30px;
+    margin-top: 30px; }
+  .pon-page-wrapper h3 {
+    font-family: AvenirNextLTPro-Medium;
+    font-size: 17px;
+    color: #4a4a4a;
+    margin: 30px 0 20px; }
+  .pon-page-wrapper .second-section {
+    border: 1px solid #eee;
+    background-color: #fff;
+    border-radius: 3px; }
+    .pon-page-wrapper .second-section .paragraph {
+      padding: 20px; }
+      .pon-page-wrapper .second-section .paragraph:not(:last-child) {
+        border-bottom: 1px solid #eee; }
+      .pon-page-wrapper .second-section .paragraph h5 {
+        color: #4a4a4a;
+        font-weight: 700;
+        font-size: 13px;
+        margin-bottom: 5px; }
+      .pon-page-wrapper .second-section .paragraph span.value {
+        font-family: AvenirNextLTPro-Regular;
+        font-size: 14px;
+        color: #4a4a4a; }
+      .pon-page-wrapper .second-section .paragraph .section {
+        padding-bottom: 0; }
+
+.poi-page-wrapper {
+  padding-top: 0;
+  margin-bottom: 0; }
+  .poi-page-wrapper label {
+    color: #4a4a4a; }
+  .poi-page-wrapper .poi-page-info {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 1px 0 4px #d8d8d8; }
+  .poi-page-wrapper .closeBox {
+    background: #000;
+    width: 100px;
+    padding: 125px 0;
+    text-align: center; }
+  .poi-page-wrapper .poi-page-title {
+    margin-top: 60px;
+    width: calc(100% - 100px); }
+    .poi-page-wrapper .poi-page-title h2 {
+      font-family: AvenirNextLTPro-Regular;
+      font-size: 27px;
+      margin-top: 0px; }
+    .poi-page-wrapper .poi-page-title input {
+      background: transparent;
+      border: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 0px;
+      width: 100%;
+      font-family: AvenirNextLTPro-Regular;
+      font-size: 17px; }
+    .poi-page-wrapper .poi-page-title .project-info h3 {
+      font-family: "AvenirNextLTPro-Demi";
+      font-size: 14px;
+      color: #3aabd5;
+      margin-bottom: 0;
+      margin-top: 20px; }
+    .poi-page-wrapper .poi-page-title .project-info span {
+      font-family: "AvenirNextLTPro-Demi";
+      font-size: 11px; }
+  .poi-page-wrapper .po-info {
+    color: #4a4a4a; }
+    .poi-page-wrapper .po-info .row span:first-child, .poi-page-wrapper .po-info .row div:first-child {
+      text-transform: uppercase;
+      font-size: 10px;
+      font-family: AvenirNextLTPro-Demi; }
+    .poi-page-wrapper .po-info .row span:last-child {
+      font-family: AvenirNextLTPro-Regular; }
+    .poi-page-wrapper .po-info .row .dropdown button span {
+      font-size: 12px; }
+    .poi-page-wrapper .po-info label {
+      color: #fff; }
+  .poi-page-wrapper .first-section {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    margin-top: 30px;
+    padding: 20px; }
+    .poi-page-wrapper .first-section .date-field-wrapper {
+      border: 1px solid #eee; }
+    .poi-page-wrapper .first-section textarea {
+      background-color: #f9f9f9; }
+      .poi-page-wrapper .first-section textarea:hover {
+        border: 1px solid #eee; }
+      .poi-page-wrapper .first-section textarea:focus, .poi-page-wrapper .first-section textarea:active {
+        background-color: #fff;
+        border: 1px solid #eee; }
+  .poi-page-wrapper .section {
+    padding: 20px;
+    border: 1px solid #eee; }
+  .poi-page-wrapper .notes {
+    display: block; }
+    .poi-page-wrapper .notes + span {
+      font-family: AvenirNextLTPro-Regular;
+      font-size: 14px; }
+  @media (max-width: 992px) {
+    .poi-page-wrapper .supplier-company,
+    .poi-page-wrapper .supplier-address,
+    .poi-page-wrapper .supplier-contact,
+    .poi-page-wrapper .supplier-terms,
+    .poi-page-wrapper .supplier-textable,
+    .poi-page-wrapper .project,
+    .poi-page-wrapper .company-name,
+    .poi-page-wrapper .delivery-address,
+    .poi-page-wrapper .company-contact,
+    .poi-page-wrapper .date-required {
+      margin-bottom: 15px; } }
+  .poi-page-wrapper .supplier-company label,
+  .poi-page-wrapper .supplier-address label,
+  .poi-page-wrapper .supplier-contact label,
+  .poi-page-wrapper .supplier-terms label,
+  .poi-page-wrapper .supplier-textable label,
+  .poi-page-wrapper .project label,
+  .poi-page-wrapper .company-name label,
+  .poi-page-wrapper .delivery-address label,
+  .poi-page-wrapper .company-contact label,
+  .poi-page-wrapper .date-required label {
+    display: block;
+    margin-bottom: 5px; }
+  @media (min-width: 992px) {
+    .poi-page-wrapper .purchase-order-to .row > div:nth-child(2),
+    .poi-page-wrapper .purchase-order-to .row > div:nth-child(3),
+    .poi-page-wrapper .purchase-order-to .row > div:nth-child(4),
+    .poi-page-wrapper .ship-to .row > div:nth-child(2),
+    .poi-page-wrapper .ship-to .row > div:nth-child(3),
+    .poi-page-wrapper .ship-to .row > div:nth-child(4) {
+      text-align: center; }
+      .poi-page-wrapper .purchase-order-to .row > div:nth-child(2) > div,
+      .poi-page-wrapper .purchase-order-to .row > div:nth-child(3) > div,
+      .poi-page-wrapper .purchase-order-to .row > div:nth-child(4) > div,
+      .poi-page-wrapper .ship-to .row > div:nth-child(2) > div,
+      .poi-page-wrapper .ship-to .row > div:nth-child(3) > div,
+      .poi-page-wrapper .ship-to .row > div:nth-child(4) > div {
+        display: table;
+        margin: 0 auto;
+        text-align: left; } }
+  .poi-page-wrapper .purchase-order-to .row > div > div,
+  .poi-page-wrapper .ship-to .row > div > div {
+    min-height: 73px; }
+  @media (min-width: 992px) {
+    .poi-page-wrapper .purchase-order-to .row > div:not(:first-child),
+    .poi-page-wrapper .ship-to .row > div:not(:first-child) {
+      border-left: 1px solid #eee; } }
+  .poi-page-wrapper .supplier-company span {
+    font-family: AvenirNextLTPro-Medium;
+    font-size: 12px;
+    display: block; }
+  .poi-page-wrapper .supplier-company small {
+    font-size: 10px; }
+  .poi-page-wrapper .supplier-address span {
+    display: block;
+    font-family: AvenirNextLTPro-Medium;
+    font-size: 12px; }
+  .poi-page-wrapper .supplier-contact .name {
+    display: block;
+    color: #3aabd5; }
+  .poi-page-wrapper .supplier-contact .company {
+    display: block;
+    font-size: 10px; }
+  .poi-page-wrapper .supplier-contact .contact {
+    font-size: 10px;
+    font-family: AvenirNextLTPro-Regular;
+    color: #8b8b8b; }
+    .poi-page-wrapper .supplier-contact .contact i {
+      margin-right: 10px; }
+      .poi-page-wrapper .supplier-contact .contact i:not(:first-child) {
+        margin-left: 10px; }
+  .poi-page-wrapper .supplier-terms span {
+    font-family: AvenirNextLTPro-Medium;
+    font-size: 12px; }
+  .poi-page-wrapper .supplier-textable {
+    font-family: AvenirNextLTPro-Medium;
+    font-size: 12px; }
+    .poi-page-wrapper .supplier-textable .status {
+      font-size: 12px;
+      margin-right: 20px; }
+  .poi-page-wrapper .company-name span {
+    font-family: AvenirNextLTPro-Medium;
+    font-size: 12px; }
+  .poi-page-wrapper .delivery-address span {
+    display: block;
+    font-family: AvenirNextLTPro-Medium;
+    font-size: 12px; }
+  .poi-page-wrapper .company-contact .name {
+    display: block;
+    color: #3aabd5; }
+  .poi-page-wrapper .company-contact .contact {
+    font-size: 10px;
+    font-family: AvenirNextLTPro-Regular;
+    color: #8b8b8b; }
+    .poi-page-wrapper .company-contact .contact i {
+      margin-right: 10px; }
+      .poi-page-wrapper .company-contact .contact i:not(:first-child) {
+        margin-left: 10px; }
+  .poi-page-wrapper .date-required span {
+    font-family: AvenirNextLTPro-Medium;
+    font-size: 12px; }
+  .poi-page-wrapper .section.item {
+    padding-bottom: 0; }
+  .poi-page-wrapper .item .item-no {
+    float: left; }
+  .poi-page-wrapper .item .button {
+    float: right; }
+  .poi-page-wrapper .item label {
+    display: block;
+    margin-bottom: 5px; }
+  .poi-page-wrapper .item span {
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 15px; }
+  .poi-page-wrapper h5 {
+    margin: 20px 0;
+    font-size: 13px; }
+    .poi-page-wrapper h5:first-child {
+      margin-top: 0; }
+  .poi-page-wrapper input {
+    height: 51px;
+    background-color: #f9f9f9; }
+    .poi-page-wrapper input:focus {
+      background-color: #fff;
+      border-color: #d7d7d7; }
+  .poi-page-wrapper .textable {
+    line-height: 30px;
+    margin-top: 30px; }
+  .poi-page-wrapper h3 {
+    font-family: AvenirNextLTPro-Medium;
+    font-size: 17px;
+    color: #4a4a4a;
+    margin: 30px 0 20px; }
+  .poi-page-wrapper .second-section {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 30px;
+    background-color: #eee; }
+    .poi-page-wrapper .second-section .second-content {
+      border: 1px solid #eee;
+      background-color: #f9f9f9; }
+      .poi-page-wrapper .second-section .second-content .nav-tabs {
+        border-bottom: 1px solid #eee; }
+        .poi-page-wrapper .second-section .second-content .nav-tabs > li > a {
+          font-family: AvenirNextLTPro-Medium;
+          font-size: 13px;
+          color: #6c6c6c;
+          min-width: 110px;
+          text-align: center;
+          padding: 15px 30px;
+          border-radius: 0;
+          border-top: 0; }
+        .poi-page-wrapper .second-section .second-content .nav-tabs > li:first-child > a {
+          border-left: 0; }
+        .poi-page-wrapper .second-section .second-content .nav-tabs > li.active a {
+          color: #e25c5c;
+          background: white;
+          border-bottom: 1px solid white; }
+      .poi-page-wrapper .second-section .second-content .tab-content {
+        border: 0; }
+        .poi-page-wrapper .second-section .second-content .tab-content .comments-wrapper .comment {
+          position: relative;
+          font-size: 13px;
+          margin-bottom: 15px;
+          font-family: AvenirNextLTPro-Regular; }
+          .poi-page-wrapper .second-section .second-content .tab-content .comments-wrapper .comment > div {
+            display: inline-block; }
+          .poi-page-wrapper .second-section .second-content .tab-content .comments-wrapper .comment .author {
+            font-size: 13px;
+            font-family: AvenirNextLTPro-Demi; }
+          .poi-page-wrapper .second-section .second-content .tab-content .comments-wrapper .comment .edit {
+            position: absolute;
+            right: 20px;
+            top: 4px; }
+            .poi-page-wrapper .second-section .second-content .tab-content .comments-wrapper .comment .edit:hover {
+              cursor: pointer; }
+    .poi-page-wrapper .second-section h3 {
+      margin-top: 20px;
+      font-family: AvenirNextLTPro-Demi;
+      font-size: 13px; }
+    .poi-page-wrapper .second-section textarea {
+      padding: 15px;
+      border-radius: 3px;
+      color: #4a4a4a;
+      background-color: #f9f9f9; }
+      .poi-page-wrapper .second-section textarea:active, .poi-page-wrapper .second-section textarea:focus {
+        background-color: #fff;
+        border-color: #eee; }

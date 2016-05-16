@@ -1,0 +1,330 @@
+<div class="bids-package-wrapper">
+    <!-- Top Nav bar -->
+    <div class="row bp-page-info">
+        <div class="pull-left pl0 pr0">
+            <div class="closeBox">
+                <p>
+                    <a ui-sref="bids.main">Close <i class="fa fa-caret-right"></i></a>
+                </p>
+            </div>
+        </div>
+
+        <div class="pull-left bp-page-title">
+            <div class="col-md-7 pl20">
+                <h2 class="text-default">Bid Package</h2>
+                <input type="text" placeholder="A Long Long Bid Name Goes Here" ng-model="bidName"></input>
+                <div class="project-info">
+                    <h3 class="text-primary">Wilmington 47</h3>
+                    <span class="text-muted">47 Wilmington Avenue<br/>Arlington, VA 90125</span>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="bp-info">
+                    <div class="row">
+                        <span class="col-xs-9 text-right">Bid Number</span>
+                        <span class="col-xs-3 text-left">
+                            <label class="label label-info">1193</label>
+                        </span>
+                    </div>
+                    <div class="row mt5">
+                        <span class="col-xs-9 text-right">Date Initiated</span>
+                        <span class="col-xs-3 text-left">8/3/14</span>
+                    </div>
+                    <div class="row mt5">
+                        <span class="col-xs-9 text-right">Initiated By</span>
+                        <span class="col-xs-3 text-left">Bruce Wayne</span>
+                    </div>
+                    <div class="row mt5">
+                        <span class="col-xs-9 text-right">Status</span>
+                        <span class="col-xs-3 text-left text-success">IN PROGRESS</span>
+                    </div>
+
+                    <div class="row mt5 pr15">
+                        <div class="col-md-6 text-right mt20">Currently Responsible</div>
+                        <div class="col-md-6 text-left">
+                            <ui-select options="users" ng-select="" selected-item="curResponsible"></ui>
+                        </div>
+                    </div>
+
+                    <div class="row mt5 pr15">
+                        <div class="col-md-12">
+                            <div class="follow-up-due">
+                                <ui-date-field ng-model="date"></ui-date-field>
+                            </div>
+                            <div class="due-title">Follow Up Due</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Top Nav bar -->
+
+    <div class="row no-margin animated fadeInRight mt30">
+        <div class="col-lg-12">
+            <div class="info-section">
+                <div class="row bp-wrapper">
+                    <div class="col-3 mb15">
+                        <div class="bp-section">
+                            <div class="header">General Contractor</div>
+                            <div class="value">Bruce Wayne</div>
+                            <div class="info">Synergy Construction</div>
+                        </div>
+                        <div class="bp-section">
+                            <div class="header">Contact</div>
+                            <div class="contact">
+                                <span>
+                                    <i class="fa fa-envelope"></i>|
+                                    <i class="fa fa-comments"></i>|
+                                    <i class="fa fa-phone"></i>801 556 5683
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 text-center mb15">
+                        <div class="bp-section">
+                            <div class="header">Office Administrator</div>
+                            <div class="value">Beth Wiseman</div>
+                            <div class="info">Synergy Construction</div>
+                        </div>
+                        <div class="bp-section">
+                            <div class="header">Contact</div>
+                            <div class="contact">
+                                <span>
+                                    <i class="fa fa-envelope"></i>|
+                                    <i class="fa fa-comments"></i>|
+                                    <i class="fa fa-phone"></i>861 455 9846
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-5 mb15">
+                        <div>
+                            <div class="bp-section">
+                                <div class="header">SubContractor</div>
+                                <div class="value">David Sokol</div>
+                                <div class="info">Smokey Mountain Hardwoods</div>
+                            </div>
+                            <div class="bp-section">
+                                <div class="header">EIN #</div>
+                                <div class="info text-default">23-2345623</div>
+                            </div>
+                            <div class="bp-section">
+                                <div class="header">Contact</div>
+                                <div class="contact">
+                                    <span>
+                                        <i class="fa fa-envelope"></i>|
+                                        <i class="fa fa-comments"></i>|
+                                        <i class="fa fa-phone"></i>861 787 8868
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div uib-dropdown dropdown-append-to-body>
+                            <a href="javascript:void(0)" uib-dropdown-toggle class="text-muted">
+                                <i class="fa fa-gear"></i>
+                                <i class="fa fa-chevron-down"></i>
+                            </a>
+                            <ul class="uib-dropdown-menu dropdown-menu-right chevron-down-menu bp-action-menu">
+                                <li><a>Edit</a></li>
+                                <li><a class="text-danger">Delete</a></li>
+                             </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="date-section">
+                    <div class="item">
+                        <div class="header">Date Est. to be on Project</div>
+                        <div class="value">Oct 13, 2015</div>
+                    </div>
+                    <div class="item">
+                        <div class="header">Bid Closing Date</div>
+                        <div class="value">Aug 22, 2015</div>
+                    </div>
+                    <div class="item">
+                        <div class="header">Submission Date</div>
+                        <div class="value">Aug 6, 2015</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 documents-section">
+                        <h4>Documents</h4>
+                        <div class="info">
+                            <div class="head">Name</div>
+                            <div class="item">
+                                <span class="name text-primary">Materials Quote.pdf</span>
+                                <span class="download pull-right"><i class="fa fa-download"></i></span>
+                            </div>
+                            <div class="item">
+                                <span class="name text-primary">Hardwood Comparison.jpg</span>
+                                <span class="download pull-right"><i class="fa fa-download"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 plans-section">
+                        <h4>Plans</h4>
+                        <div class="info">
+                            <div class="head">Name</div>
+                            <div class="item">
+                                <span class="name text-primary">Wilmington 47 Main Floor Plan</span>
+                                <span class="download pull-right"><i class="fa fa-download"></i></span>
+                            </div>
+                            <div class="item">
+                                <span class="name text-primary">Wilmington 47 Basement Blue print</span>
+                                <span class="download pull-right"><i class="fa fa-download"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 details-section">
+                        <h4>Details</h4>
+                        <div class="info">
+                            <div class="item">
+                              A discount has been applied to the bid due to the combined square footage of the main floor and basement in need of Hardwood.
+                            </div>
+                            <div class="item">
+                              The Hardwood material estimate includes the most quality Oak floor available within the Owner's budget.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row no-margin animated fadeInRight mt30">
+        <div class="col-lg-12">
+            <h3>Project Estimates</h3>
+
+            <div class="table-responsive">
+                <table class="table pe-table">
+                    <thead>
+                        <tr>
+                            <th>Scope of Work</th>
+                            <th>Quantity</th>
+                            <th>Measurement</th>
+                            <th>Material</th>
+                            <th>Materials Link</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in projectEstimates">
+                            <td class="sow">{{ row.scopeOfWork }}</td>
+                            <td>{{ row.quantity }}</td>
+                            <td>{{ row.measurement }}</td>
+                            <td>{{ row.material }}</td>
+                            <td class="material-links">{{ row.materialLink }}</td>
+                            <td>{{ row.details }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row no-margin animated fadeInRight mt30">
+        <div class="col-lg-12">
+            <h3>Cost & Schedule Breakdown</h3>
+
+            <div class="table-responsive">
+                <table class="table csb-table">
+                    <thead>
+                        <tr>
+                            <th>Scope of Work</th>
+                            <th>Cost Code</th>
+                            <th>Phase/SubPhase</th>
+                            <th>Duration</th>
+                            <th>Labor</th>
+                            <th>Material</th>
+                            <th>Equipment</th>
+                            <th>General</th>
+                            <th>Total</th>
+                            <th class="small">Require Selection</th>
+                            <th class="small">Responsible to Select</th>
+                            <th class="small">Require Order</th>
+                            <th class="small">Responsible to Order</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in costScheduledBreakdown">
+                            <td class="sow"><span>{{ row.scopeOfWork.title }}</span><br/><small>{{ row.scopeOfWork.division }}</small></td>
+                            <td class="cost-code"><label class="label label-info">{{ row.costCode.code }}</label><br/><span>{{ row.costCode.title }}</span></td>
+                            <td class="phase">{{ row.phase.parent }}<br/>{{ row.phase.sub }}</td>
+                            <td>{{ row.duration }}</td>
+                            <td>{{ row.labor | currency:'$':0}}</td>
+                            <td>{{ row.material | currency:'$':0}}</td>
+                            <td>{{ row.equipment | currency:'$':0}}</td>
+                            <td>{{ row.misc | currency:'$':0}}</td>
+                            <td>{{ row.total | currency:'$':0}}</td>
+                            <td>
+                                <div class="checkbox checkbox-inline">
+                                    <input type="checkbox" ng-model="row.requireSelection">
+                                    <label>&nbsp;</label>
+                                </div>
+                            </td>
+                            <td class="text-regular">{{ row.responsibleToSelection }}</td>
+                            <td>
+                                <div class="checkbox checkbox-inline">
+                                    <input type="checkbox" ng-model="row.requireOrder">
+                                    <label>&nbsp;</label>
+                                </div>
+                            </td>
+                            <td class="text-regular">{{ row.responsibleToSelection2 }}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="8"></td>
+                            <td colspan="5">
+                                Total<br/>
+                                <span class="text-info">$62,800.00</span>
+                            </td>
+
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row no-margin animated fadeInRight mb30">
+        <div class="col-lg-12 text-right action-button">
+            <div class="dropdown" uib-dropdown dropdown-append-to-body>
+                <button type="button" class="btn btn-primary btn-lg" uib-dropdown-toggle>
+                    Actions <i class="fa fa-chevron-down"></i>
+                </button>
+                <ul class="uib-dropdown-menu dropdown-menu-right chevron-down-menu bp-action-menu" role="menu">
+                    <li ng-repeat="action in actions"><a>{{action.name}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row no-margin animated fadeInRight bp-tabs-section">
+        <div class="bp-tabs-content">
+            <uib-tabset>
+                <uib-tab heading="Comments">
+                    <div ng-include="'partials/bids/package/comments.html'"></div>
+                </uib-tab>
+                <uib-tab heading="Access">Access</uib-tab>
+                <uib-tab heading="Activity">Activity</uib-tab>
+                <uib-tab heading="Attachments">Attachments</uib-tab>
+            </uib-tabset>
+        </div>
+    </div>
+    <!-- Main Content -->
+</div>

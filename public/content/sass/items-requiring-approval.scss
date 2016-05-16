@@ -1,0 +1,156 @@
+$default: "AvenirNextLTPro-Demi";
+$bold: "AvenirNextLTPro-Bold";
+$medium: "AvenirNextLTPro-Medium";
+$regular: "AvenirNextLTPro-Regular";
+
+.items-req-approval-wrapper {
+
+    padding-top: 0;
+    margin-bottom: 0;
+
+    .ira-page-info {
+        background: #fff none repeat scroll 0 0;
+        box-shadow: 1px 0 4px #d8d8d8;
+    }
+
+    .closeBox {
+        background: #000;
+        width: 100px;
+        padding: 110px 0;
+        text-align: center;
+    }
+
+    .ira-page-title {
+        margin-top: 60px;
+        width: calc(100% - 100px);
+        padding-left: 30px;
+        padding-right: 30px;
+
+        h2 {
+            font-family: AvenirNextLTPro-Regular;
+            font-size: 27px;
+            margin-top: 0px;
+        }
+
+        h3 {
+            font-family: $regular;
+            font-size: 15px;
+
+            span {
+                font-family: $default;
+            }
+        }
+
+        label {
+            display: block;
+            font-family: $regular;
+            font-size: 15px;
+            font-weight: 100;
+        }
+
+        span {
+            font-family: $default;
+            font-size: 15px;
+        }
+    }
+
+    .content-section {
+        margin-bottom: 40px;
+    }
+
+    .search-field {
+        width: 30%;
+        float: right;
+        margin-right: 20px;
+
+        input {
+            font-family: $regular;
+            font-size: 11px;
+        }
+    }
+
+    .btns > a {
+        font-family:  $default;
+        font-size: 11px;
+        margin: 0;
+        background-color: white;
+        color: #4a4a4a;
+        border-radius: 20px;
+        padding: 7px;
+        width: 100px;
+        border: 1px solid #b7b7b7;
+    }
+
+    .table-responsive table {
+        thead tr th {
+            font-family: $default;
+            font-size: 14px;
+            color: #808080;
+            vertical-align: middle;
+        }
+        tbody tr {
+            td {
+                vertical-align: middle;
+            }
+
+            .title {
+                a {
+                    font-size: 15px;
+                }
+
+                small {
+                    font-family: $regular;
+                    font-size: 11px;
+                }
+            }
+
+            .item-type,
+            .date {
+                font-family: $regular;
+                font-size: 12px;
+            }
+
+            .initiated-by,
+            .supplier {
+                a {
+                    font-size: 12px;
+                }
+
+                small {
+                    font-size: 10px;
+                    color: #9e9e9e;
+                }
+            }
+
+            .sow {
+                font-size: 12px;
+            }
+
+            .amount {
+                font-family: $regular;
+                font-size: 12px;
+            }
+
+            .status {
+                .label {
+                    background-color: transparent;
+                    text-transform: uppercase;
+                    font-family: $default;
+                    font-size: 10px;
+                    padding: 2px 0px 2px 0px
+                }
+                .in-process {
+                    color: #61c571;
+                }
+                .pending {
+                    color: #fdb04a;
+                }
+                .draft {
+                    color: #2a2d33
+                }
+            }
+
+        }
+    }
+}
+

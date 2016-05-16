@@ -1,0 +1,145 @@
+<div class="row wrapper border-bottom white-bg page-heading overview">
+    <div class="col-sm-6 col-lg-10">
+        <h2 class="heading">Schedules</h2>
+        <project-filter current-item="projectFilter"></project-filter>
+    </div>
+    <div class="col-sm-6 col-lg-2">
+        <div class="btns mr10">
+            <a class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-plus"></i> Create New
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right action-menu" role="menu">
+                <li><a ng-click="">Phase</a></li>
+                <li><a ng-click="">Sub Phase</a></li>
+                <li><a ng-click="">Scope of Work</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="panel panel-default">
+        <div class="panel-body row" id="schedule-stats">
+            <div class="col-md-5 pr0">
+                <table class="table no-border">
+                    <tr>
+                        <td>
+                            <div ui-arc-chart rect-width="90" rect-height="90" radius="20" pen-width="10" chart-data="financialChartData"></div>
+                        </td>
+                        <td>
+                            <table class="table no-border pull-right mt10">
+                                <tr>
+                                    <td>
+                                        <div class="label label-primary">&nbsp;</div>
+                                        SCHEDULE
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-regular">Estimate Completion</td>
+                                    <td class="font-bold">Dec 20, 2016</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-regular">Original Completion Date</td>
+                                    <td class="font-bold">Dec 14, 2014</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-3 col-sm-6 border-right">
+                <table class="table no-border pull-right mt10">
+                    <tr>
+                        <td>
+                            <div class="label label-success">&nbsp;</div>
+                            FINANCE
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="font-regular">Fund Disbursed to Date</td>
+                        <td class="font-bold">$903,348</td>
+                    </tr>
+                    <tr>
+                        <td class="font-regular">Estimated Cost at Completion</td>
+                        <td class="font-bold">$3,016,059</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <div class="clearfix">
+                    <div class="col-sm-6">
+                        <div class="clearfix">
+                            <div class="pull-left" sparkline spark-data="[33, 67]" spark-options="pieOptions"></div>
+                            <div class="pull-left mt30 pl20">33%</div>
+                        </div>
+                        <div class="sub-title mt10">Task Due Today</div>
+                        <div class="text-muted">7 of 12 completed</div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="clearfix">
+                            <div class="pull-left" sparkline spark-data="[60, 40]" spark-options="pieOptions"></div>
+                            <div class="pull-left mt30 pl20">60%</div>
+                        </div>
+                        <div class="sub-title mt10">Members Schd. On Site</div>
+                        <div class="text-muted">3 of 5 On Site</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body" id="today-tasks">
+            <div class="ibox">
+                <div class="pt10 heading">
+                    <img src="assets/img/cal.png" width="20px">  Aug 17 2015, Today's Schedules
+                </div>
+                <slick dots="false" infinite="false" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="1" variable-width="true" responsive="slickSetting">
+                    <div class="p10 mr30 clearfix" ng-repeat="schedule in schedulesOfToday">
+                        <div class="pull-left">
+                            <a>
+                                <img ng-src="{{schedule.avatar}}" width="50px" class="img-circle" alt="image">
+                            </a>
+                        </div>
+                        <div class="prj-data">
+                            <div class="text-primary">{{schedule.description}}</div>
+                            <div><small class="text-muted font-regular">assigned to:</small> {{schedule.assigned_to}}</div>
+                            <div class="row mt10">
+                                <div class="pl15 pull-left">
+                                    <div class="small text-gray-lighter">STATUS</div>
+                                    <span class="flag-badge"><i class="fa fa-flag text-{{schedule.status=='in progress' ? 'success' : 'danger'}}"></i></span>
+                                    <span class="small status text-{{schedule.status=='in progress' ? 'success' : 'danger'}}">{{schedule.status}}</span>
+                                </div>
+
+                                <div class="pl15 pull-left">
+                                    <small class="text-gray-lighter">{{schedule.completion_percentage}}% COMPLETED</small>
+                                    <div class="progress progress-small">
+                                        <div class="progress-bar progress-bar-success" style="width: {{schedule.completion_percentage}}%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </slick>
+            </div>
+        </div>
+    </div>
+    <uib-tabset>
+        <uib-tab heading="Calendar">
+            <div ng-include="'partials/schedules/calendar.html'"></div>
+        </uib-tab>
+        <uib-tab heading="Flow">Short Labeled Justified content</uib-tab>
+        <uib-tab heading="List">
+            <div ng-include="'partials/schedules/list.html'"></div>
+        </uib-tab>
+        <uib-tab heading="Gantt">Long Labeled Justified content</uib-tab>
+        <uib-tab heading="Baseline">Long Labeled Justified content</uib-tab>
+    </uib-tabset>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $('.nav-tabs').tabdrop({text: "<i class='fa fa-align-justify'></i>"});
+    })
+</script>

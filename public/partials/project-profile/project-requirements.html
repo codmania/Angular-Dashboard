@@ -1,0 +1,213 @@
+<div class="tab-content">
+    <div class="requirements-wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Approval Requirements</h3>
+            </div>
+            <div class="col-md-6 text-right">
+                <button class="btn btn-success btn-sm" ng-click="addNewRequirement()" ng-if="!isOpened">
+                    <i class="fa fa-plus"></i> Add New
+                </button>
+                <button class="btn btn-cancel btn-sm" ng-click="cancel()" ng-if="isOpened">
+                    Cancel
+                </button>
+                <button class="btn btn-success btn-sm" ng-click="saveRequirement()" ng-if="isOpened">
+                    Save
+                </button>
+            </div>
+        </div>
+        <div class="table-responsive approval-table mt10">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th class="text-muted" ng-repeat="row in data">
+                            {{roles[row.role].name}}<br>
+                            <span class="text-primary member-name">{{members[row.member].name}}</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-muted">Team Members</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.team_members"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">RFIs</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.rfis"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Inspection Items</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.inspection_items"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Punchlist Items</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.punchlist_items"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Schedule Modifications</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.schedule_modifications"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Procurement Items</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.procurement_items"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Bids</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.bids"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Purchase Orders</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.purchase_orders"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Change Orders</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.change_orders"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Invoices</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.invoices"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Payment Applications</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.payment_applications"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Direct Payments</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.direct_payments"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Bank Draws</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.bank_draws"></ui-rec-switch>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Documents</td>
+                        <td ng-repeat="row in data">
+                            <ui-rec-switch ng-model="row.documents"></ui-rec-switch>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="new-requirement" ng-show="isOpened">
+            <div class="header" style="">
+                <div class="pull-left" style="width: 160px;">
+                    <ui-select options="roles" ng-select="changeRole(selectedVal)" placeholder="User Name"></ui-select>
+                </div>
+                <div class="pull-left or">or</div>
+                <div class="pull-left" style="width: 115px;">
+                    <ui-select options="members" ng-select="changeMember(selectedVal)" placeholder="Role"></ui-select>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="content">
+                <div class="item">
+                    <ui-rec-switch ng-model="item.team_members"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.rfis"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.inspection_items"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.punchlist_items"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.schedule_modifications"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.procurement_items"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.bids"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.purchase_orders"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.change_orders"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.invoices"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.payment_applications"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.direct_payments"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.bank_draws"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.documents"></ui-rec-switch>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt30">
+            <div class="col-md-6">
+                <h3>Project Requirements</h3>
+            </div>
+            <div class="col-md-6 text-right">
+                <button class="btn btn-success btn-sm">
+                    <i class="fa fa-plus"></i> Add New
+                </button>
+            </div>
+        </div>
+
+        <div class="table-responsive requirements-table mt10 mb30">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Document</th>
+                        <th>Message</th>
+                        <th>Frequency</th>
+                        <th>Trigger</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in requirements">
+                        <td>{{row.name}}</td>
+                        <td>{{row.type}}</td>
+                        <td>{{row.document}}</td>
+                        <td>{{row.message}}</td>
+                        <td>{{row.frequency}}</td>
+                        <td>{{row.trigger}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

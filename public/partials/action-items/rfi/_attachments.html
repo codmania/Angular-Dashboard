@@ -1,0 +1,38 @@
+<div class="attachments-wrapper" slim-scroll box-height="340">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Document Name</th>
+                    <th>Item ID#</th>
+                    <th>Date Attached</th>
+                    <th>Initiator</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in attachments">
+                    <td class="document text-primary">{{row.document}}</td>
+                    <td class="item">
+                        <div class="label">{{row.item}}</div>
+                    </td>
+                    <td class="date">{{row.attached_date}}</td>
+                    <td class="initiator text-primary">{{row.initiator}}</td>
+                    <td class="download">
+                        <i class="fa fa-trash"></i>
+                        <i class="fa fa-download"></i>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <a class="text-primary">
+                            <i class="fa fa-plus"></i> Attach Documents
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

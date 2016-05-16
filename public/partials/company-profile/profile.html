@@ -1,0 +1,225 @@
+<div class="tab-content">
+    <div class="profile-wrapper">
+        <div class="row header">
+            <div class="col-md-6 project-info">
+                <img src="assets/img/logo.png" class="pull-left">
+                <div class="pull-left">
+                    <div class="name">Anderson Perkins LTD</div>
+                    <div class="address">1796 Prospector Avenue Park City, Utah 84605</div>
+                    <div class="contact">
+                        <i class="fa fa-link"></i><span class="text-primary">www.andersonperkins.com</span>
+                        <i class="fa fa-phone"></i>801-588-5688
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-6 contact-info">
+                <img src="assets/img/ben.jpg" class="pull-left">
+                <div class="pull-left">
+                    <div class="name text-primary">Ben Lee</div>
+                    <div class="role">Main Contact</div>
+                    <div class="address">123 S. Main Street, Utah 84605</div>
+                    <div class="contact">
+                        <i class="fa fa-envelope"></i>kimberly@andersonperkins.com
+                        <i class="fa fa-phone"></i>801-588-5688
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="wall billing-info mt20">
+            <div class="title">
+                <img class="lock" src="assets/img/lock.png">Billing Information
+            </div>
+            <hr class="mb0">
+            <div class="row">
+                <div class="col-md-6 contact-info">
+                    <img src="assets/img/elizabeth.png" class="pull-left">
+                    <div class="pull-left">
+                        <div class="name text-primary">Elizabeth Ross</div>
+                        <div class="role">Billing Contact</div>
+                        <div class="address">123 S. Main Street, Utah 84605</div>
+                        <div class="contact">
+                            <i class="fa fa-envelope"></i>eross@andersonperkins.com
+                            <i class="fa fa-phone"></i>801-588-5688
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="billing-address">
+                        <span class="name">Billing Address</span>
+                        <span class="value">1796 Prospector Avenue Park City, Utah 84605</span>
+                    </div>
+                    <div class="credit-card-info">
+                        <span class="name">Credit Card Info</span>
+                        <span class="value">1234 5678 90 ******</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wall projects">
+            <div class="title">
+                <img class="cap" src="assets/img/cap.png">Billing Information
+            </div>
+            <hr class="mb0">
+            <div class="row project-info">
+                <div class="col-md-3">
+                    <div id="donutchart" style="height: 140px; width: 140px;"></div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-4" style="margin-top: 55px;">
+                            <div class="pull-left">
+                                <div class="label label-primary">&nbsp;</div>
+                            </div>
+                            <div class="pull-left">
+                                <label>Current Projects</label>
+                                <span>14</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-top: 55px;">
+                            <div class="pull-left">
+                                <div class="label label-warning">&nbsp;</div>
+                            </div>
+                            <div class="pull-left">
+                                <label>Archived Projects</label>
+                                <span>15</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-top: 55px;">
+                            <div class="pull-left">
+                                <div class="label label-success">&nbsp;</div>
+                            </div>
+                            <div class="pull-left">
+                                <label>Total Projects</label>
+                                <span>29</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-7">
+                    <h5>Current Projects</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Type</th>
+                                    <th>SQFT</th>
+                                    <th>Start Date</th>
+                                    <th>Est. Duration</th>
+                                    <th>Contingency</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in current_projects">
+                                    <td class="text-primary name">{{row.name}}</td>
+                                    <td>{{row.type}}</td>
+                                    <td>{{row.sqft}}</td>
+                                    <td>{{row.start_date}}</td>
+                                    <td>{{row.est_duration}}</td>
+                                    <td>{{row.contingency}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h5>Archived Projects</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Type</th>
+                                    <th>Comp. Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in archived_projects">
+                                    <td class="ap-name">{{row.name}}</td>
+                                    <td>{{row.type}}</td>
+                                    <td class="comp-date">{{row.comp_date}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function () {
+
+    var getColor = {
+        'total': '#79c485',
+        'current': '#3aabd5',
+        'archived': '#fdae46'
+    };
+
+    $('#donutchart').highcharts({
+        credits: {
+            enabled: false
+        },
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: null
+        },
+        tooltip: {
+            enabled: false
+        },
+        plotOptions: {
+          series: {
+              dataLabels: {
+                  enabled: false
+              },
+              shadow: false,
+              states: {
+                  hover: {
+                      enabled: false
+                  }
+              }
+           },
+           pie: {
+               borderWidth: 0
+           }
+        },
+        series: [{
+            name: 'Inner',
+            data: [{
+                y: 56,
+                color: getColor['current']
+            }, {
+                y: 24,
+                color: getColor['archived'],
+            }],
+            size: '80%',
+            innerSize: '70%',
+
+        },
+        {
+            name: 'Outer',
+            data: [{
+                y: 200,
+                color: getColor['total']
+            }],
+            size: '100%',
+            innerSize: '80%',
+        }]
+    });
+});
+
+</script>
+

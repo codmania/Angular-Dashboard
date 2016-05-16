@@ -1,0 +1,438 @@
+<div class="row wrapper border-bottom white-bg page-heading overview">
+    <div class="col-sm-6 col-lg-10">
+        <h2 class="heading">Bids</h2>
+        <project-filter current-item="projectFilter"></project-filter>
+    </div>
+    <div class="col-sm-6 col-lg-2">
+        <div class="btns mr10">
+            <a class="btn btn-success btn-lg btn-bids" data-toggle="dropdown">
+                <i class="fa fa-plus"></i> Add New
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right action-menu" role="menu">
+                <li><a ui-sref="bids.new">Bid Package</a></li>
+                <li ng-click="showQuickModal()"><a href="javascript:void(0)">Quick Bid</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="card action-item">
+        <div class="bids-card-content">
+            <div class="row">
+                <div class="col-xs-12 col-md-4 col-lg-4">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-5 col-lg-5">
+                            <div class="">
+                                <div class="bids-distrib"><b>BIDS DISTRIBUTED</b></div>
+                                <div class="bids-distrib-value">{{ report.bids_distrib }}</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-7 col-lg-7">
+                            <div class="progress progress-bids">
+                                <div style="width: {{ report.response_per }}%;" class="progress-bar blue"></div>
+                            </div>
+                            <div class="progress progress-bids">
+                                <div style="width: {{ report.awarded_per }}%;" class="progress-bar progress-bar-warning orange"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-2 col-lg-2">
+                    <div class="bids-group">
+                        <span class="label label-blue">&nbsp;</span>
+                        <span>Bids with Response</span>
+                        <div>
+                            <span class="bids-num">{{ report.response }}</span>
+                            <span class="bids-per">{{ report.response_per }}%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-2 col-lg-2">
+                    <div class="bids-group">
+                        <span class="label label-orange">&nbsp;</span>
+                        <span>Bids with Awarded</span>
+                        <div>
+                            <span class="bids-num">{{ report.awarded }}</span>
+                            <span class="bids-per">{{ report.awarded_per }}%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3">
+                    <div class="bids-amount">Bids Amount Under Contract</div>
+                    <span class="primary-num">${{ report.amount | number:2 }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body bids-panel-body">
+        <p>Bids to be Awarded</p>
+        <div class="table-responsive">
+            <table class="table table-bids">
+                <thead>
+                    <tr>
+                        <th>Bid Name</th>
+                        <th>Date Initiated</th>
+                        <th>Initiated By</th>
+                        <th>Dates Distributed</th>
+                        <th>Status</th>
+                        <th>Distributed</th>
+                        <th>Replies</th>
+                        <th>Received</th>
+                        <th>Avg/Final Amount</th>
+                        <th>Documents</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="award in awards track by $index">
+                    <tr>
+                        <td class="bid-name">
+                            <span class="text-active" ng-click="toggleBid($index)">
+                                <i ng-hide="showBid[$index]" class="fa fa-plus"></i>
+                                <i ng-show="showBid[$index]" class="fa fa-minus"></i>
+                                {{ award.bid_name }}
+                            </span>
+                        </td>
+                        <td>{{ award.initial_date }}</td>
+                        <td>
+                            <span class="text-active">{{ award.initiated_by }}</span>
+                        </td>
+                        <td>{{ award.dates_distributed }}</td>
+                        <td class="bids-status">{{ award.status | uppercase }}</td>
+                        <td>{{ award.distributed }}</td>
+                        <td>{{ award.replies }}</td>
+                        <td>{{ award.received }}%</td>
+                        <td>${{ award.avg_amount | number:2 }}</td>
+                        <td>
+                            <span class="text-active-sm">{{ award.documents }} docs</span>
+                        </td>
+                    </tr>
+                    <tr ng-show="showBid[$index]" ng-if="award.children.length > 0">
+                        <td colspan="10">
+                            <div class="detailed-bids">
+                                <div class="detailed-opt">
+                                    <span>Options</span>
+                                    <span class="text-active border-right"><a ui-sref="bids.compare">Compare Selected Bids</a></span>
+                                    <span class="text-active border-right">Award</span>
+                                    <span>Archive</span>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="checkbox checkbox-inline">
+                                                        <input type="checkbox" ng-click="toggleCheck($event)">
+                                                        <label>&nbsp;</label>
+                                                    </div>
+                                                </th>
+                                                <th>Bid to Distributed</th>
+                                                <th>Company</th>
+                                                <th>OpenStatus</th>
+                                                <th>Date Submitted</th>
+                                                <th>Submitted By</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr text-class="text-muted" ng-repeat="bid in award.children">
+                                                <td class="text-primary">
+                                                    <div class="checkbox checkbox-inline">
+                                                        <input type="checkbox" ng-click="selectBid(bid)">
+                                                        <label>&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td class="text-active" ui-sref="bids.package">{{ bid.distrib_to }}</td>
+                                                <td>{{ bid.company }}</td>
+                                                <td class="bids-status">{{ bid.open_status | uppercase }}</td>
+                                                <td>{{ bid.date_submitted }}</td>
+                                                <td class="text-active">{{ bid.submitted_by }}</td>
+                                                <td>${{ bid.amount | number:2 }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5"></td>
+                        <td>
+                            <div>Total</div>
+                            <span>1</span>
+                        </td>
+                        <td>
+                            <div>Total</div>
+                            <span>0</span>
+                        </td>
+                        <td>
+                            <div>Total</div>
+                            <span>0%</span>
+                        </td>
+                        <td>
+                            <div>Total</div>
+                            <span>$0</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div class="panel-body bids-panel-body">
+        <p>Bid Drafts</p>
+        <div class="table-responsive">
+            <table class="table table-bids">
+                <thead>
+                    <tr>
+                        <th>Bid Name</th>
+                        <th>Date Initiated</th>
+                        <th>Initiated By</th>
+                        <th>Dates Distributed</th>
+                        <th>Status</th>
+                        <th>Distributed</th>
+                        <th>Replies</th>
+                        <th>Received</th>
+                        <th>Avg/Final Amount</th>
+                        <th>Documents</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="draft in drafts track by $index">
+                    <tr>
+                        <td class="bid-name">
+                            <span class="text-active" ng-click="toggleDraft($index)">
+                                <i ng-hide="showBid[$index]" class="fa fa-plus"></i>
+                                <i ng-show="showBid[$index]" class="fa fa-minus"></i>
+                                {{ draft.bid_name }}
+                            </span>
+                        </td>
+                        <td>{{ draft.initial_date }}</td>
+                        <td>
+                            <span class="text-active">{{ draft.initiated_by }}</span>
+                        </td>
+                        <td>{{ draft.dates_distributed }}</td>
+                        <td class="bids-status">{{ draft.status | uppercase }}</td>
+                        <td>{{ draft.distributed }}</td>
+                        <td>{{ draft.replies }}</td>
+                        <td>{{ draft.received }}%</td>
+                        <td>${{ draft.avg_amount | number:2 }}</td>
+                        <td>
+                            <span class="text-active-sm">{{ draft.documents }} docs</span>
+                        </td>
+                    </tr>
+                    <tr ng-show="showDraft[$index]" ng-if="draft.children.length > 0">
+                        <td colspan="10">
+                            <div class="detailed-bids">
+                                <div class="detailed-opt">
+                                    <span>Options</span>
+                                    <span class="text-active border-right">Compare Selected Bids</span>
+                                    <span class="text-active border-right">Award</span>
+                                    <span>Archive</span>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="checkbox checkbox-inline">
+                                                        <input type="checkbox">
+                                                        <label>&nbsp;</label>
+                                                    </div>
+                                                </th>
+                                                <th>Bid to Distributed</th>
+                                                <th>Company</th>
+                                                <th>OpenStatus</th>
+                                                <th>Date Submitted</th>
+                                                <th>Submitted By</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr text-class="text-muted" ng-repeat="bid in draft.children">
+                                                <td class="text-primary">
+                                                    <div class="checkbox checkbox-inline">
+                                                        <input type="checkbox" ng-click="selectBid(bid)">
+                                                        <label>&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td class="text-active">{{ bid.distrib_to }}</td>
+                                                <td>{{ bid.company }}</td>
+                                                <td class="bids-status">{{ bid.open_status | uppercase }}</td>
+                                                <td>{{ bid.date_submitted }}</td>
+                                                <td class="text-active">{{ bid.submitted_by }}</td>
+                                                <td>${{ bid.amount | number:2 }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5"></td>
+                        <td>
+                            <div>Total</div>
+                            <span>0</span>
+                        </td>
+                        <td>
+                            <div>Total</div>
+                            <span>0</span>
+                        </td>
+                        <td>
+                            <div>Total</div>
+                            <span>0%</span>
+                        </td>
+                        <td>
+                            <div>Total</div>
+                            <span>$0</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div class="panel-body bids-panel-body">
+        <p>Bids Awarded</p>
+        <div class="table-responsive">
+            <table class="table table-bids">
+                <thead>
+                    <tr>
+                        <th>Bid Name</th>
+                        <th>Date Initiated</th>
+                        <th>Initiated By</th>
+                        <th>Dates Distributed</th>
+                        <th>Status</th>
+                        <th>Distributed</th>
+                        <th>Replies</th>
+                        <th>Received</th>
+                        <th>Avg/Final Amount</th>
+                        <th>Documents</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="awarded in awardeds track by $index">
+                    <tr>
+                        <td class="bid-name">
+                            <span class="text-active" ng-click="toggleAward($index)">
+                                <i ng-hide="showBid[$index]" class="fa fa-plus"></i>
+                                <i ng-show="showBid[$index]" class="fa fa-minus"></i>
+                                {{ awarded.bid_name }}
+                            </span>
+                        </td>
+                        <td>{{ awarded.initial_date }}</td>
+                        <td>
+                            <span class="text-active">{{ awarded.initiated_by }}</span>
+                        </td>
+                        <td>{{ awarded.dates_distributed }}</td>
+                        <td class="bids-status">{{ awarded.status | uppercase }}</td>
+                        <td>{{ awarded.distributed }}</td>
+                        <td>{{ awarded.replies }}</td>
+                        <td>{{ awarded.received }}%</td>
+                        <td>${{ awarded.avg_amount | number:2 }}</td>
+                        <td>
+                            <span class="text-active-sm">{{ awarded.documents }} docs</span>
+                        </td>
+                    </tr>
+                    <tr ng-show="showAward[$index]" ng-if="awarded.children.length > 0" class="animate-show">
+                        <td colspan="10">
+                            <div class="detailed-bids">
+                                <div class="detailed-opt">
+                                    <span>Options</span>
+                                    <span class="text-active border-right">Compare Selected Bids</span>
+                                    <span class="text-active border-right">Award</span>
+                                    <span>Archive</span>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="checkbox checkbox-inline">
+                                                        <input type="checkbox">
+                                                        <label>&nbsp;</label>
+                                                    </div>
+                                                </th>
+                                                <th>Bid to Distributed</th>
+                                                <th>Company</th>
+                                                <th>OpenStatus</th>
+                                                <th>Date Submitted</th>
+                                                <th>Submitted By</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr text-class="text-muted" ng-repeat="bid in award.children">
+                                                <td class="text-primary">
+                                                    <div class="checkbox checkbox-inline">
+                                                        <input type="checkbox" ng-click="selectBid(bid)">
+                                                        <label>&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td class="text-active">{{ bid.distrib_to }}</td>
+                                                <td>{{ bid.company }}</td>
+                                                <td class="bids-status">{{ bid.open_status | uppercase }}</td>
+                                                <td>{{ bid.date_submitted }}</td>
+                                                <td class="text-active">{{ bid.submitted_by }}</td>
+                                                <td>${{ bid.amount | number:2 }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5"></td>
+                        <td>
+                            <div>Total</div>
+                            <span>21</span>
+                        </td>
+                        <td>
+                            <div>Total</div>
+                            <span>15</span>
+                        </td>
+                        <td>
+                            <div>Total</div>
+                            <span>71%</span>
+                        </td>
+                        <td>
+                            <div>Total</div>
+                            <span>$581,168</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="grand-total">
+                        <td colspan="3"></td>
+                        <td colspan="2" class="grand-left">
+                            <div class="grand-title">Grand Total</div>
+                        </td>
+                        <td class="grand-middle">
+                            <div>Total</div>
+                            <span>22</span>
+                        </td>
+                        <td class="grand-middle">
+                            <div>Total</div>
+                            <span>15</span>
+                        </td>
+                        <td class="grand-middle">
+                            <div>Total</div>
+                            <span>71%</span>
+                        </td>
+                        <td class="grand-middle">
+                            <div>Total</div>
+                            <span>$581,168</span>
+                        </td>
+                        <td class="grand-right"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

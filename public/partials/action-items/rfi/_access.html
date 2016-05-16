@@ -1,0 +1,65 @@
+<div class="access-wrapper" slim-scroll box-height="385">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Company</th>
+                    <th>Project Role</th>
+                    <th>RFI Responsibility</th>
+                    <th>Access</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="row in accesses">
+                    <td class="user">
+                        <img class="pull-left photo img-circle" ng-src="assets/img/users/{{row.user.avatar}}">
+                        <div class="pull-left">
+                            <span class="name text-primary">{{row.user.name}}</span>
+                            <div class="contact">
+                                <span>
+                                    <i class="fa fa-envelope"></i>|
+                                    <i class="fa fa-comments"></i>|
+                                    <i class="fa fa-phone"></i>{{row.user.phone}}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </td>
+                    <td class="company">
+                        {{row.company}}
+                    </td>
+                    <td class="role">
+                        {{row.role}}
+                    </td>
+                    <td class="responsibility">
+                        {{row.responsibility}}
+                    </td>
+                    <td class="access">
+                        {{row.access}}
+                    </td>
+                    <td class="gear">
+                        <div uib-dropdown dropdown-append-to-body class="dropdown">
+                            <a uib-dropdown-toggle class="text-muted dropdown-toggle">
+                                <i class="fa fa-gear"></i>
+                                <i class="fa fa-chevron-down"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <a class="text-primary">
+                            <i class="fa fa-plus"></i> Add User
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

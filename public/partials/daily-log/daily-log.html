@@ -1,0 +1,225 @@
+<div class="row wrapper border-bottom white-bg page-heading overview">
+    <div class="col-sm-6 col-lg-10">
+        <h2 class="heading">Daily Log</h2>
+        <project-filter current-item="projectFilter"></project-filter>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="text-center" ui-arc-chart rect-width="140" rect-height="140" radius="40" pen-width="12" chart-data="scheduleChartData"></div>        
+                    <table class="table no-border pull-right mt10 table-condensed">
+                        <tr>
+                            <td>
+                                <div class="label label-primary">&nbsp;</div>
+                                SCHEDULE
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium">Estimate Completion</td>
+                            <td class="font-bold">Dec 20, 2016</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium">Original Completion Date</td>
+                            <td class="font-bold">Dec 14, 2014</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="label label-success">&nbsp;</div>
+                                FINANCE
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="font-regular">Fund Disbursed to Date</td>
+                            <td class="font-bold">$903,348</td>
+                        </tr>
+                        <tr>
+                            <td class="font-regular">Estimated Cost at Completion</td>
+                            <td class="font-bold">$3,016,059</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="overview-photo">
+                        <div class="hdingTopBox">
+                            <p><img alt="image" src="assets/img/latest-photo.png">Latest Photos<a ui-sref="photos">View All</a></p>
+                        </div>
+                        <hr>
+                        <div class="row gallery mt10" slim-scroll box-height="250px">
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo11.jpg"> </div>
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo12.jpg"> </div>
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo13.jpg"> </div>
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo14.jpg"> </div>
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo21.jpg"> </div>
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo22.jpg"> </div>
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo23.jpg"> </div>
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo24.jpg"> </div>
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo25.jpg"> </div>
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo26.jpg"> </div>
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo27.jpg"> </div>
+                            <div class="col-xs-6 col-md-3 col-lg-2"><img class="img-responsive" alt="image" src="assets/img/photos/photo28.jpg"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default mt10">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="heading">Daily Recap</div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="sub-title">Construction Work</div>
+
+                            <table class="table mt10">
+                                <tr ng-repeat="schedule in schedules|filter:{status: '!suspended'}">
+                                    <td width="60px">
+                                        <a>
+                                            <img ng-src="{{schedule.avatar}}" width="50px" class="img-circle" alt="image">
+                                        </a>    
+                                    </td>
+                                    <td>
+                                        <div class="text-primary">{{schedule.description}}</div>
+                                        <div><small class="text-muted font-regular">assigned to:</small> {{schedule.assigned_to}}</div>
+                                        <div class="clearfix">
+                                            <div class="pull-left">
+                                                <span class="flag-badge"><i class="fa fa-flag text-{{schedule.status=='in progress' ? 'success' : 'danger'}}"></i></span>
+                                                <span class="status text-{{schedule.status=='in progress' ? 'success' : 'danger'}}">{{schedule.status}}</span>
+                                            </div>
+
+                                            <div class="pl15 pull-left">
+                                                <small class="text-gray-lighter">{{schedule.completion_percentage}}% COMPLETED</small>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="progress progress-small">
+                                                    <div class="progress-bar progress-bar-success" style="width: {{schedule.completion_percentage}}%"></div>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-danger">
+                        <div class="panel-body">
+                            <div class="sub-title">No Show</div>
+
+                            <table class="table mt10">
+                                <tr ng-repeat="schedule in schedules | filter:{status: 'suspended'}">
+                                    <td width="60px">
+                                        <a>
+                                            <img ng-src="{{schedule.avatar}}" width="50px" class="img-circle" alt="image">
+                                        </a>    
+                                    </td>
+                                    <td>
+                                        <div class="text-primary">{{schedule.description}}</div>
+                                        <div><small class="text-muted font-regular">assigned to:</small> {{schedule.assigned_to}}</div>
+                                        <div class="clearfix">
+                                            <div class="pull-left">
+                                                <span class="flag-badge"><i class="fa fa-flag text-{{schedule.status=='in progress' ? 'success' : 'danger'}}"></i></span>
+                                                <span class="status text-{{schedule.status=='in progress' ? 'success' : 'danger'}}">{{schedule.status}}</span>
+                                            </div>
+
+                                            <div class="pl15 pull-left">
+                                                <small class="text-gray-lighter">{{schedule.completion_percentage}}% COMPLETED</small>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="progress progress-small">
+                                                    <div class="progress-bar progress-bar-success" style="width: {{schedule.completion_percentage}}%"></div>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 border-left">
+                    <div class="heading">Items Completed</div>
+                    <div slim-scroll box-height="550px">
+                        <table class="table no-border-top">
+                            <tbody>
+                                <tr ng-repeat="item in todayItemList">
+                                    <td><a ui-sref="action-items.rfi.in-process"><span class="label label-info">{{ item.number }}</span></a></td>
+                                    <td class="text-muted font-medium sub-title">{{ item.name }}</td>
+                                    <td><span class="text-primary">{{ item.project }}</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default mt30">
+        <div class="panel-body">
+            <div class="heading">Upcoming Construction Schedule</div>
+            <table class="table table-bordered table-middle-aligned">
+                <tbody>
+                    <tr class="text-muted">
+                        <td>
+                            <div class="label label-info small">Tomorrow, Friday Jan 29, 2016</div>
+                        </td>
+                        <td>Scope of Work</td>
+                        <td>Confirmed</td>
+                        <td>Material List</td>
+                        <td>Material Status</td>
+                        <td>Material Confirmation</td>
+                    </tr>
+
+                    <tr ng-repeat="schedule in upcomingSchedules">
+                        <td>
+                            <div class="pull-left">
+                                <img width="40px" ng-src="{{schedule.user.avatar}}" class="img-circle" alt="image">
+                            </div>
+                            <div class="pull-left pl10">
+                                <div class="text-primary">{{schedule.user.name}}</div>
+                                <ul class="list-inline text-muted">
+                                    <li><i class="fa fa-envelope"></i></li>
+                                    <li><i class="fa fa-comments"></i></li>
+                                    <li><i class="fa fa-phone"></i>  <span class="small font-regular">{{schedule.user.phone_number}}</span></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="text-primary">
+                            {{schedule.sow}}
+                        </td>
+                        <td>
+                            <span class="text-warning cap" ng-class="{'text-success': schedule.confirmed == 'yes', 'text-danger': schedule.confirmed == 'no'}">
+                                {{schedule.confirmed}}
+                            </span>
+                        </td>
+                        <td class="text-muted">
+                            {{schedule.material_list}}
+                        </td>
+                        <td class="cap small">
+                            {{schedule.material_status}}
+                        </td>
+                        <td>
+                            <span class="text-warning cap" ng-class="{'text-success': schedule.material_confirmed == 'yes', 
+                                                                      'text-danger': schedule.material_confirmed == 'no'}">
+                                {{schedule.material_confirmed}}
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

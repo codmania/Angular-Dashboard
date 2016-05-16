@@ -1,0 +1,107 @@
+<div class="row wrapper border-bottom white-bg page-heading overview">
+    <div class="col-sm-6 col-lg-10">
+        <h2 class="heading">Action Items</h2>
+        <project-filter current-item="projectFilter"></project-filter>
+    </div>
+    <div class="col-sm-6 col-lg-2">
+        <div class="btns mr10">
+            <a href="#" class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-plus"></i> Create New
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right action-menu" role="menu">
+                <li><a href="javascript:void(0)" ng-click="showNewTaskModal()">Task</a></li>
+                <li><a ui-sref="action-items.rfi.new">RFI</a></li>
+                <li><a ui-sref="action-items.change-order.new">Change Order</a></li>
+                <li><a ui-sref="action-items.punch-items.new">Punch List Item</a></li>
+                <li><a href="">Inspections</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="card action-item" ng-repeat="item in items">
+        <div class="card-title">
+            {{ item.title }}
+        </div>
+        <div class="card-content">
+            <div class="row">
+                <div class="col-md-2 col-sm-6 border-right">
+                    <span class="action-item-text">Total Items Outstanding: {{ item.total }}</span>
+                    <div class="action-item-count-info">
+                        <span class="label label-green">&nbsp;</span>
+                        <span class="count">{{ item.green }}</span>
+                        <span class="label label-orange">&nbsp;</span>
+                        <span class="count">{{ item.orange }}</span>
+                        <span class="label label-red">&nbsp;</span>
+                        <span class="count">{{ item.red }}</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 border-right">
+                    <div class="action-completed-chart">
+                        <div sparkline spark-data="[item.completed.done, item.completed.total-item.completed.done]" spark-options="pieOptions"></div>
+                    </div>
+                    <div>
+                        <span class="action-item-text">{{ round(item.completed.done / item.completed.total * 100) }}% COMPLETED</span><br>
+                        <span class="action-item-value">{{ item.completed.done }}</span>
+                        <span class="action-item-of">of</span>
+                        <span class="action-item-value">{{ item.completed.total }} items</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="">
+                                <span class="action-item-text">Items Required By Me</span><br>
+                                <span class="action-item-value">
+                                    {{ item.assignedMe.green.total + item.assignedMe.orange.total + item.assignedMe.red.total }} Items
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-6">
+                                    <div class="progress progress-medium">
+                                        <div class="progress-bar progress-bar-success"
+                                             style="width: {{item.assignedMe.green.total / (item.assignedMe.green.total + item.assignedMe.orange.total + item.assignedMe.red.total) * 100}}%;">
+                                         </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 action-item-progress-text">
+                                    {{ item.assignedMe.green.total }} items
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-sm-6">
+                                    <div class="progress progress-medium">
+                                        <div class="progress-bar progress-bar-warning"
+                                             style="width: {{item.assignedMe.orange.total / (item.assignedMe.green.total + item.assignedMe.orange.total + item.assignedMe.red.total) * 100}}%;">
+                                         </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 action-item-progress-text">
+                                    {{ item.assignedMe.orange.total }} items
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-sm-6">
+                                    <div class="progress progress-medium">
+                                        <div class="progress-bar progress-bar-danger"
+                                             style="width: {{item.assignedMe.red.total / (item.assignedMe.green.total + item.assignedMe.orange.total + item.assignedMe.red.total) * 100}}%;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 action-item-progress-text">
+                                    {{ item.assignedMe.red.total }} items
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-blue pull-right" ng-click="goDetails(item.state)">See Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,138 @@
+<div class="top mt30 font-medium text-center">
+    <div ng-if="step=='signup'">
+        <div>Get ready to jumpstart your project...</div>
+        <div>Meet Avasis. Build Stronger.</div>
+    </div>
+    <div ng-if="step=='payment'">
+        <div>One last step. Just need some billing information</div>
+        <div>from you and we will get you all set up!</div>
+    </div>
+</div>
+<div class="panel panel-default auth-form">
+    <div class="panel-body">
+        <form name="signupForm" novalidate ng-show="step=='signup'">
+            <div class="text-center heading form-group">Create Your Account</div>
+            <div class="row form-group">
+                <div class="col-xs-6">
+                    <input type="text" required ng-model="user.firstName" placeholder="First Name..." class="input-lg form-control">
+                </div>
+                <div class="col-xs-6">
+                    <input type="text" required ng-model="user.lastName" placeholder="Last Name..." class="input-lg form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email..." required ng-model="user.email" class="input-lg form-control">
+            </div>
+            <div class="row form-group">
+                <div class="col-xs-6 password-wrapper">
+                    <input type="password" required ng-model="user.password" placeholder="Current Password..." class="input-lg form-control">
+                    <i class="text-success fa fa-check" ng-if="user.password && user.password == user.confirmPassword"></i>
+                </div>
+                <div class="col-xs-6 password-wrapper">
+                    <input type="password" required ng-model="user.confirmPassword" placeholder="Confirm Password..." class="input-lg form-control">
+                    <i class="text-success fa fa-check" ng-if="user.password && user.password == user.confirmPassword"></i>
+                </div>
+            </div>
+            <div class="mt20 pt20">
+                <!-- <button class="btn btn-lg btn-primary" ng-click="step='payment'" ng-class="{disabled: signupForm.$invalid}">
+                    Next
+                    <i class="fa fa-arrow-right pl10"></i>
+                </button> -->
+
+                <button class="btn btn-lg btn-primary" ng-click="createAccount()" ng-class="{disabled: signupForm.$invalid}">
+                    Next
+                    <i class="fa fa-arrow-right pl10"></i>
+                </button>
+            </div>
+        </form>
+
+        <form name="paymentForm" novalidate ng-show="step=='payment'">
+            <div class="text-center heading form-group">Your Billing Payment Information</div>
+            <div class="form-group">
+                <label for="">Select Payment Method</label>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="radio radio-inline radio-primary">
+                            <input type="radio" name="payment-option">
+                            <label for="payment-option">
+                                <img alt="image" src="assets/img/auth/card.png" height="20">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="radio radio-inline radio-primary">
+                            <input type="radio" name="payment-option">
+                            <label for="payment-option">
+                                <img alt="image" src="assets/img/auth/paypal.png" height="20">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="radio radio-inline radio-primary">
+                            <input type="radio" name="payment-option">
+                            <label for="payment-option" class="text-primary sub-title">Use Access Code</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="input-lg form-control" placeholder="Enter Credit Card Number">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="input-lg form-control" placeholder="Name As It Appears On Card...">
+            </div>
+
+            <div class="form-group">
+                <label for="">Expires</label>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <ui-select placeholder="Month" options="months"></ui-select>
+                    </div>
+                    <div class="col-sm-4 pl0">
+                        <ui-select placeholder="Year" options="years"></ui-select>
+                    </div>
+                    <div class="col-sm-4 pl0">
+                        <input type="text" class="input-lg form-control" placeholder="CVC/CVV">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Expires</label>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <input type="text" class="input-lg form-control" placeholder="Street">
+                    </div>
+                    <div class="col-sm-4 pl0">
+                        <input type="text" class="input-lg form-control" placeholder="City">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <input type="text" class="input-lg form-control" placeholder="Zipcode">
+                    </div>
+                    <div class="col-sm-4 pl0">
+                        <ui-select placeholder="State" options="states"></ui-select>
+                    </div>
+                    <div class="col-sm-4 pl0">
+                        <ui-select placeholder="Country" options="countries"></ui-select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <div class="checkbox checkbox-inline">
+                    <input type="checkbox">
+                    <label for="">
+                        I've read and accepted the <a href="" class="text-primary">Terms & Conditions</a>
+                    </label>
+                </div>
+            </div>
+            <button type="button" class="mt20 btn btn-success btn-lg" ng-click="createAccount()" ng-disabled="paymentForm.$invalid">Create Account</button>
+        </form>
+    </div>
+</div>
+<div class="text-center text-white text-medium">
+    Been here before and <a ui-sref="sign-in" class="text-primary">already have an account</a>?
+</div>

@@ -1,0 +1,74 @@
+<div class="row wrapper border-bottom white-bg page-heading overview">
+    <div class="col-sm-6 col-lg-10">
+        <h2 class="heading">Reporting</h2>
+        <project-filter current-item="projectFilter"></project-filter>
+    </div>
+    <div class="col-sm-6 col-lg-2 text-right">
+        <button class="btn btn-success btn-lg mr5">
+            <i class="fa fa-plus"></i> New
+        </button>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight report-main-wrapper">
+    <div class="filter-wrapper">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label>Category</label>
+                        <ui-select options="categories" placeholder="Choose"></ui-select>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Report</label>
+                        <ui-select options="reports" placeholder="Choose"></ui-select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <label>Filters</label>
+
+                <div class="row" ng-repeat="cond in conditions">
+                    <div class="col-md-12 form-group">
+                        <div class="filter pull-left">
+                            <ui-select options="filters"></ui-select>
+                        </div>
+                        <div class="pull-left filter-value">
+                            <input type="text" />
+                            <span>to</span>
+                            <input type="text" />
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <a class="text-primary" ng-click="addFilter()">
+                        <i class="fa fa-plus"></i> Add Filter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="report-viewer-wrapper mt30">
+        <h5>Report Viewer</h5>
+        <hr/>
+        <div class="viewer">
+        </div>
+    </div>
+
+    <div class="mt30 text-right action-button">
+        <div class="dropdown" uib-dropdown dropdown-append-to-body>
+            <button type="button" class="btn btn-primary btn-lg" uib-dropdown-toggle>
+                Actions <i class="fa fa-chevron-down"></i>
+            </button>
+            <ul class="uib-dropdown-menu dropdown-menu-right chevron-down-menu reporting-action-menu bp-action-menu" role="menu">
+                <li><a>Download as PDF</a></li>
+                <li><a>Download as CSV</a></li>
+                <li><a>Download as Excel</a></li>
+                <li><a>Save to Documents</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

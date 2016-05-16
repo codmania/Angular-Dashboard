@@ -1,0 +1,92 @@
+<div class="row schedule-detail">
+    <div class="top clearfix">
+        <div class="closeBox">
+            <p><a ui-sref="schedules.main">Close <i class="fa fa-caret-right"></i></a></p>
+        </div>
+        <div class="detail">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <div class="label label-info">5.1.1</div>
+                    <div class="title font-semibold">Roofing > Roofing Prep > Roof Dry-In</div>
+                    <div class="font-medium heading"><em>Estimated Completion Date</em> &nbsp;Aug 20, 2015</div>
+                </div>
+                <div class="pull-right">
+                    <div class="btns mr10">
+                        <a class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-plus"></i> New
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right action-menu" role="menu">
+                            <li><a ng-click="showAddTeamMemberModal()">Team Member</a></li>
+                            <li><a ng-click="showAddActionItemModal()">Action Item</a></li>
+                            <li><a ng-click="showAddDocumentModal()">Document</a></li>
+                            <li><a ng-click="showAddPhotoModal()">Photo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11">
+                    <div class="row mt10">
+                        <div class="col-md-4 clearfix">
+                            <div class="pull-left text-success" ui-arc-chart rect-width="90" rect-height="90" radius="33" pen-width="8" chart-data="sowData"></div>     
+                            <div class="pl20 pull-left">
+                                <div class="mt10 sub-title text-success">SCOPE OF WORK</div>
+                                <p>Roofing</p>
+                                <div class="text-success">IN PROGRESS</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 clearfix">
+                            <!-- <div class="pull-left text-success" ui-arc-chart rect-width="90" rect-height="90" radius="33" pen-width="8" chart-data="fundData"></div>     
+                            <div class="pl20 pull-left">
+                                <div class="mt10 sub-title text-primary">FUND DISBURSED TO DATE</div>
+                                <p>Aug 17, 2015</p>
+                                <div class="text-primary">$8,000.00</div>
+                            </div> -->
+                            <div class="circle circle-primary">$875K</div>
+                            <div class="pl20 pull-left">
+                                <div class="mt10 sub-title text-primary">FUND DISBURSED TO DATE</div>
+                                <p>Aug 17, 2015</p>
+                                <div class="text-primary">$8,000.00</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 clearfix">
+                            <div class="circle circle-warning">$18K</div>
+                            <div class="pl20 pull-left">
+                                <p class="mt10 sub-title text-warning">ESTIMATED COST AT <br>THE COMPLETION</p>
+                                <div>$18,000.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <ul class="nav nav-tabs">
+            <li ng-class="{true: 'active'}[currentTab=='summary']"><a ng-click="currentTab='summary'">Summary</a></li>
+            <li ng-class="{true: 'active'}[currentTab=='team']"><a ng-click="currentTab='team'">Team</a></li>
+            <li ng-class="{true: 'active'}[currentTab=='action_items']"><a ng-click="currentTab='action_items'">Action Items</a></li>
+            <li ng-class="{true: 'active'}[currentTab=='documents']"><a ng-click="currentTab='documents'">Documents</a></li>
+            <li ng-class="{true: 'active'}[currentTab=='drawings']"><a ng-click="currentTab='drawings'">Drawings</a></li>
+            <li ng-class="{true: 'active'}[currentTab=='communication']"><a ng-click="currentTab='communication'">Communication</a></li>
+            <li ng-class="{true: 'active'}[currentTab=='photos']"><a ng-click="currentTab='photos'">Photos</a></li>
+            <li ng-class="{true: 'active'}[currentTab=='financials']"><a ng-click="currentTab='financials'">Financials</a></li>
+            <li ng-class="{true: 'active'}[currentTab=='procurement']"><a ng-click="currentTab='procurement'">Procurement</a></li>
+        </ul>
+        <div class="tab-content">
+            <div ng-if="currentTab=='summary'" ng-include="'partials/schedules/details/summary.html'"></div>
+            <div ng-if="currentTab=='photos'" ng-include="'partials/photos/_photos.html'"></div>
+            <div ng-if="currentTab=='team'" ng-include="'partials/team-members/_team-members.html'"></div>
+            <!-- <div ng-if="currentTab=='action_items'" ng-include="'partials/photos/_photos.html'"></div>
+            <div ng-if="currentTab=='documents'" ng-include="'partials/photos/_photos.html'"></div>
+            <div ng-if="currentTab=='drawings'" ng-include="'partials/photos/_photos.html'"></div>
+            <div ng-if="currentTab=='communication'" ng-include="'partials/photos/_photos.html'"></div>
+            <div ng-if="currentTab=='financials'" ng-include="'partials/photos/_photos.html'"></div>
+            <div ng-if="currentTab=='procurement'" ng-include="'partials/photos/_photos.html'"></div> -->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.nav-tabs').tabdrop({text: "<i class='fa fa-align-justify'></i>"});
+</script>

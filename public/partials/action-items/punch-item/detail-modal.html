@@ -1,0 +1,170 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">&times;</button>
+</div>
+<div class="modal-body tm-modal-body">
+    <div class="text-right">
+        <small>PUNCHLIST ITEM #</small>
+        <span class="label label-info small">193</span>
+    </div>
+    <div class="text-right pt10 text-muted">
+        <i class="fa fa-cog pr5" style="font-size: 20px"></i>
+        <i class="fa fa-angle-down" style="font-size: 16px"></i>
+    </div>
+    <div class="text-right pt10">
+        <span uib-dropdown>
+            <a class="btn btn-primary" uib-dropdown-toggle><small>Status</small> <i class="fa fa-angle-down"></i></a>
+            <ul uib-dropdown-menu class="mt15 dropdown-menu-right chevron-down-menu">
+                <li ng-repeat="status in statuses">
+                    <a href>{{status}}</a>
+                </li>
+            </ul>
+        </span>
+    </div>
+    <hr class="tm-hr-margin-small">
+    <div class="tm-modal-title">{{punchItem.title}}</div>
+    <div class="font-medium">Details</div>
+    <div>
+        Hi Torben, I noticed we are missing a tree for the NW side of the house. Check the photos and you will probably see what I'm talking about. Not a big deal, just noticed it and thought I would bring it to your attention. It can come last.
+    </div>
+    <hr class="tm-hr-margin-small">
+    <slick dots="false" infinite="true" speed="300" slides-to-show="1" touch-move="true" slides-to-scroll="1" ng-cloak>
+        <div class="" ng-repeat="modal in [1, 2, 3]">
+            <table class="table no-border aii-inspection-info">
+                <tr>
+                    <td style="vertical-align: middle">
+                        <span>
+                            <img ng-show="punchItem.flag == 'red'" src="assets/img/red_icon.png">
+                            <img ng-show="punchItem.flag == 'yellow'" src="assets/img/yellow _icon.png">
+                            <img ng-show="punchItem.flag == 'green'" src="assets/img/flag_green.png">
+                            <img ng-show="punchItem.flag == 'canceled'" src="assets/img/failed.png">
+                            <img ng-show="punchItem.flag == 'completed'" src="assets/img/completed.png">
+                            <img ng-show="punchItem.flag == 'draft'" src="assets/img/edit_circle.png">
+                        </span>
+                    </td>
+                    <td>
+                        <p class="item-title">Initiated By <i class="fa fa-pencil"></i></p>
+                        <div class="item-value">
+                            <div>Beth Wiseman</div>
+                            <ul class="breadcrumbv22x">
+                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;861-569-6688</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="item-title">Responsible <i class="fa fa-pencil"></i></p>
+                        <div class="item-value">
+                            <div>Toren Moench</div>
+                            <ul class="breadcrumbv22x">
+                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;861-569-6688</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="item-title">Scope of Work</p>
+                        <div class="item-value">Landscaping</div>
+                        <div class="item-value">*ignore %comp*</div>
+                    </td>
+                    <td>
+                        <p class="item-title">Location</p>
+                        <div class="item-value"></div>
+                    </td>
+                    <td>
+                        <p class="item-title">Status</p>
+                        <div class="item-value text-success small">AWAITING START</div>
+                    </td>
+                    <td>
+                        <p class="item-title">Plan Link <i class="fa fa-pencil"></i></p>
+                        <div class="item-value"><small class="text-primary"></small></div>
+                    </td>
+                    <td>
+                        <p class="item-title">Due Date</p>
+                        <div class="item-value">-</div>
+                    </td>
+                </tr>
+            </table>
+            <hr class="tm-hr-margin-small">
+
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <div class="row">
+                        <div class="col-xs-6 text-left">Users With Access</div>
+                        <div class="col-xs-6 text-right"><a href="#" class="text-primary">+ Add User</a></div>
+                    </div>
+                    <div class="row no-margin mt15">
+                        <div class="col-md-12">
+                            <div class="row aii-uat-head">
+                                <div class="col-xs-6 aii-uat-th">Name</div>
+                                <div class="col-xs-6 aii-uat-th">Company</div>
+                            </div>
+                            <div class="row">
+                                <div slim-scroll box-height="150px">
+                                    <div class="row no-margin aii-uat-body" ng-repeat="user in userList">
+                                        <div class="col-xs-6 aii-uat-td">{{ user.name }}</div>
+                                        <div class="col-xs-6 aii-uat-td">{{ user.company }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div class="row">
+                        <div class="col-xs-6 text-left">Photos</div>
+                        <div class="col-xs-6 text-right"><a href="#" class="text-primary">+ Add Photos</a></div>
+                    </div>
+                    <div class="row mt15">
+                        <div class="col-md-12">
+                            <div class="row no-margin aii-photo-section">
+                                <div slim-scroll box-height="190px">
+                                    <div class="row no-margin pr5">
+                                        <div class="col-xs-4 pl5 pr5" ng-repeat="photo in photoList">
+                                            <div class="aii-photo-thumb">
+                                                <img ng-src="{{photo}}" class="img-responsive" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="tm-hr-margin-small">
+            <div class="text-left">Comments</div>
+
+            <table class="table">
+                <tr ng-repeat="comment in comments">
+                    <td><img ng-src="{{comment.avatar}}" class="img-circle" width="40px"></td>
+                    <td class="pl0">
+                        <div class="clearfix">
+                            <div class="pull-left text-primary">{{comment.created_by}}</div>
+                            <div class="pull-right small text-muted">{{comment.created_at}}</div>
+                        </div>
+                        <div class="text-muted font-medium">{{comment.body}}</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="mt15">
+                <a class="text-primary"><u>See 3 more comments</u></a>
+            </div>
+            <div class="mt15">
+                <input type="text" placeholder="Add Comment" class="form-control"/>
+            </div>
+            <div class="mt10">
+                <button class="btn btn-md btn-success">Add Comment</button>
+            </div>
+        </div>
+    </slick>
+
+    <hr class="tm-hr-margin-small">
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <button class="btn btn-lg btn-info aii-mr15">Further Action Required</button>
+            <button class="btn btn-lg btn-primary">Inspection Item Compliant</button>
+        </div>
+    </div>
+</div>

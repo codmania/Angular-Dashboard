@@ -1,0 +1,45 @@
+<div class="row wrapper border-bottom white-bg page-heading overview project-profile-top-wrapper">
+    <div class="col-xs-6 col-md-7 pl20">
+        <h2 class="heading">Project Name Goes Here</h2>
+    </div>
+    <div class="col-xs-6 col-md-5 pr20">
+        <div class="row">
+            <span class="col-xs-9 text-right">DATE INITIATED</span>
+            <span class="col-xs-3 text-left text-default text-medium">8/23/14</span>
+        </div>
+        <div class="row mt5">
+            <span class="col-xs-9 text-right">INITIATED BY</span>
+            <span class="col-xs-3 text-left text-primary">Bruce Wayne</span>
+        </div>
+        <div class="row mt5">
+            <span class="col-xs-9 text-right">PROJECT SUPER ADMIN ROLE</span>
+            <span class="col-xs-3 text-left text-primary">Alec Douglas</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div ng-include="'partials/project-profile/_information.html'"></div>
+    <div class="project-profile-wrapper">
+        <ul class="nav nav-tabs">
+            <li ng-class="{true: 'active'}[isActive('project-profile.construction-loan-parameters')]">
+                <a ui-sref="project-profile.construction-loan-parameters">Construction Loan Parameters</a>
+            </li>
+            <li ng-class="{true: 'active'}[isActive('project-profile.project-requirements')]">
+                <a ui-sref="project-profile.project-requirements">Project Requirements</a>
+            </li>
+            <li ng-class="{true: 'active'}[isActive('project-profile.division-cost-code')]">
+                <a ui-sref="project-profile.division-cost-code">Division & Cost Code</a>
+            </li>
+            <li ng-class="{true: 'active'}[isActive('project-profile.project-phases-sow')]">
+                <a ui-sref="project-profile.project-phases-sow">Project Phases & Scope of Work List</a>
+            </li>
+            <li ng-class="{true: 'active'}[isActive('project-profile.project-permissions')]">
+                <a ui-sref="project-profile.project-permissions">Project Permissions</a>
+            </li>
+        </ul>
+
+        <ui-view></ui-view>
+    </div>
+</div>

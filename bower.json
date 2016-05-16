@@ -1,0 +1,26 @@
+{
+  "name": "avasis-demo",
+  "version": "0.0.1",
+  "description": "avasis-demo",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.14.3",
+    "lodash": "~3.10.1",
+    "angular-dropzone": "~0.1.2",
+    "angular-tree": "*",
+    "angular-ui-tree": "~2.11.0",
+    "angular-input-masks": "~2.1.1",
+    "angularjs-slider": "~2.1.0",
+    "angular-slick": "~0.2.1",
+    "bootstrap-tabdrop": "~1.0.0",
+    "ngstorage": "~0.3.10",
+    "angular-strap": "~2.3.7"
+  }
+}

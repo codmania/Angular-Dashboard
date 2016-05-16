@@ -1,0 +1,36 @@
+.report-main-wrapper .filter-wrapper {
+  border: 1px solid #eee;
+  padding: 20px;
+  background-color: #fff; }
+  .report-main-wrapper .filter-wrapper .filter {
+    width: 150px;
+    margin-right: 20px; }
+  .report-main-wrapper .filter-wrapper .filter-value input[type="text"] {
+    background-color: #f9f9f9;
+    padding: 16px;
+    width: 100px; }
+    .report-main-wrapper .filter-wrapper .filter-value input[type="text"]:focus {
+      background-color: #fff; }
+  .report-main-wrapper .filter-wrapper .filter-value span {
+    margin: 0 10px;
+    color: #8b8b8b; }
+
+.report-main-wrapper .report-viewer-wrapper {
+  border: 1px solid #eee;
+  padding: 25px 20px 20px 20px;
+  background-color: #fff; }
+  .report-main-wrapper .report-viewer-wrapper .viewer {
+    width: 600px;
+    height: 800px;
+    margin: 20px auto 0;
+    border: 1px solid #eee;
+    background-color: #f9f9f9; }
+  .report-main-wrapper .report-viewer-wrapper h5 {
+    font-size: 13px;
+    margin-bottom: 0; }
+
+.report-main-wrapper .action-button {
+  padding-bottom: 200px; }
+
+.reporting-action-menu {
+  min-width: 150px; }

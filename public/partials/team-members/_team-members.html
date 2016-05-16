@@ -1,0 +1,116 @@
+<div class="table-responsive">
+    <table class="table memberv22x animated fadeInRight tm-scroll-table" id="team-members-list">
+        <thead>
+            <tr>
+                <th class="td-name">Name</th>
+                <th class="td-scheduled">Scheduled</th>
+                <th class="td-project">Project/Role</th>
+                <th class="td-scope">Scope Of Work</th>
+                <th class="td-flag">Flag Alert</th>
+                <th>
+                    <div class="pull-left">
+                        <div class="dd wrapper-dropdown-team sortby animated fadeInRight">
+                            <span><a class="btn1 btn-dangerteam btn-sm tm-sortby" href="#">Sort by <i class="fa fa-angle-down"></i></a></span>
+                            <ul class="dropdown">
+                                <li><a href="#">Name</a></li>
+                                <li><a href="#">Company</a></li>
+                                <li><a href="#">Next Scheduled</a></li>
+                                <li><a href="#">Flag Alerts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="whiteBgColor" ng-repeat="row in selectedMembers">
+                <td class="MemberTableDetails td-name">
+                    <div class="feed-Compliance">
+                        <div class="pull-left">
+                            <img ng-src="assets/img/avasisteam/{{row.avatar}}" class="img-circle photo" alt="image">
+                        </div>
+                        <div class="pull-left media-Compliance">
+                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">
+                                {{row.name}}
+                                <a ui-sref="team-members.risk" ng-if="row.alert"><img src="assets/img/alert_small.png"></a>
+                            </span>
+                            <b>{{row.company}}</b>
+                            <ul class="breadcrumbv22x">
+                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;{{row.phone}}</a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </td>
+                <td class="td-scheduled">
+                    <div class="feed-Compliance">
+                        <div class="mapflag pull-left">
+                            <img alt="image" class="img-circle" src="assets/img/map_icon.png" ng-if="row.availability == 'On Site'">
+                            <img alt="image" class="img-circle" src="assets/img/map_icon-gry.png"  ng-if="row.availability != 'On Site'">
+                        </div>
+                        <div class="media-Compliance">
+                            <p class="pink"><span ng-class="{true: 'sky4', false: 'offsite'}[row.availability == 'On Site']">{{row.availability}}</span> {{row.show}}</p>
+                            <div class="clearfix"></div>
+                            <p class="light-big">next sched. {{row.next_sched}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="td-project">
+                    <div class="feed-Compliance">
+                        <div class="media-Compliance">
+                            <small class="pull-right"></small>
+                            <p ng-class="{true: 'multipalepro', false: 'light-big'}[row.project == 'Multiple']">
+                                <a uib-popover-html="row.project_popover" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter" ng-if="row.project == 'Multiple'">Multiple</a>
+                                {{row.project != 'Multiple' ? row.project: ''}}
+                            </p>
+                            <b>{{row.role}}</b>
+                        </div>
+                    </div>
+                </td>
+                <td class="td-scope">
+                    <div class="feed-Compliance">
+                        <div class="media-Compliance">
+                            <small class="pull-right"></small>
+                            <p ng-class="{true: 'multipalepro', false: 'light-big'}[row.sow == 'Multiple']">
+                                <a uib-popover-html="row.sow_popover" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter" ng-if="row.sow == 'Multiple'">Multiple</a>
+                                {{row.sow != 'Multiple' ? row.sow: ''}}
+                            </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="tm-flag-td td-flag">
+                    <div class="pull-left text-danger alert-flag" ng-if="row.flag.danger">
+                        <img src="assets/img/red_icon.png"><span>{{row.flag.danger}}</span>
+                    </div>
+                    <div class="pull-left text-warning alert-flag" ng-if="row.flag.warning">
+                        <img src="assets/img/yellow _icon.png"><span>{{row.flag.warning}}</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </td>
+                <td>
+                    <div class="ibox-team pull-left">
+                        <div class="dd wrapper-dropdown-team">
+                            <span><a class="#"><i class="fa fa-cog"></i></a></span>
+                            <!-- <ul class="dropdown">
+                                <li><a href="#">Add Notes</a></li>
+                                <li><a href="#">Permissions</a></li>
+                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
+                            </ul> -->
+                        </div>
+                        <div class="dd wrapper-dropdown-team">
+                            <span><a class="#"><i class="fa fa-angle-down"></i></a></span>
+                            <!-- <ul class="dropdown">
+                                <li><a href="#">Add Notes</a></li>
+                                <li><a href="#">Permissions</a></li>
+                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

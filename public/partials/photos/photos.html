@@ -1,0 +1,28 @@
+<div class="row wrapper border-bottom white-bg page-heading overview">
+    <div class="col-xs-6 col-lg-10">
+        <h2 class="heading">Your Project Photos</h2>
+        <project-filter current-item="projectFilter"></project-filter>
+    </div>
+    <div class="col-xs-6 col-lg-2">
+        <div class="btns mr10">
+            <a href="javascript:void(0)" class="btn btn-success btn-lg" ng-click="showUploadModal()">
+                <i class="fa fa-plus"></i> Add New Photos
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="card-wrapper whiteBox">
+        <div ng-include="'partials/photos/_photos.html'"></div>
+    </div>
+</div>
+
+
+<div class="upload-preview hide">
+    <div class="dz-preview dz-image-preview">
+    </div>
+</div>
+
+<script src="assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>

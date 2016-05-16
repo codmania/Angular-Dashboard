@@ -1,0 +1,36 @@
+<div class="tab-content">
+    <div class="templates-wrapper">
+        <div class="text-right mb10">
+            <button class="btn btn-success btn-sm">
+                <i class="fa fa-plus"></i> Add
+            </button>
+        </div>
+
+        <div class="item" ng-repeat="template in templates" ng-class="{first: $first}">
+            <div class="pull-left">
+                <label class="name text-primary">{{template.name}}</label>
+                <span class="uploaded-at">
+                    <small>uploaded at</small>
+                    <span class="date">{{template.uploaded_at}}</span>
+                    <small>by</small>
+                    <span class="text-primary">{{template.uploader}}</span>
+                </span>
+                <span class="last-modified-at">
+                    <small>last modified on</small>
+                    <span class="date">{{template.modified_at}}</span>
+                    <small>by</small>
+                    <span class="text-primary">{{template.modifier}}</span>
+                </span>
+            </div>
+            <div class="pull-right">
+                <div uib-dropdown dropdown-append-to-body class="dropdown">
+                    <a href="javascript:void(0)" uib-dropdown-toggle class="text-muted dropdown-toggle">
+                        <i class="fa fa-gear"></i>
+                        <i class="fa fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

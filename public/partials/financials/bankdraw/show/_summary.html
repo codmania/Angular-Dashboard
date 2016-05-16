@@ -1,0 +1,83 @@
+<div class="row pt20 pb10">
+    <div class="col-md-2">
+        <div class="text-muted">Project</div>
+        <div class="text-primary sub-title pay-page-wrapper">
+            <ul class="topSubtitle">
+                <li>
+                    <a href="#">Wilmington 47</a>
+                </li>
+                <li><span>47 Wilmington Ave<br /> Arlington, VA  90125</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-muted">General Contractor Name</div>
+        <div class="text-muted heading font-medium">Synergy Construction</div>
+        <div class="text-gray-lighter small font-regular">Bruce Wayne</div>
+        <div class="text-gray-lighter small font-regular">1492 Park Ave</div>
+        <div class="text-gray-lighter small font-regular">Arlington, VA 90125</div>
+    </div>
+    <div class="col-md-2">
+        <div class="text-muted">Contact Info</div>
+        <div class="text-muted heading font-medium">Beth Wiseman</div>
+        <div class="text-gray-light small">
+            <ul class="list-inline text-muted">
+                <li><i class="fa fa-envelope"></i></li>
+                <li><i class="fa fa-comments"></i></li>
+                <li><i class="fa fa-phone"></i>  <small>{{application.phone_number}}</small></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="text-muted">Date Submitted</div>
+        <div class="text-muted heading font-medium">Aug 17, 2015</div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-9">
+        <table class="table text-muted">
+            <tr>
+                <td>Estimated Cost at Completion</td>
+                <td class="heading">{{3016059.48 | currency:'$':2}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Construction Loan Amount</td>
+                <td class="heading">{{2860509 | currency:'$':2}}</td>
+                <td><span class="heading">95%</span> of the Cost at Completion</td>
+            </tr>
+            <tr>
+                <td>Loan Drawn to Date <small>not including pending</small></td>
+                <td class="heading">{{903348 | currency:'$':2}}</td>
+                <td><span class="heading">32%</span> of the Construction Loan Amount</td>
+            </tr>
+            <tr>
+                <td>Total Non Loan Payments to Date</td>
+                <td class="heading">$-</td>
+                <td><span class="heading">0%</span> of the Cost at Completion</td>
+            </tr>
+            <tr>
+                <td>Amount of this Draw Request</td>
+                <td class="heading">{{181267 | currency:'$':2}}</td>
+                <td><span class="heading">6%</span> of the Construction Loan Amount</td>
+            </tr>
+            <tr>
+                <td>% of Project Paid</td>
+                <td rowspan="2">
+                    <div ui-arc-chart rect-width="100" rect-height="100" radius="30" pen-width="6" chart-data="percentChartData"></div>
+                </td>
+                <td><span class="heading text-primary">30%</span></td>
+            </tr>
+            <tr>
+                <td class="no-borders">% of Project Completed</td>
+                <td class="no-borders"><span class="heading text-success">64%</span></td>
+            </tr>
+            <tr>
+                <td>Estimated Cash Required to Complete</td>
+                <td class="heading"></td>
+                <td><span class="heading">70%</span> of the Cost at Completion</td>
+            </tr>
+        </table>
+    </div>
+</div>

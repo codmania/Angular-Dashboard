@@ -1,0 +1,98 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading overview">
+    <div class="col-xs-12 col-lg-3">
+        <h2 class="heading">Team Members</h2>
+        <project-filter current-item="projectFilter"></project-filter>
+    </div>
+    <div class="col-xs-12 col-lg-7">
+        <div class="row topMemberContain">
+            <div class="col-xs-12 col-sm-4">
+                <div class="green2" ng-click="toggleOnSite()">
+                    <img src="assets/img/onSite.png" alt="image">
+                    <span>5</span>
+                    <p>
+                        Members onsite
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="sky2" ui-sref="team-members.risk">
+                    <img src="assets/img/company-icon.png" alt="image">
+                    <span>2</span>
+                    <p>
+                        Members from my Company
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="orangeColor2" ui-sref="team-members.risk">
+                    <img src="assets/img/members.png" alt="image">
+                    <span>38</span>
+                    <p>
+                        Total # of members
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pull-right pr10">
+        <div class="teaminvite pull-right text-right">
+            <a class="btn btn-success btn-lg" ng-click="showInviteModal()">
+                <i class="fa fa-plus"></i> Invite Team Members
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper-content animated fadeInRight">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="pull-left">
+                <div class="label label-danger warning-circle">
+                    <i class="fa fa-warning"></i>
+                </div>
+            </div>
+            <div class="pull-left heading pt5 pl10">You have 2 compliance issues.</div>
+            <div class="pull-right">
+                <a ng-click="" class="btn btn-info btn-sm" ui-sref="team-members.risk">Review issues</a>
+            </div>
+        </div>
+    </div>
+    <div ng-include="'partials/team-members/_team-members.html'"
+</div>
+<script type="text/javascript">
+    function DropDown(el) {
+        this.dd = el;
+        this.placeholder = this.dd.children('span');
+        this.opts = this.dd.find('ul.dropdown > li');
+        this.val = '';
+        this.index = -1;
+        this.initEvents();
+    }
+    DropDown.prototype = {
+        initEvents: function () {
+            var obj = this;
+
+            obj.dd.on('click', function (event) {
+                $(this).toggleClass('active');
+                return false;
+            });
+        },
+        getValue: function () {
+            return this.val;
+        },
+        getIndex: function () {
+            return this.index;
+        }
+    }
+
+    $(function () {
+        var dd = new DropDown($('.dd'));
+
+        $(document).click(function () {
+            // all dropdowns
+            $('.wrapper-dropdown-team').removeClass('active');
+        });
+
+    });
+
+</script>

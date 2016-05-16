@@ -1,0 +1,35 @@
+<div class="activity-wrapper" slim-scroll box-height="340">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Activity Date</th>
+                    <th>Team Member</th>
+                    <th>Project Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in activities">
+                    <td class="name">{{row.name}}</td>
+                    <td class="date">{{row.date}}</td>
+                    <td class="member">
+                        <img class="pull-left photo img-circle" ng-src="assets/img/users/{{row.user.avatar}}">
+                        <div class="pull-left">
+                            <span class="name text-primary">{{row.user.name}}</span>
+                            <div class="contact">
+                                <span>
+                                    <i class="fa fa-envelope"></i>|
+                                    <i class="fa fa-comments"></i>|
+                                    <i class="fa fa-phone"></i>{{row.user.phone}}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </td>
+                    <td class="role">{{row.role}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

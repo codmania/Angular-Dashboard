@@ -1,0 +1,63 @@
+@media (min-width: 992px) {
+  .buget-addition-modal .modal-dialog .modal-content {
+    width: 800px; } }
+
+.buget-addition-modal .modal-dialog .modal-content .modal-body {
+  padding: 25px 20px 20px; }
+  .buget-addition-modal .modal-dialog .modal-content .modal-body input {
+    height: 51px;
+    padding: 15px;
+    border: 1px solid #eee;
+    font-family: AvenirNextLTPro-Regular; }
+    .buget-addition-modal .modal-dialog .modal-content .modal-body input:hover, .buget-addition-modal .modal-dialog .modal-content .modal-body input:active {
+      background-color: #f9f9f9;
+      border: 1px solid #eee; }
+  .buget-addition-modal .modal-dialog .modal-content .modal-body span.title {
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: AvenirNextLTPro-Regular; }
+  .buget-addition-modal .modal-dialog .modal-content .modal-body input.title {
+    border: 0;
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 20px;
+    padding-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .buget-addition-modal .modal-dialog .modal-content .modal-body input.title:hover {
+      background-color: #fff; }
+  .buget-addition-modal .modal-dialog .modal-content .modal-body span.edit {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #eee; }
+    .buget-addition-modal .modal-dialog .modal-content .modal-body span.edit i {
+      color: #8b8b8b;
+      margin-left: 5px; }
+  .buget-addition-modal .modal-dialog .modal-content .modal-body h3 {
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 20px; }
+  .buget-addition-modal .modal-dialog .modal-content .modal-body hr {
+    margin-top: 5px; }
+  .buget-addition-modal .modal-dialog .modal-content .modal-body .btn-cancel {
+    color: #4a4a4a; }
+    .buget-addition-modal .modal-dialog .modal-content .modal-body .btn-cancel:hover {
+      color: #fff; }
+  .buget-addition-modal .modal-dialog .modal-content .modal-body span.total-title {
+    color: #8b8b8b;
+    display: block;
+    text-transform: uppercase; }
+    @media (min-width: 992px) {
+      .buget-addition-modal .modal-dialog .modal-content .modal-body span.total-title {
+        margin-top: 30px; } }
+
+.budgets .table-tree-row > div:not(:first-child) {
+  width: 80px; }
+
+@media (min-width: 1440px) {
+  .budgets .table-tree-row > div:not(:first-child) {
+    width: 100px; } }
+
+@media (min-width: 1600px) {
+  .budgets .table-tree-row > div:not(:first-child) {
+    width: 150px; } }

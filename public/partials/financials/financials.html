@@ -1,0 +1,111 @@
+<div class="row wrapper border-bottom white-bg page-heading overview">
+    <div class="col-xs-6 col-lg-10 pl20">
+        <h2 class="heading">Financials</h2>
+        <project-filter current-item="projectFilter"></project-filter>
+    </div>
+    <div class="col-xs-6 col-lg-2 pr20">
+        <div class="text-right">
+            <a class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-plus"></i> Create New
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right action-menu" role="menu">
+                <li><a ui-sref="bankdraw.new.payment-application">Bank Draw</a></li>
+                <li><a ng-click="showBudgetAdditionModal()">Budget Estimate</a></li>
+                <li><a ui-sref="direct-invoice">Direct Invoice</a></li>
+                <li><a ui-sref="direct-payment.new">Direct Payment</a></li>
+                <li><a ui-sref="payment-application.initiate">Payment Application</a></li>
+                <li><a ui-sref="purchase-orders.new">Purchase Order</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div ng-include="'partials/financials/_stats.html'"></div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="financial-wrapper">
+        <ul class="nav nav-tabs">
+            <li ng-class="{true: 'active'}[isActive('financials.main')]"><a ui-sref="financials.main">Main</a></li>
+            <li ng-class="{true: 'active'}[isActive('financials.budget')]"><a ui-sref="financials.budget">Budget</a></li>
+            <li ng-class="{true: 'active'}[isActive('financials.purchase-orders')]"><a ui-sref="financials.purchase-orders">Purchase Orders</a></li>
+            <li ng-class="{true: 'active'}[isActive('financials.invoices')]"><a ui-sref="financials.invoices">Invoices</a></li>
+            <li ng-class="{true: 'active'}[isActive('financials.pay-apply')]"><a ui-sref="financials.pay-apply">Payment Applications</a></li>
+            <li ng-class="{true: 'active'}[isActive('financials.direct-payments')]"><a ui-sref="financials.direct-payments">Direct Payments</a></li>
+            <li ng-class="{true: 'active'}[isActive('financials.bankdraw')]"><a ui-sref="financials.bankdraw">Bank Draws</a></li>
+            <li ng-class="{true: 'active'}[isActive('financials.loan')]"><a ui-sref="financials.loan.main">Construction Loan</a></li>
+        </ul>
+
+        <ui-view></ui-view>
+    </div>
+</div>
+
+<!-- Budget Addition Modal Template -->
+<script type="text/ng-template" id="budget-addition-modal.html">
+    <div class="modal-header clearfix">
+        <button type="button" class="close" ng-click="cancel()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <div ng-hide="isNameEdit">
+            <span class="title">{{ name ? name : 'Budget Estimate'}}</span>
+            <span class="edit" ng-click="isNameEdit = true;">Edit<i class="fa fa-pencil"></i></span>
+        </div>
+        <div ng-show="isNameEdit">
+            <input class="title" type="text" ng-model="name" ng-blur="isNameEdit = false;" placeholder="Estimate Name"/>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>Scope of Work</label>
+                <ui-select options="sows" placeholder="Select Scope of Work"></ui-select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>Division</label>
+                <ui-select options="divisions" placeholder="Select Placeholder" selected-item="currentDivision"></ui-select>
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Cost Code</label>
+                <ui-select options="currentDivision.codes" placeholder="Select Cost Code" selected-item="currentCostCode"></ui-select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label>Labour</label>
+                        <input class="form-control" type="text" placeholder="$" ui-money-mask="2" ng-model="labor"/>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Materials</label>
+                        <input class="form-control" type="text" placeholder="$" ui-money-mask="2" ng-model="materials"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label>Equipment</label>
+                        <input class="form-control" type="text" placeholder="$" ui-money-mask="2" ng-model="equipment"/>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label>Misc</label>
+                        <input class="form-control" type="text" placeholder="$" ui-money-mask="2" ng-model="misc"/>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <span class="total-title">Total</span>
+                        <span class="total-value">{{ total | currency: '$': 2}}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <hr/>
+        <div class="text-right">
+            <button type="button" class="btn btn-cancel btn-lg" ng-click="cancel()">Delete Estimate</button>
+            <button type="button" class="btn btn-primary btn-lg" ng-click="ok()">Add Estimate</button>
+        </div>
+    </div>
+</script>
+<script type="text/javascript">
+    // $('.nav-tabs').tabdrop({text: "<i class='fa fa-align-justify'></i>"});
+</script>

@@ -1,0 +1,442 @@
+.project-profile-top-wrapper h2 {
+  margin-top: 15px; }
+
+.project-profile-top-wrapper .col-xs-9 {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 10px; }
+
+.project-profile-top-wrapper .col-xs-3 {
+  font-size: 12px; }
+
+.project-profile-information-wrapper {
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border: 1px solid #eee; }
+  .project-profile-information-wrapper img {
+    width: 75px;
+    height: 75px;
+    display: block; }
+  .project-profile-information-wrapper a {
+    font-size: 11px; }
+  .project-profile-information-wrapper label {
+    display: block;
+    font-size: 13px;
+    color: #4a4a4a; }
+  .project-profile-information-wrapper span {
+    display: block;
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 12px;
+    color: #4a4a4a; }
+  .project-profile-information-wrapper .address {
+    margin-left: 40px;
+    margin-top: 20px; }
+  .project-profile-information-wrapper .section {
+    height: 93px; }
+  .project-profile-information-wrapper .border-right {
+    border-right: 1px solid #eee; }
+  .project-profile-information-wrapper .type-of-project,
+  .project-profile-information-wrapper .square-footage {
+    display: inline-block;
+    text-align: left; }
+  .project-profile-information-wrapper .type-of-project {
+    margin-top: 25px; }
+  .project-profile-information-wrapper .square-footage {
+    margin-top: 5px; }
+  .project-profile-information-wrapper .start-date-edit {
+    margin-top: 25px;
+    text-align: left; }
+  .project-profile-information-wrapper button {
+    padding: 10px 20px; }
+
+.project-profile-wrapper .text-regular {
+  font-family: "AvenirNextLTPro-Regular"; }
+
+.project-profile-wrapper .text-bold {
+  font-family: "AvenirNextLTPro-Demi"; }
+
+.project-profile-wrapper .text-medium {
+  font-family: "AvenirNextLTPro-Medium"; }
+
+.project-profile-wrapper .nav-tabs {
+  border: 1px solid #eee; }
+  .project-profile-wrapper .nav-tabs li a {
+    color: #8b8b8b;
+    font-size: 13px;
+    min-width: 110px;
+    text-align: center;
+    padding: 15px 30px;
+    border-top: 0; }
+  .project-profile-wrapper .nav-tabs li.active a {
+    border: 1px solid #eee;
+    border-top: 0;
+    border-bottom: 1px solid #fff;
+    border-radius: 0; }
+  .project-profile-wrapper .nav-tabs li:first-child a {
+    border-left: 0; }
+
+.project-profile-wrapper .tab-content {
+  background-color: #fff;
+  padding: 30px 20px 20px;
+  border: 1px solid #eee;
+  border-top: 0; }
+
+.project-profile-wrapper .loans-wrapper h4 {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 12px; }
+
+.project-profile-wrapper .loans-wrapper p {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 16px; }
+
+.project-profile-wrapper .loans-wrapper .address {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 12px; }
+
+.project-profile-wrapper .loans-wrapper .contact {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 10px; }
+
+.project-profile-wrapper .loans-wrapper .table-responsive table thead th {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 12px;
+  color: #8b8b8b; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table thead th:first-child {
+    border-left: 1px solid #eee; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table thead th:last-child {
+    border-right: 1px solid #eee; }
+
+.project-profile-wrapper .loans-wrapper .table-responsive table tbody td {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 13px;
+  padding: 25px 20px; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table tbody td:first-child {
+    border-left: 1px solid #eee; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table tbody td:last-child {
+    border-right: 1px solid #eee; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table tbody td.desc {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 11px; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table tbody td.sow {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 12px;
+    color: #3aabd5; }
+
+.project-profile-wrapper .loans-wrapper .add-line {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 13px; }
+
+.project-profile-wrapper .phases-sow-wrapper h3 {
+  font-family: "AvenirNextLTPro-Medium";
+  font-size: 17px;
+  color: #4a4a4a;
+  margin-bottom: 20px; }
+
+.project-profile-wrapper .phases-sow-wrapper .table-responsive table thead th {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 13px;
+  color: #8b8b8b; }
+  .project-profile-wrapper .phases-sow-wrapper .table-responsive table thead th:first-child {
+    border-left: 1px solid #eee; }
+  .project-profile-wrapper .phases-sow-wrapper .table-responsive table thead th:last-child {
+    border-right: 1px solid #eee; }
+
+.project-profile-wrapper .phases-sow-wrapper .table-responsive table tbody tr td {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 13px;
+  padding: 25px 20px; }
+  .project-profile-wrapper .phases-sow-wrapper .table-responsive table tbody tr td:first-child {
+    border-left: 1px solid #eee; }
+  .project-profile-wrapper .phases-sow-wrapper .table-responsive table tbody tr td:last-child {
+    border-right: 1px solid #eee; }
+
+.project-profile-wrapper .phases-sow-wrapper .table-responsive table tbody tr:last-child td {
+  border-bottom: 1px solid #eee; }
+
+.project-profile-wrapper .phases-sow-wrapper .add-line {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 13px; }
+
+.project-profile-wrapper .phases-sow-wrapper input[type=text] {
+  background-color: #f9f9f9; }
+  .project-profile-wrapper .phases-sow-wrapper input[type=text]:focus {
+    background-color: #fff; }
+
+.project-profile-wrapper .division-cost-code-wrapper h3 {
+  font-family: "AvenirNextLTPro-Medium";
+  font-size: 17px; }
+
+.project-profile-wrapper .division-cost-code-wrapper .node-wrapper {
+  padding: 10px;
+  border-top: 1px solid #eee; }
+  .project-profile-wrapper .division-cost-code-wrapper .node-wrapper > div {
+    display: table-cell; }
+
+.project-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-handle {
+  padding: 20px 15px;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+  font-size: 13px; }
+
+.project-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-nodes .fa {
+  font-size: 13px;
+  padding-right: 0; }
+
+.project-profile-wrapper .division-cost-code-wrapper .division {
+  width: 135px; }
+
+.project-profile-wrapper .division-cost-code-wrapper .divisions-wrapper {
+  border: 1px solid #eee;
+  border-top: 0;
+  margin-top: 10px; }
+
+.project-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-node .angular-ui-tree-nodes:before {
+  height: 0; }
+
+.project-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-nodes .angular-ui-tree-nodes li {
+  border-left: 0; }
+
+.project-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-nodes .angular-ui-tree-nodes li[has-child='true']:before {
+  border-top: 0; }
+
+.project-profile-wrapper .division-cost-code-wrapper .child {
+  padding-left: 110px;
+  color: #4a4a4a; }
+
+.project-profile-wrapper .division-cost-code-wrapper .collapsed {
+  background-color: #f9f9f9; }
+
+.project-profile-wrapper .requirements-wrapper h3 {
+  font-family: "AvenirNextLTPro-Medium";
+  font-size: 17px; }
+
+.project-profile-wrapper .requirements-wrapper .table-responsive.approval-table table thead tr th,
+.project-profile-wrapper .requirements-wrapper .table-responsive.approval-table table tbody tr td {
+  vertical-align: middle;
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 15px; }
+
+.project-profile-wrapper .requirements-wrapper .table-responsive.approval-table table tbody tr td:first-child {
+  border-right: 1px solid #eee;
+  padding-left: 20px; }
+
+.project-profile-wrapper .requirements-wrapper .table-responsive.approval-table table thead tr th {
+  background-color: #f9f9f9; }
+  .project-profile-wrapper .requirements-wrapper .table-responsive.approval-table table thead tr th:first-child {
+    width: 300px;
+    padding-left: 20px; }
+
+.project-profile-wrapper .requirements-wrapper .table-responsive.approval-table table thead tr th:nth-child(2),
+.project-profile-wrapper .requirements-wrapper .table-responsive.approval-table table tbody tr td:nth-child(2) {
+  padding-left: 40px; }
+
+.project-profile-wrapper .requirements-wrapper .table-responsive.approval-table table .member-name {
+  font-size: 12px; }
+
+.project-profile-wrapper .requirements-wrapper .btn {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.project-profile-wrapper .requirements-wrapper .btn-cancel {
+  margin-right: 10px; }
+
+.project-profile-wrapper .requirements-wrapper .new-requirement {
+  position: fixed;
+  top: 317px;
+  right: 36px;
+  width: 340px;
+  border: 1px solid #eee;
+  z-index: 999;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); }
+  .project-profile-wrapper .requirements-wrapper .new-requirement .header {
+    padding: 10px 16px;
+    background-color: #f9f9f9; }
+    .project-profile-wrapper .requirements-wrapper .new-requirement .header .or {
+      margin-top: 18px;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-family: "AvenirNextLTPro-Regular";
+      font-size: 11px; }
+  .project-profile-wrapper .requirements-wrapper .new-requirement .content .item {
+    padding-left: 135px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 0 auto;
+    border-top: 1px solid #eee; }
+
+.project-profile-wrapper .permissions-wrapper .description {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 12px; }
+  .project-profile-wrapper .permissions-wrapper .description h4 {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 13px;
+    margin-top: 0; }
+  .project-profile-wrapper .permissions-wrapper .description span.text-bold {
+    font-size: 13px;
+    margin-left: 30px; }
+  .project-profile-wrapper .permissions-wrapper .description span.create {
+    margin-left: 0; }
+  .project-profile-wrapper .permissions-wrapper .description span.asterisk {
+    margin-left: 30px; }
+
+.project-profile-wrapper .permissions-wrapper .filter {
+  margin-top: 5px; }
+  .project-profile-wrapper .permissions-wrapper .filter a {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 12px;
+    margin: 0;
+    background-color: white;
+    color: #4a4a4a;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
+    border: 1px solid #b7b7b7; }
+
+.project-profile-wrapper .permissions-wrapper .search-field i {
+  padding: 13px; }
+
+.project-profile-wrapper .permissions-wrapper .search-field input {
+  height: 34px;
+  width: 308px;
+  font-family: AvenirNextLTPro-Regular;
+  font-size: 11px;
+  padding-left: 40px;
+  background-color: #f9f9f9;
+  border: 0;
+  margin-right: 10px; }
+
+.project-profile-wrapper .permissions-wrapper .empty-box {
+  height: 105px;
+  border-bottom: 1px solid #eee; }
+
+.project-profile-wrapper .permissions-wrapper .contents {
+  margin-top: 20px; }
+
+.project-profile-wrapper .permissions-wrapper .selected {
+  background-color: #fbfbee; }
+
+.project-profile-wrapper .permissions-wrapper .left-side {
+  width: 160px;
+  border: 1px solid #eee;
+  border-bottom: 0;
+  float: left; }
+  .project-profile-wrapper .permissions-wrapper .left-side .node {
+    border-bottom: 1px solid #eee; }
+  .project-profile-wrapper .permissions-wrapper .left-side .children .item {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 11px;
+    margin-left: 30px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee; }
+    .project-profile-wrapper .permissions-wrapper .left-side .children .item:last-child {
+      border-bottom: 0; }
+  .project-profile-wrapper .permissions-wrapper .left-side .handle {
+    color: #3aabd5;
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 12px;
+    padding: 10px 20px; }
+    .project-profile-wrapper .permissions-wrapper .left-side .handle i {
+      margin-right: 5px;
+      cursor: pointer; }
+
+.project-profile-wrapper .permissions-wrapper .right-side {
+  float: left;
+  width: calc(100% - 160px);
+  border: 1px solid #eee;
+  border-left: 0;
+  border-bottom: 0; }
+  .project-profile-wrapper .permissions-wrapper .right-side .slick-prev {
+    left: -18px;
+    top: 73px; }
+  .project-profile-wrapper .permissions-wrapper .right-side .slick-next {
+    right: -28px;
+    top: 73px; }
+  .project-profile-wrapper .permissions-wrapper .right-side .node {
+    border-bottom: 1px solid #eee; }
+  .project-profile-wrapper .permissions-wrapper .right-side .children .item {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 10px;
+    line-height: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee; }
+    .project-profile-wrapper .permissions-wrapper .right-side .children .item:last-child {
+      border-bottom: 0; }
+    .project-profile-wrapper .permissions-wrapper .right-side .children .item > span {
+      margin-right: 2px; }
+  .project-profile-wrapper .permissions-wrapper .right-side .handle {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 12px;
+    padding: 10px 20px; }
+  .project-profile-wrapper .permissions-wrapper .right-side .person {
+    width: 110px;
+    position: relative;
+    border-right: 1px solid #eee; }
+    .project-profile-wrapper .permissions-wrapper .right-side .person .info {
+      height: 105px;
+      border-bottom: 1px solid #eee; }
+      .project-profile-wrapper .permissions-wrapper .right-side .person .info .name {
+        font-family: "AvenirNextLTPro-Demi";
+        font-size: 12px; }
+      .project-profile-wrapper .permissions-wrapper .right-side .person .info .role {
+        font-size: 10px; }
+      .project-profile-wrapper .permissions-wrapper .right-side .person .info img {
+        width: 35px;
+        margin: 20px auto 10px;
+        display: inline; }
+    .project-profile-wrapper .permissions-wrapper .right-side .person .color {
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      top: 0; }
+    .project-profile-wrapper .permissions-wrapper .right-side .person .bg-success {
+      background-color: #79c485; }
+    .project-profile-wrapper .permissions-wrapper .right-side .person .bg-warning {
+      background-color: #fdb04a; }
+    .project-profile-wrapper .permissions-wrapper .right-side .person .bg-danger {
+      background-color: #e25c5c; }
+
+.project-profile-wrapper .table-responsive.requirements-table table thead tr th,
+.project-profile-wrapper .table-responsive.requirements-table table tbody tr td {
+  vertical-align: middle;
+  padding: 20px; }
+
+.project-profile-wrapper .table-responsive.requirements-table table thead tr th {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 15px;
+  color: #8b8b8b; }
+
+.project-profile-wrapper .table-responsive.requirements-table table tbody tr td {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 13px;
+  color: #4a4a4a; }
+
+.permissions-popover {
+  width: 280px;
+  padding: 20px; }
+  .permissions-popover .name {
+    font-size: 12px; }
+  .permissions-popover .role {
+    font-size: 10px; }
+  .permissions-popover .table {
+    margin-top: 10px;
+    margin-bottom: 20px; }
+    .permissions-popover .table thead tr th {
+      background-color: #f9f9f9;
+      font-family: "AvenirNextLTPro-Demi";
+      font-size: 10px;
+      color: #8b8b8b; }
+    .permissions-popover .table tbody tr td {
+      font-family: "AvenirNextLTPro-Demi";
+      font-size: 10px;
+      padding: 10px; }
+      .permissions-popover .table tbody tr td:first-child {
+        padding-left: 20px; }

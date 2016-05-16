@@ -1,0 +1,154 @@
+<div class="tab-content">
+    <table class="table mb20" id="budget-stats">
+        <tr>
+            <td class="text-muted">Square footage</td>
+            <td class="font-bold">9,788</td>
+        </tr>
+        <tr>
+            <td class="text-muted">Goal Cost per SF</td>
+            <td class="font-bold">$295.00</td>
+            <td class="text-muted">Goal Construction Cost</td>
+            <td class="font-bold">$2,887,460.00</td>
+        </tr>
+        <tr>
+            <td class="text-muted">Current Cost per SF</td>
+            <td class="font-bold">$308.00</td>
+            <td class="text-muted">Current Construction Cost</td>
+            <td class="font-bold">$3,016,059.00</td>
+        </tr>
+        <tr>
+            <td class="text-muted">Variance</td>
+            <td class="font-bold text-danger">$13.14</td>
+            <td class="text-muted">Variance</td>
+            <td class="font-bold text-danger">-$128,599.00</td>
+        </tr>
+    </table>
+    <div class="budgets">
+        <div class="table-tree" style="padding: 15px 20px; background: #f3f3f4;">
+            <div class="text-muted table-tree-row">
+                <div>&nbsp;</div>
+                <div>Labor</div>
+                <div>Materials</div>
+                <div>Equipment</div>
+                <div>Miscellanous</div>
+                <div>Total</div>
+                <div>Items</div>
+                <div>CPSF</div>
+                <div>% of Project</div>
+            </div>
+        </div>
+        <div ui-tree data-drag-enabled="false" data-max-depth="3">
+            <ol ui-tree-nodes="" ng-model="budgets">
+                <li ng-repeat="item in budgets" ui-tree-node data-collapsed="true" ng-include="'budget-item-template.html'"></li>
+            </ol>
+        </div>
+        <div class="table-tree" style="padding: 15px 20px; background: #f3f3f4;">
+            <div class="text-muted table-tree-row">
+                <div>Total</div>
+                <div>{{budgets | sumBy:'labor'}}</div>
+                <div>{{budgets | sumBy:'materials'}}</div>
+                <div>{{budgets | sumBy:'equipment'}}</div>
+                <div>{{budgets | sumBy:'misc'}}</div>
+                <div>{{budgets | sumBy:'total'}}</div>
+                <div></div>
+                <div>{{(budgets | sumBy:'cpsf') | number:0}}</div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Nested node template -->
+    <script type="text/ng-template" id="budget-item-template.html">
+        <div ui-tree-handle class="tree-node tree-node-content table-tree">
+            <div class="text-muted font-regular table-tree-row">
+                <div data-nodrag ng-click="toggle(this)" class="text-primary font-semibold">
+                    <i class="fa" ng-class="{'fa-plus': collapsed, 'fa-minus': !collapsed}" ng-if="item.children" style="display:inline-block"></i>
+                    <div style="display: inline-block">
+                        <div class="text-gray division">{{item.division}}</div>
+                        <span>{{item.name}}</span>
+                    </div>
+                </div>
+                <div>{{item.labor | zCurrency}}</div>
+                <div>{{item.materials | zCurrency}}</div>
+                <div>{{item.equipment | zCurrency}}</div>
+                <div>{{item.misc | zCurrency}}</div>
+                <div>{{item.total | zCurrency}}</div>
+                <div><span class="items" ng-if="item.items" ng-click="showBudgetEstimateModal(item)">{{item.items}}</span></div>
+                <div>{{item.cpsf}}</div>
+                <div><span ng-if="item.percent_of_project">{{item.percent_of_project}}%</span></div>
+            </div>
+        </div>
+        <ol ui-tree-nodes ng-model="item.children" ng-class="{hidden: collapsed}">
+            <li ng-repeat="item in item.children" has-child="{{item.children!=null}}" data-collapsed="true" ui-tree-node ng-include="'budget-item-template.html'"></li>
+            <li data-collapsed="true" ui-tree-node ng-if="item.depth == 2">
+                <div ui-tree-handle class="tree-node tree-node-content table-tree">
+                    <div class="text-muted font-regular">
+                        <div data-nodrag ng-click="toggle(this)" class="text-primary font-semibold">
+                            <i class="fa fa-plus pr10"></i>
+                            <span class="text-gray division add-budget" ng-click="showBudgetAdditionModal()">Add Budget Estimate</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </script>
+
+    <script type="text/ng-template" id="budget-estimate-modal.html">
+        <div class="modal-header clearfix">
+            <button type="button" class="close" ng-click="cancel()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h3>Budget Estimate</h3>
+            <hr/>
+            <div class="row">
+                <div class="col-md-5 form-group">
+                    <label>Division</label>
+                    <ui-select options="divisions" selected-item="divisions[0]"></ui-select>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label>Cost Code</label>
+                    <ui-select options="costCodes" selected-item="costCodes[0]"></ui-select>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label>Scope of Work</label>
+                    <ui-select options="sows" selected-item="sows[0]"></ui-select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label>Labour</label>
+                            <input class="form-control" type="text" placeholder="$" ui-money-mask="2" ng-model="labor"/>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Materials</label>
+                            <input class="form-control" type="text" placeholder="$" ui-money-mask="2" ng-model="materials"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <label>Equipment</label>
+                            <input class="form-control" type="text" placeholder="$" ui-money-mask="2" ng-model="equipment"/>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label>Misc</label>
+                            <input class="form-control" type="text" placeholder="$" ui-money-mask="2" ng-model="misc"/>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <span class="total-title">Total</span>
+                            <span class="total-value">{{ total | currency: '$': 2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <hr/>
+            <div class="text-right">
+                <button type="button" class="btn btn-cancel btn-lg" ng-click="cancel()">Delete Estimate</button>
+                <button type="button" class="btn btn-primary btn-lg" ng-click="ok()">Add Estimate</button>
+            </div>
+        </div>
+    </script>
+</div>

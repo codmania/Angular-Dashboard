@@ -1,0 +1,134 @@
+<div class="row page-detail-header">
+    <div class="col-md-1 no-padding-horizontal">
+        <div class="closeBox">
+            <p>
+                <a ui-sref="action-items.main">
+                    Close <i class="fa fa-caret-right"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-11 mt25">
+        <div class="row page-detail-header-wrapper">
+            <div class="col-md-8 text-muted">
+                <h2 class="heading">Punchlist</h2>
+                <div class="sub-title">
+                    <a class="text-primary">Wilmington 47 <i class="ace-icon fa fa-angle-down"></i></a>
+                </div>
+                <div class="mt10">47 Wilmington Ave Arlington, VA 90125</div>
+                <div class="small"><small>Contractor</small></div>
+                <small>Construction Lending Office</small>
+            </div>
+            <div class="col-md-4 text-right">
+                <a class="btn btn-success btn-lg mt25" ui-sref="action-items.punch-items.new">
+                    <i class="fa fa-plus"></i> Add New
+                </a>
+                <div class="row mt20">
+                    <div class="col-sm-6 small mt20">PUNCHLIST LEAD</div>
+                    <div class="col-sm-6">
+                        <ui-select selected-item="leadList[0]" options="leadList"></ui-select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <span class="text-muted">Estimated Completion Date </span>
+            <span class="heading">Dec 14, 2015</span>
+            <div>Progress</div>
+            <div class="row">
+                <div class="col-md-10" ng-cloak>
+                    <uib-progressbar value="50" class="progress-small"></uib-progressbar>
+                </div>
+                <div class="col-md-2">1 of 2 completed</div>
+            </div>
+        </div>
+    </div>
+    <h3>Items Outstanding</h3>
+    <div class="table-responsive">
+        <table class="table table-condensed table-bordered table-striped">
+            <thead>
+                <th class="flag"></th>
+                <th class="title">Punchlist Item</th>
+                <th class="due-date">Due Date</th>
+                <th class="responsible">Responsible</th>
+                <th class="sow">Scope of Work</th>
+                <th class="status">Status</th>
+                <th class=""></th>
+            </thead>
+            <tbody>
+              <tr ng-repeat="row in punchItem.listRequiredByMe" ng-click="go('action-items.punchItem.in-process')">
+                <td class="flag">
+                    <span>
+                        <img ng-show="row.flag == 'red'" src="assets/img/red_icon.png">
+                        <img ng-show="row.flag == 'yellow'" src="assets/img/yellow _icon.png">
+                        <img ng-show="row.flag == 'green'" src="assets/img/flag_green.png">
+                        <img ng-show="row.flag == 'canceled'" src="assets/img/failed.png">
+                        <img ng-show="row.flag == 'completed'" src="assets/img/completed.png">
+                        <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
+                    </span>
+                </td>
+                <td class="title">
+                    <a class="text-primary" ng-click="showPunchItemDetailModal(row)">
+                        <div>{{ row.title }}</div>
+                        <small>{{ row.sTitle }}</small>
+                    </a>
+                </td>
+                <td class="due-date">{{ row.due_date }}</td>
+                <td class="responsible"><a>{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
+                <td class="sow">{{ row.sow }}</td>
+                <td class="status">
+                    <div class="text-success small">APPROVED BY</div>
+                </td>
+                <td class="initiator"><a>{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="mt30">Items Completed</h3>
+    <div class="table-responsive">
+        <table class="table table-condensed table-bordered table-striped">
+            <thead>
+                <th class="flag"></th>
+                <th class="title">Punchlist Item</th>
+                <th class="due-date">Due Date</th>
+                <th class="responsible">Responsible</th>
+                <th class="sow">Scope of Work</th>
+                <th class="status">Status</th>
+                <th class=""></th>
+            </thead>
+            <tbody>
+              <tr ng-repeat="row in punchItem.listCompleted" ng-click="go('action-items.punchItem.in-process')">
+                <td class="flag">
+                    <span>
+                        <img ng-show="row.flag == 'red'" src="assets/img/red_icon.png">
+                        <img ng-show="row.flag == 'yellow'" src="assets/img/yellow _icon.png">
+                        <img ng-show="row.flag == 'green'" src="assets/img/flag_green.png">
+                        <img ng-show="row.flag == 'canceled'" src="assets/img/failed.png">
+                        <img ng-show="row.flag == 'completed'" src="assets/img/completed.png">
+                        <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
+                    </span>
+                </td>
+                <td class="title">
+                    <a class="text-primary" ng-click="showPunchItemDetailModal(row)">
+                        <div>{{ row.title }}</div>
+                        <small>{{ row.sTitle }}</small>
+                    </a>
+                </td>
+                <td class="due-date">{{ row.due_date }}</td>
+                <td class="responsible"><a>{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
+                <td class="sow">{{ row.sow }}</td>
+                <td class="status">
+                    <div class="text-success small">APPROVED BY</div>
+                </td>
+                <td class="initiator"><a>{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

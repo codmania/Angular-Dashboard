@@ -1,0 +1,179 @@
+<div class="pi-page-wrapper mb30">
+    <div class="row bankbg">
+        <div class="pull-left noPdingLeft noPdingRight">
+            <div class="closeBox">
+                <p><a ui-sref="financials.main">Close <i class="fa fa-caret-right"></i></a></p>
+            </div>
+        </div>
+        <div class="pull-left pi-page-title">
+            <div class="row no-margin">
+                <div class="col-md-8">
+                    <h2 class="heading">New Pay Application</h2>
+                    <input type="text" class="app-name-input" placeholder="Enter Pay Application Name" />
+                </div>
+                <div class="col-md-4">
+                    <div class="mt30">
+                        <div class="row">
+                            <span class="col-xs-8 text-right small">PAY APPLICATION</span>
+                            <span class="col-xs-4">
+                                <span class="label label-black">193</span>
+                            </span>
+                        </div>
+                        <div class="row mt5">
+                            <span class="col-xs-8 text-right small">DATE INITATED</span>
+                            <span class="col-xs-4">8/23/15</span>
+                        </div>
+                        <div class="row mt5">
+                            <span class="col-xs-8 text-right small">INITIATED BY</span>
+                            <span class="col-xs-4">Eric Hoffman</span>
+                        </div>
+                        <div class="row mt5">
+                            <span class="col-xs-8 text-right small">STATUS</span>
+                            <span class="col-xs-4 text-success">In Progress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper wrapper-content mb30 animated fadeInRight">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="sub-title">Billing Item #1</div>
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Project</label>
+                                    <ui-select selected-item="selectedProject" options="projects" placeholder="General"></ui-select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Contract</label>
+                                    <ui-select selected-item="selectedContract" options="contracts" placeholder="Select One"></ui-select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Scope of Work</label>
+                                    <ui-select selected-item="selectedScope" options="sows" placeholder="Select One"></ui-select>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered border-bottom billing-item-table">
+                            <thead>
+                                <th></th>
+                                <th>Labor</th>
+                                <th>Materials</th>
+                                <th>Equipment</th>
+                                <th>General</th>
+                                <th>TOTAL</th>
+                            </thead>
+                            <tbody>
+                                <tr class="text-muted">
+                                    <td>Contracted Amount</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">% Completed</td>
+                                    <td><input type="text" ng-model="completed_percent1" ui-percentage-mask="2" class="text-right input-sm label-default" placeholder="%"></td>
+                                    <td><input type="text" ng-model="completed_percent2" ui-percentage-mask="2" class="text-right input-sm label-default" placeholder="%"></td>
+                                    <td><input type="text" ng-model="completed_percent3" ui-percentage-mask="2" class="text-right input-sm label-default" placeholder="%"></td>
+                                    <td><input type="text" ng-model="completed_percent4" ui-percentage-mask="2" class="text-right input-sm label-default" placeholder="%"></td>
+                                    <td><input type="text" ng-model="completed_percent5" ui-percentage-mask="2" class="text-right input-sm label-default" placeholder="%"></td>
+                                </tr>
+                                <tr>
+                                    <td>Earned (less Retainage)</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                </tr>
+                                <tr>
+                                    <td>Previously Paid</td>
+                                    <td class="text-danger">{{-123 | accounting}}</td>
+                                    <td class="text-danger">{{-123 | accounting}}</td>
+                                    <td class="text-danger">{{-123 | accounting}}</td>
+                                    <td class="text-danger">{{-123 | accounting}}</td>
+                                    <td class="text-danger">{{-123 | accounting}}</td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <td>Amount Due</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                </tr>
+                                <tr>
+                                    <td>Current Invoice For</td>
+                                    <td><input type="text" ng-model="invoice_amount1" ui-money-mask class="input-sm label-default" placeholder="$"></td>
+                                    <td><input type="text" ng-model="invoice_amount2" ui-money-mask class="input-sm label-default" placeholder="$"></td>
+                                    <td><input type="text" ng-model="invoice_amount3" ui-money-mask class="input-sm label-default" placeholder="$"></td>
+                                    <td><input type="text" ng-model="invoice_amount4" ui-money-mask class="input-sm label-default" placeholder="$"></td>
+                                    <td><input type="text" ng-model="invoice_amount5" ui-money-mask class="input-sm label-default" placeholder="$"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">Variance</td>
+                                    <td class="text-danger">{{-123 | accounting}}</td>
+                                    <td class="text-danger">{{-123 | accounting}}</td>
+                                    <td class="text-danger">{{-123 | accounting}}</td>
+                                    <td class="text-danger">{{-123 | accounting}}</td>
+                                    <td class="text-danger">{{-123 | accounting}}</td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <td>Balance to Complete</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                    <td>$123</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row clearfix p20">
+                        <div class="col-md-2">
+                            <div>Estimation Duration</div>
+                            <div class="text-muted font-medium">144 days</div>
+                        </div>
+                        <div class="col-md-1">
+                            <div>Retainage</div>
+                            <div class="text-muted font-medium">10%</div>
+                        </div>
+                        <div class="col-md-2">
+                            <div>Scheduled Completion</div>
+                            <div class="text-muted font-medium">Aug 23, 2015</div>
+                        </div>
+                        <div class="col-md-2">
+                            <div>Estimated Completion</div>
+                            <div class="text-muted font-medium">Aug 28, 2015</div>
+                        </div>
+                        <div class="col-md-2">
+                            <div>Varience</div>
+                            <div class="text-danger font-medium">5 days</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <a ui-sref="payment-application.initiate" class="text-primary text-left"><i class="fa fa-plus"></i> Add Another Billing Item</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-right">
+            <button type="button" class="btn btn-lg btn-info" ng-click="cancel()">Save as Draft</button>
+            <button type="button" class="btn btn-lg btn-primary" ng-click="sendInvite()">Review</button>
+        </div>
+    </div>
+</div>

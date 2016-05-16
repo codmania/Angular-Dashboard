@@ -1,0 +1,122 @@
+.pay-page-wrapper .aii-page-title {
+  margin-top: 50px; }
+
+.pay-page-wrapper .heading {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important; }
+
+.pay-page-wrapper .pay-app-name-input {
+  width: 100%;
+  border: 0px;
+  background: transparent;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0px 10px 0px; }
+
+.pay-page-wrapper ul.topSubtitle {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .pay-page-wrapper ul.topSubtitle li a {
+    font-size: 16px;
+    font-family: "AvenirNextLTPro-Demi";
+    color: #3aabd5; }
+  .pay-page-wrapper ul.topSubtitle li span {
+    color: #8b8b8b;
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 12px; }
+
+.pay-page-wrapper .item-title {
+  text-transform: uppercase; }
+
+@media (max-width: 767px) {
+  .pay-page-wrapper .close-section {
+    height: 400px !important; } }
+
+@media (max-width: 989px) and (min-width: 768px) {
+  .pay-page-wrapper .close-section {
+    height: 360px !important; } }
+
+.pay-page-wrapper .pai-item-table th, .pay-page-wrapper .pai-item-table td {
+  vertical-align: middle; }
+
+.pay-page-wrapper .pai-item-table td.item-title {
+  color: #808080;
+  font-size: 14px;
+  font-family: "AvenirNextLTPro-Demi";
+  text-transform: none;
+  padding: 20px; }
+
+.pay-page-wrapper .pai-item-table td {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 13px;
+  background-color: #fff; }
+
+.pay-page-wrapper .pai-item-table td.item-value {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 13px; }
+
+.pay-page-wrapper .pai-item-table > tbody > tr > td.item-total, .pay-page-wrapper .pai-item-table > thead > tr > th.item-total {
+  border-left: 1px solid #e7eaec; }
+
+.pay-page-wrapper .pai-item-table tr.empty td {
+  background-color: #f9f9f9; }
+
+.pay-page-wrapper .pai-item-table tr.current-invoice td {
+  background-color: #f3fafd; }
+  .pay-page-wrapper .pai-item-table tr.current-invoice td.item-title {
+    color: #4a4a4a; }
+
+.pay-page-wrapper .pai-item-table tr.previously-paid td {
+  background-color: #fdf5f5;
+  color: #e25c5c; }
+  .pay-page-wrapper .pai-item-table tr.previously-paid td.item-title {
+    color: #4a4a4a; }
+
+.pay-page-wrapper .pai-item-table tr td:last-child {
+  text-align: center; }
+
+.pay-page-wrapper .summary-total-value {
+  font-size: 16px; }
+
+.pay-page-wrapper .pi-static-summary span {
+  color: #aaa;
+  margin-left: 0px;
+  font-size: 14px; }
+
+.pay-comment-section {
+  border-top: 2px solid #e0e0e0;
+  background-color: #F0F0F0; }
+  .pay-comment-section .nav-tabs {
+    background: #f9f9f9; }
+    .pay-comment-section .nav-tabs > li > a {
+      padding: 15px 60px; }
+  .pay-comment-section .tab-content {
+    padding: 15px; }
+  .pay-comment-section .aii-comment {
+    border-bottom: 0px;
+    padding: 15px 0px; }
+    .pay-comment-section .aii-comment .comment-date {
+      font-family: "AvenirNextLTPro-Demi";
+      font-size: 12px;
+      color: #808080; }
+    .pay-comment-section .aii-comment .no-photo {
+      background-color: #ddd;
+      border-radius: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: white;
+      font-size: 15px; }
+    .pay-comment-section .aii-comment .edit-icon {
+      font-family: "AvenirNextLTPro-Demi";
+      font-size: 12px;
+      color: #333;
+      right: 0;
+      top: -14px;
+      position: absolute; }
+  .pay-comment-section .comment-edit {
+    color: #a0a0a0; }
+  .pay-comment-section .comment-edit textarea {
+    padding: 15px; }
+  .pay-comment-section textarea {
+    resize: none; }

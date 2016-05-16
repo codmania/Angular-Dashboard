@@ -1,0 +1,778 @@
+/*************************************************************************************
+                             AVASIS-Action-Main-V2@2x
+**************************************************************************************/
+.mr10 {
+    margin-right: 10px;
+}
+
+.page-heading h2.heading {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 27px;
+    font-weight: 100;
+    color: #4a4a4a;
+    margin: 0 0 10px 0;
+}
+.btn-green {
+    background-color: #79c485;
+    border-color: #79c485;
+    color: #FFFFFF;
+}
+
+.btn-blue {
+    background-color: #3aabd5;
+    border-color: #3aabd5;
+    color: #FFFFFF;
+}
+
+.card {
+    border: 1px solid #e7eaec;
+    background-color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.card-title {
+    padding: 24px 20px 20px;
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 19px;
+    color: #4a4a4a;
+}
+
+.card-content {
+    padding: 20px;
+    padding-top: 0;
+}
+
+.action-item-text {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 15px;
+}
+
+.action-item-count-info span:not(.label) {
+    font-family: "AvenirNextLTPro-Medium";
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.action-item-count-info .count {
+    padding-right: 3px;
+}
+
+.action-item-value {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 15px;
+}
+
+.action-item-of {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 15px;
+
+}
+
+.label-green {
+    background-color: #79c485;
+    color: #ffffff;
+}
+
+.label-red {
+    background-color: #e25c5c;
+    color: #ffffff;
+}
+
+.label-orange {
+    background-color: #fdae46;
+    color: #ffffff;
+}
+
+.action-item-progress-text {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .action-item-progress-text {
+        margin-left: -15px;
+        margin-top: -6px;
+    }
+}
+
+.btns {
+    float: right;
+    position: relative;
+}
+
+.action-item .btn a.btn i {
+    font-size: 14px;
+    font-family: "AvenirNextLTPro-Demi";
+    vertical-align: middle;
+}
+
+.action-item .btn-blue {
+    font-family: AvenirNextLTPro-Demi;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.border-right {
+    border-right: 1px solid #eeeeee;
+}
+
+@media (min-width: 768px) {
+    .action-item .btn-blue {
+        margin-top: -3px;
+    }
+}
+
+.progress-medium {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 3px;
+    height: 13px;
+}
+
+.action-completed-chart {
+    width: 50px;
+    float: left;
+    margin-right: 10px;
+
+}
+
+@media (min-width: 768px) {
+    .action-completed-chart {
+        margin-top: -4px;
+    }
+}
+.action-menu::before{
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: #fff;
+    content: "\f0de";
+    position: absolute;
+    right: 20px;
+    top: -11px;
+}
+.action-menu {
+    width: 210px;
+    margin-top: 16px;
+    padding: 0;
+    border: 1px solid rgba(221,221,221,0.1);
+    box-shadow: 0px 0px 25px 0 #ccc;
+}
+.action-menu > li:not(:last-child) {
+    border-bottom: 1px solid #eeeeee;
+}
+.action-menu > li > a {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 13px;
+    color: #3aabd5;
+    padding: 17px;
+}
+
+
+/*************************************************************************************
+                             AVASIS-Action-Main-GAI-V3@2x
+**************************************************************************************/
+.no-padding-left {
+    padding-left: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+.no-padding-horizontal {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.page-detail-header {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 1px 0 4px #d8d8d8;
+}
+
+.page-detail-header .closeBox {
+    background: #000;
+    background-color: #1b1e23;
+    width: 100%;
+    padding: 105px 0;
+}
+
+.page-detail-header .closeBox p {
+    text-align: center;
+    font-family: "AvenirNextLTPro-Bold";
+    font-size: 13px;
+}
+
+.page-detail-header-wrapper {
+    padding: 20px 15px 25px 15px
+}
+
+.page-detail-header-wrapper h2.heading {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 27px;
+    color: #4a4a4a;
+}
+
+.page-detail-header-wrapper ul.topSubtitle {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #4a4a4a;
+}
+
+.page-detail-header-wrapper ul.topSubtitle li a {
+    font-size: 14px;
+    font-family: "AvenirNextLTPro-Demi";
+    color: #3aabd5;
+}
+
+.gai-table {
+    margin-bottom: 25px;
+
+}
+.gai-table h3 {
+    margin: 0;
+    margin-bottom: 15px;
+    font-family: "AvenirNextLTPro-Medium";
+    font-size: 17px;
+}
+
+.gai-table table thead th {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 15px;
+    color: #808080;
+    border: none;
+}
+
+th.flag {
+    width: 4%;
+}
+
+.gai-table th.title {
+    width: 30%;
+}
+
+.gai-table th.due-date {
+    width: 12%;
+}
+
+.gai-table th.responsible, th.initiator {
+    width: 12%;
+}
+
+.gai-table th.status {
+    width: 13%;
+}
+
+.gai-table table tbody tr {
+    border-top: 1px solid #eee;
+}
+
+.gai-table table tbody tr td {
+    border: none;
+    vertical-align: middle;
+}
+
+.gai-table table tbody tr td.title {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 15px;
+    color: #44474b;
+}
+
+.gai-table table tbody tr td.title small {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 11px;
+}
+
+.gai-table td.sow, .gai-table td.due-date {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 12px;
+}
+
+.gai-table table tbody td.responsible a, .gai-table table tbody td.initiator a {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 12px;
+    color: #3aabd5;
+}
+
+.gai-table table tbody td.responsible small, .gai-table table tbody td.initiator small {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 10px;
+    color: #9e9e9e;
+}
+
+.gai-table td.status .label {
+    background-color: transparent;
+    text-transform: uppercase;
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 10px;
+    padding: 2px 0px 2px 0px;
+}
+
+.gai-table td.status small {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 11px;
+    color: #44474b;
+}
+
+.gai-table td.status .in-process {
+    color: #61c571;
+}
+
+.gai-table td.status .pending {
+    color: #fdb04a;
+}
+
+.gai-table td.status .draft {
+    color: #2a2d33;
+}
+
+.gai-table td.flag span {
+    margin: 4px;
+}
+
+
+/*************************************************************************************
+                             AVASIS-Action-Inspections@2x
+**************************************************************************************/
+.inspections-wrapper {
+    padding: 20px;
+    border: 1px solid #eee;
+    box-shadow: -2px -2px 10px #eee;
+}
+
+.inspections-wrapper .label {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 4px;
+    margin-right: 10px;
+}
+
+.inspections-charts {
+    padding: 15px 15px 30px;
+    border-bottom: 1px solid #eee;
+}
+.label-pending {
+    background-color: #fdae46;
+    color: #fff;
+}
+
+.label-completed {
+    background-color: #79c485;
+    color: #fff;
+}
+
+.label-upcoming {
+    background-color: #3aabd5;
+    color: #fff;
+}
+
+.inspections-overview-title {
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 21px;
+    color: #44474b;
+    margin-bottom: 10px;
+}
+
+.inspections-wrapper .value {
+    display: inline-block;
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 14px;
+}
+
+.inspections-wrapper .value b {
+    font-family: AvenirNextLTPro-Demi;
+    font-size: 12px;
+}
+
+.inspection-table {
+    margin-bottom: 25px;
+}
+
+.inspection-table table tbody tr td, .inspection-table table thead tr th {
+    padding: 6px;
+}
+
+.inspection-table h3 {
+    font-family: "AvenirNextLTPro-Medium";
+    font-size: 17px;
+    color: #4a4a4a;
+    margin: 25px 0 15px;
+}
+
+.inspection-table table thead th {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 13px;
+    color: #808080;
+    border: none;
+}
+
+.inspection-table table thead th, .inspection-table table tbody td {
+    vertical-align: middle;
+    border: none;
+}
+
+.inspection-table table tbody tr {
+    border-top: 1px solid #eee;
+}
+
+.inspection-table th.flag {
+    width: 4%;
+}
+
+.inspection-table td.flag span {
+    margin: 4px;
+}
+
+.inspection-table th.title {
+    width: 16%;
+}
+.inspection-table th.inspector, .inspection-table th.responsible {
+    width: 7%;
+}
+.inspection-table th.status {
+    width: 7%;
+}
+
+.inspection-table th.documents {
+    width: 9%;
+}
+
+.inspection-table th.date-completion {
+    width: 11%;
+}
+
+.inspection-table th.order-by-date {
+    width: 11%;
+}
+
+.inspection-table th.next-inspection {
+    width: 11%;
+}
+
+.inspection-table th.date-completed {
+    width: 12%;
+}
+
+.inspection-table th.action {
+    width: 5%;
+}
+
+.inspection-table td.title a {
+    font-family: AvenirNextLTPro-Demi;
+    font-size: 13px;
+    color: #3aabd5;
+}
+
+.inspection-table td.title small {
+    font-family: AvenirNextLTPro-Demi;
+    font-size: 10px;
+    color: #9e9e9e;
+}
+
+.inspection-table td.responsible a, .inspection-table td.inspector a {
+    font-family: AvenirNextLTPro-Demi;
+    font-size: 12px;
+    color: #3aabd5;
+}
+
+.inspection-table td.responsible small, .inspection-table td.inspector small {
+    font-family: AvenirNextLTPro-Demi;
+    font-size: 10px;
+    color: #9e9e9e;
+}
+
+.inspection-table td.status {
+    text-transform: uppercase;
+    font-family: AvenirNextLTPro-Demi;
+    font-size: 10px;
+    color: #2a2d33;
+}
+
+.inspection-table td.documents a {
+    font-family: AvenirNextLTPro-Demi;
+    font-size: 12px;
+    color: #3aabd5;
+}
+
+.inspection-table td.date-completion {
+    font-size: 12px;
+    font-family: AvenirNextLTPro-Regular;
+    color: #44474b;
+}
+
+.inspection-table td.order-by-date, .inspection-table td.next-inspection, .inspection-table td.date-completed {
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 13px;
+    color: #44474b;
+}
+
+.inspection-table td .gear-dropdown {
+    width: 30px;
+    display: inline-block;
+}
+
+.inspection-table td .gear-dropdown > a {
+    color: #8c8c8c;
+}
+
+@media (min-width: 1200px) {
+    .inspection-table td .gear-dropdown {
+        margin-left: -25px;
+    }
+}
+
+/********************************************
+*       General Item New Modal              *
+********************************************/
+
+.modal.gai-modal .modal-dialog{
+    width: 830px;
+    color: #44474b;
+}
+
+.gai-modal .modal-body {
+    padding: 40px 30px 0 30px;
+}
+
+.gai-modal .modal-footer {
+    padding: 20px 30px 20px;
+    border-top: 0;
+}
+
+.gai-modal .modal-footer .btn + .btn {
+    margin-left: 20px;
+}
+
+.gai-title input {
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 17px;
+    padding: 0;
+    border: 0;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.gai-title input.focus, .gai-title input:focus {
+    outline: 0;
+}
+
+.gai-info {
+    border: 0;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 15px 0;
+    margin-bottom: 15px;
+    font-family: AvenirNextLTPro-Medium;
+}
+
+.gai-info span {
+    font-family: AvenirNextLTPro-Bold;
+    font-size: 9px;
+}
+
+.gai-modal textarea {
+    min-height: 120px;
+    padding: 20px
+}
+
+#gai-modal-more-options {
+    padding: 20px 30px 10px;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+#gai-modal-more-options .row > div {
+    margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+    #gai-modal-more-options .row > div:not(:last-child) {
+        border-right: 1px solid #d7d7d7;
+    }
+}
+
+#gai-modal-more-options #assignee-check {
+    margin-top: -2px;
+}
+
+.gai-modal div.due-date {
+    padding: 15px;
+    border: 1px solid #eee;
+    font-size: 14px;
+}
+
+.gai-modal div.inline-calendar {
+    display: inline-block;
+    position: absolute;
+    min-height: 290px;
+    z-index: 9999;
+}
+
+.gai-modal  .more-option {
+    padding: 15px 0;
+}
+
+@media (min-width: 768px) {
+    .gai-modal  .more-option {
+        margin-left: -16px;
+    }
+}
+
+
+.gai-modal  .more-option a {
+    padding: 15px;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    #gai-modal-more-options .row > div {
+        text-align: center;
+    }
+
+    .modal.gai-modal .modal-dialog {
+        color: #44474b;
+        width: inherit;
+    }
+}
+
+/********************************************
+*       Change Order New Modal              *
+********************************************/
+
+.modal.change-order-modal .modal-dialog{
+    width: 1050px;
+    color: #44474b;
+}
+
+.change-order-modal .modal-body {
+    padding: 40px 30px 0 30px;
+}
+
+.change-order-modal .modal-footer {
+    padding: 20px 30px 20px;
+    border-top: 0;
+}
+
+.change-order-modal .modal-footer .btn + .btn {
+    margin-left: 20px;
+}
+
+.change-order-modal-title input {
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 17px;
+    padding: 0;
+    border: 0;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.change-order-modal-title input.focus, .change-order-modal-title input:focus {
+    outline: 0;
+}
+
+.change-order-modal-info {
+    border: 0;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 15px 0;
+    margin-bottom: 15px;
+    font-family: AvenirNextLTPro-Medium;
+}
+
+.change-order-modal-info span {
+    font-family: AvenirNextLTPro-Bold;
+    font-size: 9px;
+}
+
+.change-order-modal textarea {
+    padding: 20px
+}
+
+#change-order-more-options {
+    padding: 20px 30px 10px;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+#change-order-more-options .row > div {
+    margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+    #change-order-more-options .row > div:not(:last-child) {
+        border-right: 1px solid #d7d7d7;
+    }
+}
+
+#change-order-more-options #assignee-check {
+    margin-top: -2px;
+}
+
+.change-order-modal div.due-date {
+    padding: 15px;
+    border: 1px solid #eee;
+    font-size: 14px;
+}
+
+.change-order-modal div.inline-calendar {
+    display: inline-block;
+    position: absolute;
+    min-height: 290px;
+    z-index: 9999;
+}
+
+.change-order-modal  .more-option {
+    padding: 15px 0;
+}
+
+.change-order-modal .table thead tr th, .change-order-modal .table tbody tr td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.change-order-modal .table thead tr th {
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.change-order-modal .table td:first-child {
+    font-family: AvenirNextLTPro-Regular;
+    padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+    .change-order-modal  .more-option {
+        margin-left: -16px;
+    }
+
+    .change-order-modal .table {
+        border: 1px solid #eee;
+    }
+
+}
+
+
+.change-order-modal  .more-option a {
+    padding: 15px;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    #change-order-more-options .row > div {
+        text-align: center;
+    }
+
+    .modal.change-order-modal .modal-dialog {
+        color: #44474b;
+        width: inherit;
+    }
+}
+
+
+.change-order-descript {
+    font-size: 12px;
+    padding: 15px 10px !important;
+}

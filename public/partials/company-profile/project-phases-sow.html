@@ -1,0 +1,121 @@
+<div class="tab-content">
+    <div class="phases-sow-wrapper">
+
+        <h3 class="mt0">Project Phases</h3>
+        <div class="table-responsive project-phases">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Number</th>
+                        <th>Predecessors</th>
+                        <th>Successors</th>
+                        <th class="gear">
+                            <div uib-dropdown dropdown-append-to-body>
+                                <a href="javascript:void(0)" uib-dropdown-toggle class="text-muted">
+                                    <i class="fa fa-gear"></i>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="row in phases">
+                        <td>
+                            <input type="text" ng-model="row.name" ng-if="row.isEditable">
+                            <span class="text-primary" ng-if="!row.isEditable">{{row.name}}</span>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="row.number" ng-if="row.isEditable">
+                            <span class="text-regular" ng-if="!row.isEditable">{{row.number}}</span>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="row.predecessors" ng-if="row.isEditable">
+                            <span class="text-primary" ng-if="!row.isEditable">{{row.predecessors}}</span>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="row.successors" ng-if="row.isEditable">
+                            <span class="text-primary" ng-if="!row.isEditable">{{row.successors}}</span>
+                        </td>
+                        <td>
+                            <div uib-dropdown dropdown-append-to-body>
+                                <a href="javascript:void(0)" uib-dropdown-toggle class="text-muted">
+                                    <i class="fa fa-gear"></i>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <a href="javascript:void(0)" class="text-primary add-line" ng-click="addNewPhase()"><i class="fa fa-plus"></i> New</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="mt30">Scope of Work</h3>
+        <div class="table-responsive project-sows">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phase</th>
+                        <th>SubPhase</th>
+                        <th>Division</th>
+                        <th>Cost Code</th>
+                        <th class="gear">
+                            <div uib-dropdown dropdown-append-to-body>
+                                <a href="javascript:void(0)" uib-dropdown-toggle class="text-muted">
+                                    <i class="fa fa-gear"></i>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="row in sows">
+                        <td>
+                            <input type="text" ng-model="row.name" ng-if="row.isEditable">
+                            <span class="text-primary" ng-if="!row.isEditable">{{row.name}}</span>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="row.phase" ng-if="row.isEditable">
+                            <span class="text-primary" ng-if="!row.isEditable">{{row.phase}}</span>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="row.subphase" ng-if="row.isEditable">
+                            <span class="text-primary" ng-if="!row.isEditable">{{row.subphase}}</span>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="row.division" ng-if="row.isEditable">
+                            <span class="text-regular" ng-if="!row.isEditable">{{row.division}}</span>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="row.cost_code" ng-if="row.isEditable">
+                            <span class="text-regular" ng-if="!row.isEditable">{{row.cost_code}}</span>
+                        </td>
+                        <td>
+                            <div uib-dropdown dropdown-append-to-body>
+                                <a href="javascript:void(0)" uib-dropdown-toggle class="text-muted">
+                                    <i class="fa fa-gear"></i>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <a href="javascript:void(0)" class="text-primary add-line" ng-click="addNewSow()"><i class="fa fa-plus"></i> New</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

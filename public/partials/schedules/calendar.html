@@ -1,0 +1,112 @@
+<div id="calendar">
+    <div class="clearfix">
+        <ul class="list-inline pull-left">
+            <li><a ng-click="changeCalendarScope('day')" ng-class="{true: 'text-default', false: 'text-primary'}[calendarScope=='day']">3 Days</a></li>
+            <li><a ng-click="changeCalendarScope('week')" ng-class="{true: 'text-default', false: 'text-primary'}[calendarScope=='week']">3 Weeks</a></li>
+            <li><a ng-click="showProjectCalendar()" ng-class="{true: 'text-default', false: 'text-primary'}[calendarScope=='project']">Project</a></li>
+        </ul>
+        <div class="pull-right">
+            <ul class="list-inline">
+                <li><a class="date-navigator" ng-click="minusOffset()"><i class="fa fa-chevron-left"></i></a></li>
+                <li class="text-muted font-medium sub-title">{{startDate.format('ddd, MMM DD')}} ~ {{endDate.format('ddd, MMM DD')}}</li>
+                <li><a class="date-navigator" ng-click="plusOffset()"><i class="fa fa-chevron-right"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="calendar-container">
+        <div ng-show="calendarScope=='day'">
+            <div class="days-container">
+                <table class="table">
+                    <tr>
+                        <th width="14%" ng-repeat="day in range(3)">
+                            <div class="day-header text-center" ng-class="{'label-success': dayTitles[day] == today.format('ddd, MMM DD')}">{{dayTitles[day]}}</div>
+                        </th>
+                    </tr>
+                    <tr ng-repeat="schedule in schedulesInRange">
+                        <td ng-repeat="i in range(schedule.relativePos)"></td>
+                        <td colspan="{{schedule.relativeLength}}">
+                            <div class="alert text-left alert-{{schedule.schedule_type}} clearfix"
+                                 tabindex="0"
+                                 popover-trigger="focus"
+                                 popover-append-to-body="true"
+                                 uib-popover-template="'schedule-popover-template.html'">
+                                <div class="flag-badge"><i class="fa fa-flag text-{{schedule.status}}"></i></div>
+                                <div class="content">
+                                    <div>{{schedule.description}}</div>
+                                    <div class="text-muted font-regular">{{schedule.completion_percentage}}% completed</div>
+                                </div>
+                                <span>
+                                    <i class="fa fa-info-circle"></i>
+                                </span>
+                            </div>
+                        </td>
+                        <td ng-if="schedule.relativePos + schedule.relativeLength == 2">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div ng-show="calendarScope=='week'">
+            <div class="mb40" ng-repeat="section in range(3)">
+                <div class="heading text-center font-bold">{{weekTitles[section]}}</div>
+                <div class="week-container">
+                    <table class="table">
+                        <tr>
+                            <th width="14%" ng-repeat="day in range(7)">
+                                <div class="day-header text-center" ng-class="{'label-success': daysInRange[section * 7 + day] == today.format('ddd, MMM DD')}">{{daysInRange[section * 7 + day]}}</div>
+                            </th>
+                        </tr>
+                        <tr ng-repeat="schedule in schedulesInRange[section]">
+                            <td ng-repeat="i in range(schedule.relativePos)" ng-class="{'no-schedule': isEmptyDate(section, i)}"></td>
+                            <td colspan="{{schedule.relativeLength}}">
+                                <div class="alert text-left alert-{{schedule.schedule_type}} clearfix" tabindex="0" popover-trigger="focus" popover-append-to-body="true" uib-popover-template="'schedule-popover-template.html'">
+                                    <div class="flag-badge"><i class="fa fa-flag text-{{statusToStyle(schedule.status)}}"></i></div>
+                                    <div class="content">
+                                        <div>{{schedule.description}}</div>
+                                        <div class="text-muted font-regular">{{schedule.completion_percentage}}% completed</div>
+                                    </div>
+                                    <span>
+                                        <i class="fa fa-info-circle"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td ng-repeat="i in range(7 - schedule.relativePos - schedule.relativeLength)" ng-class="{'no-schedule': isEmptyDate(section, i + schedule.relativePos + schedule.relativeLength)}">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="schedule-popover-template.html">
+    <div style="width: 420px;">
+        <ul class="list-inline">
+            <li><a class="text-default">Roofing > </a></li>
+            <li><a class="text-default">Roofing Prep > </a></li>
+            <li><a class="text-primary">Roof Dry-In</a></li>
+        </ul>
+        <div class="content-wrapper">
+            <div>Team Members</div>
+            <div class="text-primary">Dave Gebo</div>
+            <div class="text-muted font-medium small">Sub Contractor, On Top Roofing</div>
+        </div>
+        <div class="clearfix">
+            <div class="pull-left">
+                <div class="text-muted font-regular">Duration</div>
+                5 <span class="font-regular"> of</span> 9 Days
+            </div>
+            <div class="pl20 pull-left">
+                <div class="text-muted font-regular">Status</div>
+                <span class="text-success pr10">IN PROGRESS</span> <strong>%60 Completed</strong>
+            </div>
+            <div class="pull-right text-right pt20 text-primary">
+                <a ng-click="showScheduleDetail(schedule.id)">
+                    <i class="fa fa-info-circle" style="font-size: 16px"></i>
+                    See Details
+                </a>
+            </div>
+        </div>
+    </div>
+</script>

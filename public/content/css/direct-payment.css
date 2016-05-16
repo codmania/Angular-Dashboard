@@ -1,0 +1,233 @@
+.dpi-page-wrapper {
+  padding-top: 0;
+  margin-bottom: 0; }
+  .dpi-page-wrapper .text-regular {
+    font-family: AvenirNextLTPro-Regular; }
+  .dpi-page-wrapper .text-default {
+    font-family: AvenirNextLTPro-Demi; }
+  .dpi-page-wrapper .text-medium {
+    font-family: AvenirNextLTPro-Medium; }
+  .dpi-page-wrapper .dpi-page-info {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 1px 0 4px #d8d8d8; }
+  .dpi-page-wrapper .closeBox {
+    background: #000;
+    width: 100px;
+    padding: 110px 0;
+    text-align: center; }
+  .dpi-page-wrapper .dpi-page-title {
+    margin-top: 60px;
+    width: calc(100% - 100px); }
+    .dpi-page-wrapper .dpi-page-title h2 {
+      font-family: AvenirNextLTPro-Regular;
+      font-size: 27px;
+      margin-bottom: 20px;
+      margin-top: 0px; }
+    .dpi-page-wrapper .dpi-page-title span.dp-name {
+      font-family: AvenirNextLTPro-Regular;
+      font-size: 17px; }
+    .dpi-page-wrapper .dpi-page-title input {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 0px;
+      width: 100%;
+      font-size: 17px; }
+  .dpi-page-wrapper .dp-info {
+    color: #4a4a4a; }
+    .dpi-page-wrapper .dp-info .row span:first-child, .dpi-page-wrapper .dp-info .row div:first-child {
+      text-transform: uppercase;
+      font-size: 10px;
+      font-family: AvenirNextLTPro-Demi; }
+    .dpi-page-wrapper .dp-info .row span.date, .dpi-page-wrapper .dp-info .row span.initiated-by {
+      font-family: AvenirNextLTPro-Medium;
+      font-size: 12px; }
+    .dpi-page-wrapper .dp-info .row span.status {
+      font-family: AvenirNextLTPro-Demi;
+      font-size: 11px;
+      color: #79c485; }
+    .dpi-page-wrapper .dp-info .row .dropdown button span {
+      font-size: 12px; }
+    .dpi-page-wrapper .dp-info .row .dropdown .dropdown-menu li a {
+      font-size: 12px; }
+  .dpi-page-wrapper .first-section {
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    margin-top: 30px;
+    padding: 20px; }
+    .dpi-page-wrapper .first-section .payee-info {
+      color: #4a4a4a; }
+      .dpi-page-wrapper .first-section .payee-info label {
+        display: block; }
+      .dpi-page-wrapper .first-section .payee-info span {
+        display: block; }
+      .dpi-page-wrapper .first-section .payee-info small {
+        font-size: 10px; }
+      .dpi-page-wrapper .first-section .payee-info div.contact span {
+        display: inline; }
+      .dpi-page-wrapper .first-section .payee-info .account span,
+      .dpi-page-wrapper .first-section .payee-info .irn span,
+      .dpi-page-wrapper .first-section .payee-info .address span,
+      .dpi-page-wrapper .first-section .payee-info .labor span {
+        font-family: "AvenirNextLTPro-Medium";
+        font-size: 12px; }
+      @media (min-width: 992px) {
+        .dpi-page-wrapper .first-section .payee-info .col-md-2:not(:first-child),
+        .dpi-page-wrapper .first-section .payee-info .col-xs-6:not(:first-child) {
+          border-left: 1px solid #eee;
+          min-height: 75px; } }
+      .dpi-page-wrapper .first-section .payee-info .col-md-2:not(:first-child) .form-group {
+        display: table;
+        margin: 0 auto 15px; }
+    .dpi-page-wrapper .first-section .contact {
+      font-family: "AvenirNextLTPro-Regular";
+      font-size: 10px;
+      color: #7f8a90; }
+      .dpi-page-wrapper .first-section .contact i {
+        margin-right: 10px;
+        margin-left: 10px; }
+        .dpi-page-wrapper .first-section .contact i:first-child {
+          margin-left: 0; }
+    .dpi-page-wrapper .first-section .payment-info {
+      color: #4a4a4a; }
+      .dpi-page-wrapper .first-section .payment-info label {
+        display: block; }
+      .dpi-page-wrapper .first-section .payment-info span {
+        display: block;
+        font-family: "AvenirNextLTPro-Medium";
+        font-size: 12px; }
+      @media (min-width: 992px) {
+        .dpi-page-wrapper .first-section .payment-info .col-md-2:not(:first-child),
+        .dpi-page-wrapper .first-section .payment-info .col-xs-6:not(:first-child) {
+          border-left: 1px solid #eee;
+          height: 45px; } }
+      .dpi-page-wrapper .first-section .payment-info .col-md-2:not(:first-child) .form-group {
+        display: table;
+        margin: 0 auto 15px; }
+    .dpi-page-wrapper .first-section .total-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      display: block; }
+    .dpi-page-wrapper .first-section .total-value {
+      font-family: "AvenirNextLTPro-Regular";
+      font-size: 17px; }
+    .dpi-page-wrapper .first-section .item {
+      border: 1px solid #d7d7d7;
+      padding: 20px 20px 5px;
+      margin-bottom: 20px;
+      color: #4a4a4a; }
+      @media (min-width: 992px) {
+        .dpi-page-wrapper .first-section .item .col-md-2:not(:first-child) .form-group {
+          display: table;
+          margin: 0 auto 15px; }
+        .dpi-page-wrapper .first-section .item .col-md-2:not(:first-child) {
+          border-left: 1px solid #eee;
+          height: 45px; } }
+      .dpi-page-wrapper .first-section .item label {
+        display: block; }
+      .dpi-page-wrapper .first-section .item span {
+        font-family: "AvenirNextLTPro-Medium";
+        font-size: 12px; }
+        .dpi-page-wrapper .first-section .item span.prj, .dpi-page-wrapper .first-section .item span.sow, .dpi-page-wrapper .first-section .item span.budget {
+          font-family: "AvenirNextLTPro-Demi";
+          font-size: 13px; }
+        .dpi-page-wrapper .first-section .item span.cost-code {
+          padding: 2px 10px;
+          background-color: #44474b;
+          color: #fff;
+          border-radius: 3px;
+          font-family: "AvenirNextLTPro-Regular";
+          font-size: 13px; }
+    .dpi-page-wrapper .first-section .additional-detail {
+      border: 1px solid #eee;
+      padding: 10px 20px 20px;
+      margin-bottom: 20px; }
+      .dpi-page-wrapper .first-section .additional-detail h5 {
+        font-size: 13px; }
+      .dpi-page-wrapper .first-section .additional-detail span {
+        font-family: "AvenirNextLTPro-Medium";
+        font-size: 12px; }
+    .dpi-page-wrapper .first-section .attachments {
+      border: 1px solid #eee;
+      padding: 10px 20px 20px;
+      margin-bottom: 20px; }
+      .dpi-page-wrapper .first-section .attachments h5 {
+        font-size: 13px; }
+      .dpi-page-wrapper .first-section .attachments span {
+        font-family: "AvenirNextLTPro-Medium";
+        font-size: 12px; }
+      .dpi-page-wrapper .first-section .attachments .document {
+        padding: 10px 0; }
+        .dpi-page-wrapper .first-section .attachments .document:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+        .dpi-page-wrapper .first-section .attachments .document:last-child {
+          padding-bottom: 0; }
+      .dpi-page-wrapper .first-section .attachments img {
+        width: 30px;
+        margin-right: 20px;
+        float: left; }
+      .dpi-page-wrapper .first-section .attachments .desc span {
+        display: block;
+        font-family: AvenirNextLTPro-Demi;
+        font-size: 13px; }
+      .dpi-page-wrapper .first-section .attachments .desc small {
+        font-family: AvenirNextLTPro-Regular;
+        font-size: 11px; }
+  .dpi-page-wrapper .second-section {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 30px;
+    background-color: #eee; }
+    .dpi-page-wrapper .second-section .second-content {
+      border: 1px solid #eee;
+      background-color: #f9f9f9; }
+      .dpi-page-wrapper .second-section .second-content .nav-tabs {
+        border-bottom: 1px solid #eee; }
+        .dpi-page-wrapper .second-section .second-content .nav-tabs > li > a {
+          font-family: AvenirNextLTPro-Medium;
+          font-size: 13px;
+          color: #6c6c6c;
+          min-width: 110px;
+          text-align: center;
+          padding: 15px 30px;
+          border-radius: 0;
+          border-top: 0; }
+        .dpi-page-wrapper .second-section .second-content .nav-tabs > li:first-child > a {
+          border-left: 0; }
+        .dpi-page-wrapper .second-section .second-content .nav-tabs > li.active a {
+          color: #e25c5c;
+          background: white;
+          border-bottom: 1px solid white; }
+      .dpi-page-wrapper .second-section .second-content .tab-content {
+        border: 0; }
+        .dpi-page-wrapper .second-section .second-content .tab-content .comments-wrapper .comment {
+          position: relative;
+          font-size: 13px;
+          margin-bottom: 15px;
+          font-family: AvenirNextLTPro-Regular; }
+          .dpi-page-wrapper .second-section .second-content .tab-content .comments-wrapper .comment > div {
+            display: inline-block; }
+          .dpi-page-wrapper .second-section .second-content .tab-content .comments-wrapper .comment .author {
+            font-size: 13px;
+            font-family: AvenirNextLTPro-Demi; }
+          .dpi-page-wrapper .second-section .second-content .tab-content .comments-wrapper .comment .edit {
+            position: absolute;
+            right: 20px;
+            top: 4px; }
+            .dpi-page-wrapper .second-section .second-content .tab-content .comments-wrapper .comment .edit:hover {
+              cursor: pointer; }
+    .dpi-page-wrapper .second-section h3 {
+      margin-top: 20px;
+      font-family: AvenirNextLTPro-Demi;
+      font-size: 13px; }
+    .dpi-page-wrapper .second-section textarea {
+      padding: 15px;
+      border-radius: 3px;
+      color: #4a4a4a;
+      background-color: #f9f9f9; }
+      .dpi-page-wrapper .second-section textarea:active, .dpi-page-wrapper .second-section textarea:focus {
+        background-color: #fff;
+        border-color: #eee; }

@@ -1,0 +1,25 @@
+<div class="row wrapper border-bottom white-bg page-heading overview">
+    <div class="col-sm-6 col-lg-10">
+        <h2 class="heading">Team Communication Inbox</h2>
+        <project-filter current-item="projectFilter"></project-filter>
+    </div>
+    <div class="col-sm-6 col-lg-2">
+        <div class="btns mr10">
+            <a ui-sref="comm.new" class="btn btn-primary btn-lg">
+                <i class="fa fa-pencil"></i> Compose New Message
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <uib-tabset>
+        <uib-tab heading="Inbox">
+            <div ng-include="'partials/comm/comm-inbox.html'"></div>
+        </uib-tab>
+        <uib-tab heading="Sent">Short Labeled Justified content</uib-tab>
+        <uib-tab heading="Important">Long Labeled Justified content</uib-tab>
+        <uib-tab heading="Drafts">Long Labeled Justified content</uib-tab>
+        <uib-tab heading="Trash">Long Labeled Justified content</uib-tab>
+    </uib-tabset>
+</div>

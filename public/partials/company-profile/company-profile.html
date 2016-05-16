@@ -1,0 +1,39 @@
+<div class="row wrapper border-bottom white-bg page-heading overview company-profile-top-wrapper">
+    <div class="col-md-12 pl20">
+        <h2 class="heading">Anderson Perkins LTD</h2>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="company-profile-wrapper">
+        <ul class="nav nav-tabs">
+            <li ng-class="{true: 'active'}[isActive('company-profile.profile')]">
+                <a ui-sref="company-profile.profile">Profile</a>
+            </li>
+            <li ng-class="{true: 'active'}[isActive('company-profile.documentation')]">
+                <a ui-sref="company-profile.documentation">Documentation</a>
+            </li>
+            <li ng-class="{true: 'active'}[isActive('company-profile.approvals')]">
+                <a ui-sref="company-profile.approvals">Approvals</a>
+            </li>
+            <li ng-class="{true: 'active'}[isActive('company-profile.permissions')]">
+                <a ui-sref="company-profile.permissions">Permissions</a>
+            </li>
+            <li ng-class="{true: 'active'}[isActive('company-profile.templates')]">
+                <a ui-sref="company-profile.templates">Templates</a>
+            </li>
+            <li ng-class="{true: 'active'}[isActive('company-profile.division-cost-code')]">
+                <a ui-sref="company-profile.division-cost-code">Division & Cost Code</a>
+            </li>
+            <li ng-class="{true: 'active'}[isActive('company-profile.project-phases-sow')]">
+                <a ui-sref="company-profile.project-phases-sow">Project Phases & Scope of Work</a>
+            </li>
+            <li ng-class="{true: 'active'}[isActive('company-profile.project-templates')]">
+                <a ui-sref="company-profile.project-templates">Project Templates</a>
+            </li>
+        </ul>
+
+        <ui-view></ui-view>
+    </div>
+</div>

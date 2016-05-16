@@ -1,0 +1,40 @@
+.auth-wrapper {
+    background-color: #2a2d33;
+    min-height: 100%;
+    padding-bottom: 80px;
+    .top {
+        div {
+            font-size: 20px;
+            color: white;
+        }
+    }
+    .auth-form {
+        width: 500px;
+        border-radius: 5px;
+        margin: 20px auto;
+
+        .heading {
+            font-size: 20px;
+            color: #44474b;
+        }
+
+        .password-wrapper {
+            position: relative;
+            i.fa-check {
+                position: absolute;
+                right: 22px;
+                top: 16px;
+                font-size: 17px;
+            }
+        }
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+ui-select ul.dropdown-menu {
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

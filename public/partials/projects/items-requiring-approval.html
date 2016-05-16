@@ -1,0 +1,121 @@
+<div class="items-req-approval-wrapper">
+    <!-- Top Nav bar -->
+    <div class="row ira-page-info">
+        <div class="pull-left pl0 pr0">
+            <div class="closeBox">
+                <p>
+                    <a ui-sref="projects.main">Close <i class="fa fa-caret-right"></i></a>
+                </p>
+            </div>
+        </div>
+
+        <div class="pull-left ira-page-title">
+            <h2 class="text-default">Items Requiring Approval</h2>
+
+            <h3 class="mt30">
+                TOTAL:
+                <span>49</span>
+            </h3>
+
+            <div class="row mt20">
+                <div class="col-md-2 form-group">
+                    <label>Payment Applications</label>
+                    <span>12</span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <label>Purchase Orders</label>
+                    <span>3</span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <label>Change Orders</label>
+                    <span>1</span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <label>Bank Draws</label>
+                    <span>2</span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <label>RFI's</label>
+                    <span>1</span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <label>Procurement</label>
+                    <span>8</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Top Nav bar -->
+
+    <div class="row no-margin animated fadeInRight mt30">
+        <div class="col-lg-12">
+            <div class="content-section">
+                <div class="btns pull-right">
+                    <a href="" class="btn btn-default" data-toggle="dropdown">
+                        Filter by <i class="fa fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right action-menu" role="menu">
+                        <li><a href="">Type</a></li>
+                        <li><a href="">Project</a></li>
+                        <li><a href="">SOW</a></li>
+                        <li><a href="">Role</a></li>
+                        <li><a href="">User</a></li>
+                    </ul>
+                </div>
+                <div class="search-field">
+                    <i class="fa fa-search"></i>
+                    <input type="text text-default" placeholder="Search by type, project, SOW, role or user" class="form-control round">
+                </div>
+                <div class="clearfix"></div>
+                <div class="table-responsive mt25">
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                            <th class="flag"></th>
+                            <th class="title">Title</th>
+                            <th class="item-type">Item Type</th>
+                            <th class="due-date">Due Date</th>
+                            <th class="date-submitted">Date Submitted</th>
+                            <th class="initiated-by">Initiated by</th>
+                            <th class="supplier">Supplier</th>
+                            <th class="sow">SOW</th>
+                            <th class="amount">Amount</th>
+                            <th class="status">Status</th>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="row in data">
+                            <td class="flag">
+                                <span>
+                                    <img ng-show="row.flag == 'red'" src="assets/img/red_icon.png">
+                                    <img ng-show="row.flag == 'yellow'" src="assets/img/yellow _icon.png">
+                                    <img ng-show="row.flag == 'green'" src="assets/img/flag_green.png">
+                                    <img ng-show="row.flag == 'canceled'" src="assets/img/failed.png">
+                                    <img ng-show="row.flag == 'completed'" src="assets/img/completed.png">
+                                    <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
+                                </span>
+                            </td>
+                            <td class="title"><a class="text-primary">{{ row.title }}</a><br><small>{{ row.sTitle }}</small></td>
+                            <td class="item-type">{{ row.item_type }}</td>
+                            <td class="date">{{ row.due_date }}</td>
+                            <td class="date">{{ row.date_submitted }}</td>
+                            <td class="initiated-by"><a href="javascript:void(0)" class="text-primary">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
+                            <td class="supplier"><a href="javascript:void(0)" class="text-primary">{{ row.supplier.name }}</a><br><small>{{ row.supplier.company }}</small></td>
+                            <td class="sow text-primary">{{ row.sow }}</td>
+                            <td class="amount">${{ row.amount | number:2 }}</td>
+                            <td class="status">
+                                <span class="label" ng-class="{'in-process': row.status == 'In Process',
+                                                               'draft': row.status == 'Draft',
+                                                               'pending': row.status == 'Pending',
+                                                               'completed': row.status == 'Completed'}">
+                                    {{ row.status }}
+                                </span>
+                            </td>
+
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

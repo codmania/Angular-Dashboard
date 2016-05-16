@@ -1,0 +1,157 @@
+<div class="tab-content">
+    <div class="loans-wrapper">
+        <div class="row mt10">
+            <div class="col-md-8">
+
+                <div class="row">
+                    <div class="col-md-3 mb10">
+                        <h4 class="text-muted">Bank Name</h4>
+                        <p class="text-default">Wells Fargo</p>
+                        <small class="text-gray-lighter address" style="display:block;">123 Street, San Diego CA 92110</small>
+                    </div>
+                    <div class="col-md-3  mb10">
+                        <h4 class="text-muted">Banker Name</h4>
+                        <p class="text-default">Joe Sloan</p>
+                        <small class="text-gray-lighter contact">
+                            <span>
+                                <i class="fa fa-envelope mr5"></i>|
+                                <i class="fa fa-phone mr5 ml5"></i>
+                                816-553-2939
+                            </span>
+                        </small>
+                    </div>
+                    <div class="col-md-3 mb10">
+                        <h4 class="text-muted">Construction Loan Amount</h4>
+                        <p class="text-default">$123,456.00</p>
+                    </div>
+                    <div class="col-md-3 mb10">
+                        <h4 class="text-muted">Loan Account Number</h4>
+                        <p class="text-default">897-2271623</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 text-right  mb10">
+                <a class="btn btn-lg btn-primary">Edit Loan Parameters</a>
+            </div>
+        </div>
+
+        <hr/>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4 project-item  mb10">
+                        <h4 class="text-muted">Project</h4>
+                        <span class="text-primary">Commodo Ligula Fermentum</span>
+                    </div>
+                    <div class="col-md-4 project-item  mb10">
+                        <h4 class="text-muted">Amount Drawn to Date</h4>
+                        <span>$123,456.00</span>
+                    </div>
+                    <div class="col-md-4 project-item  mb10">
+                        <h4 class="text-muted">Total Draw Amount Pending</h4>
+                        <span>$123,456.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4 project-item  mb10">
+                        <h4 class="text-muted">%Drawn</h4>
+                        <span>65%</span>
+                    </div>
+                    <div class="col-md-4 project-item  mb10">
+                        <h4 class="text-muted">Remaining to be Drawn</h4>
+                        <span>$123,456.00</span>
+                    </div>
+                    <div class="col-md-4 project-item  mb10">
+                        <h4 class="text-muted">Construction Loan per SqFt</h4>
+                        <span>$123,456.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div slim-scroll box-height="600px">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th class="sow">Cost Code</th>
+                            <th>Loan Amount</th>
+                            <th>Drawn to Date</th>
+                            <th>Pending Draws</th>
+                            <th>Amount Remaining to be Drawn</th>
+                            <th>Drawn</th>
+                            <th class="gear">
+                                <div uib-dropdown dropdown-append-to-body>
+                                    <a href="javascript:void(0)" uib-dropdown-toggle class="text-muted">
+                                        <i class="fa fa-gear"></i>
+                                        <i class="fa fa-chevron-down"></i>
+                                    </a>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="row in data">
+                            <td class="desc">
+                                <input type="text" ng-model="row.desc" ng-if="isEdit"></input>
+                                <span ng-if="!isEdit">{{row.desc}}</span>
+                            </td>
+                            <td class="sow">
+                                <ui-select options="sows" selected-item="row.sow" ng-if="isEdit"></ui-select>
+                                <span ng-if="!isEdit">{{row.sow}}</span>
+                            </td>
+                            <td>
+                                <input type="text" ui-money-mask="2" placeholder="$" ng-model="row.loan_amount" ng-if="isEdit"></input>
+                                <span ng-if="!isEdit">{{row.loan_amount | currency:'$':2}}</span>
+                            </td>
+                            <td><span>{{row.drawn_date | currency:'$':2}}</span></td>
+                            <td><span>{{row.pending_draws | currency:'$':2}}</span></td>
+                            <td><span>{{row.amount_remaining | currency:'$':2}}</span></td>
+                            <td><span>{{row.percent_drawn}}%</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">
+                                <a href="javascript:void(0)" class="text-primary add-line" ng-click="addLine()"><i class="fa fa-plus"></i> Add  Additional Line</a>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"></td>
+
+                            <td>
+                                <h4 class="text-muted">Total</h4>
+                                <span>$2,860,509.00</span>
+                            </td>
+                            <td>
+                                <h4 class="text-muted">Total</h4>
+                                <span>$903,347.67</span>
+                            </td>
+                            <td>
+                                <h4 class="text-muted">Total</h4>
+                                <span>$181,266.84</span>
+                            </td>
+                            <td>
+                                <h4 class="text-muted">Total</h4>
+                                <span>$1,957,161.33</span>
+                            </td>
+                            <td colspan="2">
+                                <h4 class="text-muted">Total</h4>
+                                <span>68.4%</span>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,327 @@
+@import 'variables';
+
+.up-top-wrapper {
+    color: $text-default;
+
+    h2 {
+        font-family: $text-regular;
+        font-size: 27px;
+        font-weight: 300;
+        margin: 15px 0;
+    }
+}
+
+.up-content-wrapper {
+    color: $text-default;
+    padding: 30px 30px 40px;
+
+    .up-card {
+        border: 1px solid #eee;
+        border-radius: 2px;
+        position: relative;
+        background-color: #fff;
+        min-height: 100px;
+
+        .btn-edit {
+            padding: 10px 20px;
+            position: absolute;
+            right: 20px;
+        }
+
+        .photo-section {
+            .photo {
+                margin: 0 auto;
+                display: table;
+                position: relative;
+            }
+
+            img {
+                width: 100px;
+                border-radius: 100px;
+            }
+
+            .warning-circle {
+                padding: 2px 4px;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                display: block;
+                line-height: 20px;
+                font-size: 13px;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            .text-primary {
+                font-family: AvenirNextLTPro-Demi;
+                font-size: 11px;
+                margin-bottom: 15px;
+                margin-top: 15px;
+                margin-left: 10px;
+            }
+        }
+
+        .contact-info {
+            text-align: center;
+
+            .name {
+                font-family: AvenirNextLTPro-Demi;
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .address {
+                font-family: AvenirNextLTPro-Regular;
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+
+            .contact {
+                font-family: AvenirNextLTPro-Regular;
+                font-size: 11px;
+
+                i {
+                    margin-right: 10px;
+
+                    &:last-child {
+                        margin-left: 20px;
+                    }
+
+                    &.fa-link {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .billing-info {
+        .title {
+            font-family: AvenirNextLTPro-Regular;
+            font-size: 17px;
+
+            img.lock {
+                width: 20px;
+                margin-top: -6px;
+            }
+        }
+
+        label {
+            font-family: $text-bold;
+            font-size: 13px;
+            display: block;
+        }
+
+        span {
+            font-family: $text-regular;
+            font-size: 12px;
+        }
+    }
+
+    .security-settings {
+        .title {
+            font-family: AvenirNextLTPro-Regular;
+            font-size: 17px;
+
+            img.lock {
+                width: 20px;
+                margin-top: -6px;
+            }
+        }
+
+        label {
+            font-family: $text-bold;
+            font-size: 13px;
+            display: block;
+        }
+
+        span {
+            font-family: $text-regular;
+            font-size: 12px;
+        }
+
+        input[type=password] {
+            background-color: #f9f9f9;
+            width: 100%;
+
+            &:active, &:focus {
+                background-color: #fff;
+            }
+        }
+
+        .two-step-security {
+            > div:first-child {
+                margin-top: 7px;
+            }
+        }
+    }
+
+    .compliance-info {
+        .title {
+            font-family: $text-regular;
+            font-size: 17px;
+        }
+
+        .compliance-item {
+            .pull-left {
+                font-family: $text-regular;
+                font-size: 12px;
+            }
+
+            .pull-right {
+                span {
+                    font-family: $text-bold;
+                    font-size: 11px;
+                    display: block;
+                }
+
+                small {
+                    font-family: $text-regular;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .projects {
+        @media(max-width: 992px) {
+            margin-top: 30px;
+        }
+
+        .title {
+            font-family: AvenirNextLTPro-Regular;
+            font-size: 17px;
+
+            img.cap {
+                width: 22px;
+                margin-top: -3px;
+            }
+        }
+
+        h5 {
+            font-family: $text-bold;
+            font-size: 13px;
+        }
+
+        .current-projects {
+            .table {
+                thead {
+                    tr th {
+                        padding: 15px 20px;
+                        font-family: $text-bold;
+                        font-size: 13px;
+                        color: $text-muted;
+                        background-color: #f9f9f9;
+                    }
+                }
+
+                tbody {
+
+                    tr td {
+                        vertical-align: middle;
+                        padding: 20px;
+                        &.name, &.sow {
+                            font-family: $text-bold;
+                            font-size: 11px;
+                            color: $text-primary;
+                        }
+
+                        &.role, &.sow-completion {
+                            font-family: $text-regular;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+
+            .schedule {
+                .on-off-site {
+                    font-family: $text-bold;
+                    font-size: 10px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    text-transform: uppercase;
+                }
+
+                .on-site {
+                    color: $text-success;
+                }
+
+                .off-site {
+                    color: $text-muted;
+                }
+
+                .availability-image {
+                    width: 8px;
+                }
+
+                .availability {
+                    color: $text-danger;
+                    font-family: $text-bold;
+                    font-size: 9px;
+                    line-height: 16px;
+                }
+
+                .next-sched {
+                    font-family: $text-regular;
+                    font-size: 11px;
+                }
+
+            }
+        }
+
+        .archived-projects {
+
+            .table {
+                thead {
+                    tr th {
+                        padding: 15px 20px;
+                        font-family: $text-bold;
+                        font-size: 13px;
+                        color: $text-muted;
+                        background-color: #f9f9f9;
+                    }
+                }
+
+                tbody {
+
+                    tr td {
+                        vertical-align: middle;
+                        padding: 20px;
+                        &.name, &.sow {
+                            font-family: $text-medium;
+                            font-size: 11px;
+                        }
+
+                        &.role {
+                            font-family: $text-regular;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .project-info {
+            .label {
+                margin-right: 10px;
+            }
+            label {
+                display: block;
+                font-family: $text-bold;
+                font-size: 13px;
+                text-transform: uppercase;
+            }
+
+            span {
+                font-family: $text-regular;
+                font-size: 12px;
+            }
+        }
+    }
+
+    hr.lighter {
+        border: 1px solid #f9f9f9;
+    }
+}

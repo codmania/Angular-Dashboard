@@ -1,0 +1,269 @@
+<div class="dpi-page-wrapper mb30">
+    <!-- Top Nav bar -->
+    <div class="row dpi-page-info">
+        <div class="pull-left pl0 pr0">
+            <div class="closeBox">
+                <p>
+                    <a ui-sref="financials.invoices">Close <i class="fa fa-caret-right"></i></a>
+                </p>
+            </div>
+        </div>
+
+        <div class="pull-left dpi-page-title">
+            <div class="col-md-7 pl20">
+                <h2 class="text-default">Direct Invoice</h2>
+                <span class="dp-name">A Long Long Direct Invoice Name Goes Here</span>
+                <hr/>
+            </div>
+
+            <div class="col-md-5">
+                <div class="dp-info">
+                    <div class="row">
+                        <span class="col-xs-9 text-right">Invoice#</span>
+                        <span class="col-xs-3 text-left">
+                            <label class="label label-info">193</label>
+                        </span>
+                    </div>
+                    <div class="row mt5">
+                        <span class="col-xs-9 text-right">Date Initiated</span>
+                        <span class="col-xs-3 text-left date">8/23/14</span>
+                    </div>
+                    <div class="row mt5">
+                        <span class="col-xs-9 text-right">Initiated By</span>
+                        <span class="col-xs-3 text-left initiated-by">Eric Hoffman</span>
+                    </div>
+                    <div class="row mt5 pr15">
+                        <div class="col-md-6 text-right mt20">Currently Responsible</div>
+                        <div class="col-md-6 text-left">
+                            <ui-select options="users" ng-select="" selected-item="curResponsible"></ui>
+                        </div>
+                    </div>
+                    <div class="row mt5 pr15">
+                        <div class="col-md-12">
+                            <div class="follow-up-due">
+                                <ui-date-field ng-model="date"></ui-date-field>
+                            </div>
+                            <div class="due-title">Follow Up Due</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Top Nav bar -->
+
+
+    <!-- Main Content -->
+    <div class="row no-margin animated fadeInRight">
+        <div class="col-lg-12">
+            <div class="first-section">
+
+                <div class="form-group text-right">
+                    <div uib-dropdown dropdown-append-to-body class="dropdown">
+                        <a href="javascript:void(0)" uib-dropdown-toggle="" class="text-muted dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-gear"></i>
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <ul class="uib-dropdown-menu dropdown-menu-right chevron-down-menu bp-action-menu" role="menu">
+                            <li ng-repeat="action in actions"><a>{{action.name}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <div class="row payee-info">
+                    <div class="col-md-2 col-xs-6">
+                        <div class="form-group payee">
+                            <label>Payee</label>
+                            <span class="text-primary">Eric Hoffman</span>
+                            <small>Flora Corp</small>
+                            <div class="contact">
+                                <span>
+                                    <i class="fa fa-envelope"></i>|
+                                    <i class="fa fa-comments"></i>|
+                                    <i class="fa fa-phone"></i>801 556 5683
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <div class="form-group account">
+                            <label>Account</label>
+                            <span>Lorem ipsum</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <div class="form-group irn">
+                            <label>IRN#</label>
+                            <span>12314566</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <div class="form-group address">
+                            <label>Address</label>
+                            <span>5941 8th Avenue</span>
+                            <span>Website, NY 14580</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <div class="form-group">
+                            <label>Contact</label>
+                            <span class="text-primary">Bob Jones</span>
+                            <div class="contact">
+                                <span>
+                                    <i class="fa fa-envelope"></i>|
+                                    <i class="fa fa-comments"></i>|
+                                    <i class="fa fa-phone"></i>801 556 5683
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="mt5"/>
+
+                <div class="item">
+                    <h5>Item #1</h5>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Amount</label>
+                                <span>$1,234</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Description</label>
+                                <span>Etiam porta sem malesda</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Project</label>
+                                <span class="prj text-primary">Enclave 14</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Contract</label>
+                                <span>Ridiculus Justo</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Scope of Work</label>
+                                <span class="text-primary sow">Dolor Tortor Ultricies</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Classification</label>
+                                <span>Labor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt5"/>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Budgeted</label>
+                                <span class="text-success budget">Yes</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Cost Code</label>
+                                <span class="cost-code">PA #1023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="additional-detail">
+                            <h5>Additional Details</h5>
+                            <hr/>
+                            <span>Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras
+attis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis. Donec ulla
+mcorper null metus auctor fringilla.</span>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="attachments">
+                            <h5>Attachments</h5>
+                            <hr class="mb5" />
+                            <div slim-scroll box-height="50">
+                                <div class="document">
+                                    <img src="assets/img/documents/pdf_sample1.jpg">
+                                    <div class="desc">
+                                        <span class="text-primary">Document Name.jpg</span>
+                                        <small class="text-muted">133MB</small>
+                                    </div>
+                                </div>
+                                <div class="document">
+                                    <img src="assets/img/documents/pdf_sample1.jpg">
+                                    <div class="desc">
+                                        <span class="text-primary">Document Name.jpg</span>
+                                        <small class="text-muted">133MB</small>
+                                    </div>
+                                </div>
+                                <div class="document">
+                                    <img src="assets/img/documents/pdf_sample1.jpg">
+                                    <div class="desc">
+                                        <span class="text-primary">Document Name.jpg</span>
+                                        <small class="text-muted">133MB</small>
+                                    </div>
+                                </div>
+                                <div class="document">
+                                    <img src="assets/img/documents/pdf_sample1.jpg">
+                                    <div class="desc">
+                                        <span class="text-primary">Document Name.jpg</span>
+                                        <small class="text-muted">133MB</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    <span class="total-title">Total Amount</span>
+                    <span class="total-value">$1234</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 mt30 mb30 text-right">
+            <div class="dropdown">
+                <div class="dropdown" uib-dropdown dropdown-append-to-body>
+                    <button type="button" class="btn btn-primary btn-lg" uib-dropdown-toggle>
+                        Actions <i class="fa fa-chevron-down"></i>
+                    </button>
+                    <ul class="uib-dropdown-menu dropdown-menu-right chevron-down-menu bp-action-menu" role="menu">
+                        <li ng-repeat="action in actions"><a>{{action.name}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row no-margin animated fadeInRight second-section">
+        <div class="second-content">
+            <uib-tabset>
+                <uib-tab heading="Comments">
+                    <div ng-include="'partials/action-items/change-order/comments.html'"></div>
+                </uib-tab>
+                <uib-tab heading="Access">Short Labeled Justified content</uib-tab>
+                <uib-tab heading="Activity">Short Labeled Justified content</uib-tab>
+                <uib-tab heading="Attachments">Long Labeled Justified content</uib-tab>
+            </uib-tabset>
+        </div>
+    </div>
+    <!-- Main Content -->
+</div>
