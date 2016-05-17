@@ -139,7 +139,6 @@ app.controller('AiriqsearchMainCtrl',
         ];
         $scope.allAirlines = true;
         $scope.airHeaders = [];
-        $scope.searchCompleted = true;
 
         $scope.savetoDashboard = function() {
 
