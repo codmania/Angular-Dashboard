@@ -180,7 +180,8 @@
             font-family: "AvenirNextLTPro-Medium";
         }
     }
-    li.active {
+    li.active,
+    li:hover {
         border-left: 0px;
         background: #e25c5c;
     }

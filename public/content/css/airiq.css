@@ -128,6 +128,7 @@
     color: #fff;
     font-family: "AvenirNextLTPro-Medium"; }
 
-.child-menu li.active {
+.child-menu li.active,
+.child-menu li:hover {
   border-left: 0px;
   background: #e25c5c; }
