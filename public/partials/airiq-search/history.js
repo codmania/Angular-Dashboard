@@ -207,6 +207,7 @@ app.controller('AiriqsearchHistoryCtrl',
             Futuredate.getHistory(token, searchString).then(function(response) {
                 // console-log of query and response
                 var responseTime = new Date().getTime() - ajaxTime;
+                console.log("Outbound Date:", od);
                 console.log("Start Date:", sd);
                 console.log("End Date:", ed);
                 console.log("From-To:", from, "-", to);
@@ -216,7 +217,7 @@ app.controller('AiriqsearchHistoryCtrl',
 
                 $scope.preloader = false;
                 $scope.loader = false;
-                $scope.legend = true;
+                $scope.legend = false;
                 $scope.dowloadLinks = true;
 
                 gData = response;
@@ -224,8 +225,9 @@ app.controller('AiriqsearchHistoryCtrl',
             }, function(error) {
                 if(error.status == 401){
                     //unset auth if it was set
-                    $localStorage.auth = undefined;
+                    // $localStorage.auth = undefined;
                 }
+                $scope.loader = false;
                 console.warn(error);
             });
         }

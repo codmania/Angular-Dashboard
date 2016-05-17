@@ -212,7 +212,7 @@ app.controller('AiriqsearchDemandCtrl',
 
                 $scope.preloader = false;
                 $scope.loader = false;
-                $scope.legend = true;
+                $scope.legend = false;
                 $scope.dowloadLinks = true;
 
                 gData = response;

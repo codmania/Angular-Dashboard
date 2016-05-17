@@ -63,12 +63,17 @@ app.controller('AiriqsearchMainCtrl',
         var $loader = $('#main-loading');
         var $preloader = $('#main-placeholder');
         var $legend = $('#main-graph-legend');
-        var $dowloadLinks = $('#main-download-links');
+        var $downloadLinks = $('#main-download-links');
         var $diffBlock = $('#main-diff-block');
 
         var $reportsBlock = $('#main-report-block');
         var $negativeBlock = $('#main-negative-block');
         var $positiveBlock = $('#main-positive-block');
+
+        $scope.loader = false;
+        $scope.preloader = true;
+        $scope.legend = false;
+        $scope.downloadLinks = true;
 
         Chart.types.Line.extend({
             name: "LineWithLine",
@@ -174,6 +179,11 @@ app.controller('AiriqsearchMainCtrl',
             }
             var searchString = from + '/' + to + '/' + formatDate(sd) + '/' + formatDate(ed);
 
+            $scope.loader = true;
+            $scope.preloader = true;
+            $scope.legend = false;
+            $scope.downloadLinks = false;
+
             var token = JSON.parse($localStorage.auth) || {};
             if(token['token']){
                 token = token['token']
@@ -185,6 +195,7 @@ app.controller('AiriqsearchMainCtrl',
             Futuredate.getData(token, searchString).then(function(response) {
                 // console-log of query and response
                 var responseTime = new Date().getTime() - ajaxTime;
+                
                 console.log("Start Date:", sd);
                 console.log("End Date:", ed);
                 console.log("From-To:", from, "-", to);
@@ -192,14 +203,20 @@ app.controller('AiriqsearchMainCtrl',
                 console.log("Min Threshold:", minThreshold);
                 console.log("Response TIme:", responseTime, "ms");
 
+                $scope.preloader = false;
+                $scope.loader = false;
+                $scope.legend = false;
+                $scope.downloadLinks = true;
+
                 gData = response;
                 $scope.searchCompleted = false;
                 showCharts(response.data, response.labels);
             }, function(error) {
                 if(error.status == 401){
                     //unset auth if it was set
-                    $localStorage.auth = undefined;
+                    // $localStorage.auth = undefined;
                 }
+                $scope.loader = false;
                 console.warn(error);
             });
         }
