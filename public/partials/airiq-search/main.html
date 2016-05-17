@@ -1,153 +1,241 @@
-<div class="wrapper wrapper-content animated fadeInRight project-start">
-    <h2>Welcome {{currentUser.firstName}}, Lets Get Started!</h2>
-    <div class="card-wrapper whiteBox">
-        <h3>Basic Details</h3>
-        <hr/>
-        <div class="row">
-            <div class="col-md-6 col-md-3">
-                <div class="item">
-                    <span>Name of your Project</span>
-                    <input type="text" class="form-control"></input>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-md-3">
-                <div class="item">
-                    <span>Type of Project</span>
-                    <ui-select selected-item="typeOfProject[1]" options="typeOfProject"></ui-select>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-md-3">
-                <div class="item">
-                    <span>Which Best Describes Your Project?</span>
-                    <ui-select selected-item="bestDescriptions[0]" options="bestDescriptions"></ui-select>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-md-3">
-                <div class="item">
-                    <span>Select a Country</span>
-                    <ui-select selected-item="countries[0]" options="countries"></ui-select>
-                </div>
-            </div>
-        </div>
-
-
-        <h3>Address of Your Property</h3>
-        <div class="row">
-            <div class="col-md-6 col-md-4">
-                <div class="item">
-                    <span>Street Address</span>
-                    <input type="text" class="form-control"></input>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-md-3">
-                <div class="item">
-                    <span>City</span>
-                    <input type="text" class="form-control"></input>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-md-3">
-                <div class="item">
-                    <span>State</span>
-                    <ui-select selected-item="states[2]" options="states"></ui-select>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-md-2">
-                <div class="item">
-                    <span>Zipcode</span>
-                    <input type="text" class="form-control"></input>
-                </div>
-            </div>
-        </div>
-
+<div class="row wrapper border-bottom white-bg page-heading overview ng-scope">
+    <div class="col-sm-6 col-lg-10">
+        <h2 class="heading">Future Date Range by Market</h2>
     </div>
+</div>
 
-
-    <div class="card-wrapper whiteBox">
-        <h3>Project Specifications</h3>
-        <hr/>
-        <div class="row">
-            <div class="col-md-7">
+<div class="wrapper wrapper-content animated fadeInRight airiq-wrapper">
+    <form name="detailForm">
+        <div class="card-wrapper whiteBox">
+            <div class="card-title">
+                <h3><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Details info</h3>
+            </div>
+            <div class="card-content">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6 col-md-3">
                         <div class="item">
-                            <span>Your Role</span>
-                            <ui-select selected-item="project.role" options="roles"></ui-select>
+                            <span>Origin(ie TPA)</span>
+                            <input type="text" ng-model="tpa" class="form-control" ng-required="true"></input>
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6 col-md-3">
                         <div class="item">
-                            <span>Project Sqft</span>
-                            <input type="text" class="form-control" />
+                            <span>Destination(ie DXB)</span>
+                            <input type="text" ng-model="dxb" class="form-control" ng-required="true"></input>
                         </div>
                     </div>
-
-                    <div class="col-md-5">
+                    <div class="col-md-6 col-md-3">
                         <div class="item">
-                            <span>Target Construction Days per Sqft</span>
-                            <input type="text" class="form-control" placeholder=".05"/>
+                            <span>Date Range</span>
+                            <ui-date-field ng-model="startDate" placeholder="Start Date"></ui-date-field>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-3">
+                        <div class="item">
+                            <span>&nbsp;</span>
+                            <ui-date-field ng-model="endDate" min-date="startDate" placeholder="End Date"></ui-date-field>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-5">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-md-3">
                         <div class="item">
-                            <span>Project Start Date (Excavation)</span>
-                            <ui-date-field ng-model="project.start_date"></ui-date-field>
+                            <span>Type</span>
+                            <ui-select selected-item="searchTypes[0]" options="searchTypes"></ui-select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-3">
+                        <div class="item">
+                            <span>Min Threshold</span>
+                            <input type="number" ng-model="maxThreshold" class="form-control"></input>
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-md-3">
                         <div class="item">
-                            <span>Goal Price per Sqft</span>
-                            <input class="form-control" type="text" ng-model="goalPrice" ui-money-mask="0" placeholder="$"/>
+                            <span>Max Threshold</span>
+                            <input type="number" ng-model="minThreshold" class="form-control"></input>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <hr class="mt0"/>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="item">
-                    <span>Have Architectural Plans?</span>
-                    <ui-rec-switch ng-model="haveArchPlans" />
+        <div class="row button-group">
+            <button type="button" class="btn btn-lg btn-warning" ng-click="savetoDashboard()">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;Save to Dashboard
+            </button>
+            <button type="submit" class="btn btn-lg btn-success" ng-click="buildReport()">
+                <i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;Build Report
+            </button>
+        </div>
+    </form>
+    <div class="clearfix"></div>
+
+    <div class="card-wrapper whiteBox">
+        <div class="card-title">
+            <span><h3><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;&nbsp;Date Range by Market</h3></span>
+            <!-- <span class="pull-right"> -->
+            <div class="btns">
+                <a data-toggle="dropdown" class="btn-toggle">
+                    <i class="fa fa-download" aria-hidden="true"></i>&nbsp;DownLoad
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right action-menu" role="menu">
+                    <li ng-click="downloadCSV()"><a href="javascript:void(0)">CSV</a></li>
+                    <li ng-click="downLoadPDF()"><a href="javascript:void(0)">PDF</a></li>
+                </ul>
+            </div>
+            <!-- </span> -->
+        </div>
+        <div class="card-content">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="item">
+                                <span>All Airlines</span>
+                                <ui-rec-switch ng-model="allAirlines" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-sm-5">
+                            <div class="item muti-check">
+                                <span>Select Tiers</span>
+                                <ui-select has-filter="true" multiple="true" ng-modle="airlineFilters" ng-select="changeOption()" selected-item="selectedItem" options="options"></ui-select>
+                            </div>
+                        </div>
+                        <div class="pull-right groups-wrapper-main"></div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-9 col-md-6">
-                <div class="item" ng-show="haveArchPlans">
-                    <div class="ps-file-dropzone">
-                        <form class="mt30 dropzone"
-                              enctype="multipart/form-data"
-                              ng-dropzone dropzone="dropzone"
-                              dropzone-config="dropzoneConfig"
-                              event-handlers="dropzoneEventHandlers">
-                            <input name="file" class="hidden" type="file" multiple />
-                        </form>
-                        <div class="text-center dropzone-title">
-                            <div>Drag and drop Plans, <a class="mt20 btn-file-input">or click here to browse for files</a></div>
-                            <small class="text-muted">Max. 50MB</small>
+            <div class="row">
+                <!-- <div class="result-field text-center" id="main-placeholder">
+                    <img src="assets/img/airdata/logowait.svg" alt=""/>
+                </div> -->
+                <div class="main-exported-content">
+                    <div class="panel panel-default">
+                        <div class="panelwithgraph">
+                            <canvas id="main-QbyS" style="width: 100%;height: auto;"></canvas>
+                            <div id="main-wj-graph-tooltip"></div>
+                            <div id="main-loading" style="display: none;">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                        <span class="sr-only">100% Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="main-placeholder" ng-show="searchCompleted">
+                                <img src="assets/img/airdata/logowait.svg" alt=""/>
+                            </div>
                         </div>
-                        <div id="upload-files-container"></div>
+                        <div class="panel-footer" id="main-graph-legend" style="display: none;"></div>
+                    </div>
+
+                    <div class="panel panel-default table-responsive" id="main-report-block" style="display:none">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th ng-repeat="header in airHeaders">
+                                        <span>{{header}}</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="text-right">
-        <a class="btn btn-cancel btn-lg">Cancel</a>
-        <a class="btn btn-success btn-lg" ng-click="createProject()">Create Project</a>
-    </div>
+
+
+        <div class="panel panel-default hide" id="main-diff-block" style="display:none;">
+            <div class="panel-heading">
+                <h3 class="panel-title inline-block">Diff</h3>
+            </div>
+            <div class="panel-body panelwithgraph">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <canvas id="main-diff-upper" style="width: 100%;height: auto;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer" id="main-graph-legend-diff">
+
+            </div>
+        </div>
+
+
+        <div class="row small-tables main-exported-content">
+
+            <div class="col-sm-6">
+                <div class="panel panel-default" id="main-negative-block" style="display:none">
+                    <div class="panel-heading">
+                        <h3 class="panel-title inline-block">Differential by Date Range</h3>
+                        <h3 class="panel-title inline-block ml40"></h3>
+                    </div>
+                    <div class="panel-body panelwithgraph">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <canvas style="width: 100%;height: auto;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="panel panel-default" id="main-positive-block" style="display:none">
+                    <div class="panel-heading">
+                        <h3 class="panel-title inline-block">Profit Differential</h3>
+                        <h3 class="panel-title inline-block multiplier"></h3>
+                        <div class="multiplier-dropdown pull-right">
+                            <label for="profitMultiplierMain">PAX Multiplier:</label>
+                            <!-- <select id="profitMultiplierMain" class="form-control"></select> -->
+                            <ui-select selected-item="searchTypes[0]" options="searchTypes" id="profitMultiplierMain"></ui-select>
+                        </div>
+                    </div>
+                    <div class="panel-body panelwithgraph">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <canvas style="width: 100%;height: auto;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 </div>

@@ -151,7 +151,7 @@ h6 {font-size: 10px;}
     transition: all 0.5s;
 }
 
-.nav > li.active { border-left: 0px; background: #e25c5c;}
+.nav > li.active { border-left: 0px;/* background: #e25c5c;*/}
 .nav.nav-second-level > li.active { border: none;}
 .nav.nav-second-level.collapse[style] { height: auto !important;}
 .nav-header a { color: #DFE4ED;}

@@ -61,7 +61,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         .state('airiq-search', {
             url: '/airiq-search',
             abstract: true,
-            templateUrl: "partials/airiq-search/airiq-search.html",
+            template: "<ui-view/>",
             controller: "AiriqsearchCtrl",
             data: {
                 pageName: 'AirIQ Search'
@@ -76,6 +76,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             url: '/history',
             templateUrl: "partials/airiq-search/history.html",
             controller: "AiriqsearchHistoryCtrl"
+        })
+        .state('airiq-search.demand', {
+            url: '/demand',
+            templateUrl: "partials/airiq-search/demand.html",
+            controller: "AiriqsearchDemandCtrl"
         })
         .state('dashboard', {
             url: '/dashboard',
