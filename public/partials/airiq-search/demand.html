@@ -1,5 +1,120 @@
-<div class="row wrapper border-bottom white-bg page-heading overview">
+<div class="row wrapper border-bottom white-bg page-heading overview ng-scope">
     <div class="col-sm-6 col-lg-10">
-        <h2 class="heading">Demand</h2>
+        <h2 class="heading">Demand by Search Date Range</h2>
     </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight airiq-wrapper">
+    <form name="detailForm">
+        <div class="card-wrapper whiteBox">
+            <div class="card-title">
+                <h3><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Details info</h3>
+            </div>
+            <div class="card-content">
+                <div class="row">
+                    <div class="col-md-6 col-md-3">
+                        <div class="item">
+                            <span>Dep Date</span>
+                            <ui-date-field ng-model="depDate"></ui-date-field>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-3">
+                        <div class="item">
+                            <span>Origin(ie TPA)</span>
+                            <input type="text" ng-model="tpa" class="form-control" ng-required="true"></input>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-md-3">
+                        <div class="item">
+                            <span>Destination(ie DXB)</span>
+                            <input type="text" ng-model="dxb" class="form-control" ng-required="true"></input>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-3">
+                        <div class="item">
+                            <span>Type</span>
+                            <ui-select ng-select="changeOption()" selected-item="selectedType" options="timeTypes"></ui-select>
+                            <!-- <ui-select selected-item="timeTypes[0]" options="timeTypes"></ui-select> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-md-3">
+                        <div class="item">
+                            <span>Date Range</span>
+                            <ui-date-field ng-model="startDate" placeholder="Start Date"></ui-date-field>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-3">
+                        <div class="item">
+                            <span>&nbsp;</span>
+                            <ui-date-field ng-model="endDate" min-date="startDate" placeholder="End Date"></ui-date-field>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-3">
+                        <div class="item">
+                            <span>Min Threshold</span>
+                            <input type="number" ng-model="maxThreshold" class="form-control"></input>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-md-3">
+                        <div class="item">
+                            <span>Max Threshold</span>
+                            <input type="number" ng-model="minThreshold" class="form-control"></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row button-group">
+            <button type="button" class="btn btn-lg btn-warning" ng-click="savetoDashboard()">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;Save to Dashboard
+            </button>
+            <button type="submit" class="btn btn-lg btn-success" ng-click="buildReport()">
+                <i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;Build Report
+            </button>
+        </div>
+    </form>
+    <div class="clearfix"></div>
+
+    <div class="card-wrapper whiteBox">
+        <div class="card-title">
+            <span><h3><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;&nbsp;Demand by Search Date Range</h3></span>
+            <!-- <span class="pull-right"> -->
+            <div class="btns" ng-show="downloadLinks">
+                <a data-toggle="dropdown" class="btn-toggle">
+                    <i class="fa fa-download" aria-hidden="true"></i>&nbsp;DownLoad
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right action-menu" role="menu">
+                    <li ng-click="downloadCSV()"><a href="javascript:void(0)">CSV</a></li>
+                    <li ng-click="downLoadPDF()"><a href="javascript:void(0)">PDF</a></li>
+                </ul>
+            </div>
+            <!-- </span> -->
+        </div>
+        <div class="card-content">
+            <div class="row">
+                <div class="demand-exported-content">
+                    <div class="panel panel-default">
+                        <div class="panelwithgraph">
+                            <canvas id="demand-QbyS" style="width: 100%;height: auto;"></canvas>
+                            <div id="demand-wj-graph-tooltip"></div>
+                            <div id="demand-loading" class="chart-loader" ng-show="loader">
+                                <i class="fa fa-spinner fa-spin" style="font-size:70px;color:#4B599E;"></i>
+                            </div>
+                            <div id="demand-placeholder" ng-show="preloader">
+                                <img src="assets/img/airdata/logowait.svg" alt=""/>
+                            </div>
+                        </div>
+                        <div class="panel-footer" id="demand-graph-legend" ng-show="legend"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

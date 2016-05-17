@@ -59,14 +59,16 @@
   .airiq-wrapper .panelwithgraph {
     position: relative; }
   .airiq-wrapper #main-placeholder,
-  .airiq-wrapper #history-placeholder {
+  .airiq-wrapper #history-placeholder,
+  .airiq-wrapper #demand-placeholder {
     position: absolute;
     top: 0px;
     text-align: center;
     width: 100%;
     height: 100%; }
     .airiq-wrapper #main-placeholder img,
-    .airiq-wrapper #history-placeholder img {
+    .airiq-wrapper #history-placeholder img,
+    .airiq-wrapper #demand-placeholder img {
       height: 90%;
       max-width: 100%; }
   .airiq-wrapper .custom-datefield {
